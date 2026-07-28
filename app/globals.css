@@ -44,7 +44,9 @@
   --action-radius: 999px;
   --action-ease: 180ms ease;
   --panel-gutter: 18px;
-  --section: min(1320px, calc(100vw - 64px));
+  --section-space: clamp(88px, 7.5vw, 108px);
+  --section-heading-space: clamp(36px, 4vw, 52px);
+  --section: min(1320px, calc(100% - 64px));
 }
 
 * {
@@ -624,23 +626,23 @@ h3 {
 }
 
 .partner-logo-vdh {
-  max-width: 180px !important;
+  max-width: 180px;
 }
 
 .partner-logo-priority {
-  max-width: 145px !important;
+  max-width: 145px;
 }
 
 .partner-logo-martin {
-  max-width: 165px !important;
+  max-width: 165px;
 }
 
 .partner-logo-spedlog {
-  max-width: 185px !important;
+  max-width: 185px;
 }
 
 .intro-section {
-  padding: 30px 0 118px;
+  padding: clamp(24px, 2.5vw, 36px) 0 var(--section-space);
 }
 
 .intro-heading {
@@ -665,7 +667,7 @@ h3 {
 
 .experience-grid {
   display: grid;
-  margin-top: 58px;
+  margin-top: var(--section-heading-space);
   grid-template-columns: 1.12fr 0.72fr 1fr;
   align-items: stretch;
   gap: 20px;
@@ -776,7 +778,7 @@ h3 {
 
 .service-marquee {
   display: flex;
-  min-height: 170px;
+  min-height: clamp(132px, 12vw, 160px);
   align-items: center;
   justify-content: center;
   gap: clamp(18px, 3vw, 42px);
@@ -835,8 +837,8 @@ h3 {
 .services-panel-inner {
   position: relative;
   z-index: 1;
-  width: min(1220px, calc(100vw - 175px));
-  padding-block: 76px 66px;
+  width: min(1220px, calc(100% - 120px));
+  padding-block: clamp(68px, 6vw, 80px);
 }
 
 .section-heading {
@@ -857,7 +859,7 @@ h3 {
 
 .service-grid {
   display: grid;
-  margin-top: 42px;
+  margin-top: var(--section-heading-space);
   grid-template-columns: repeat(4, 1fr);
   gap: 26px;
 }
@@ -953,7 +955,7 @@ h3 {
 }
 
 .process-section {
-  padding-block: 92px;
+  padding-block: var(--section-space);
 }
 
 .centered-heading {
@@ -963,7 +965,7 @@ h3 {
 
 .process-layout {
   display: grid;
-  margin-top: 54px;
+  margin-top: var(--section-heading-space);
   grid-template-columns: 1.18fr 0.82fr;
   overflow: hidden;
   border-radius: var(--radius-lg);
@@ -1040,7 +1042,7 @@ h3 {
 
 .benefit-row {
   display: grid;
-  margin-top: 46px;
+  margin-top: clamp(36px, 3.5vw, 46px);
   grid-template-columns: repeat(3, 1fr);
   gap: 42px;
 }
@@ -1205,7 +1207,8 @@ h3 {
 
 .testimonial-section {
   display: grid;
-  min-height: 430px;
+  min-height: 0;
+  padding-block: clamp(64px, 5vw, 78px);
   grid-template-columns: 150px 1.25fr 0.9fr;
   align-items: center;
   gap: 50px;
@@ -1296,7 +1299,7 @@ h3 {
 .impact-panel {
   display: grid;
   min-height: 550px;
-  margin-bottom: 105px;
+  margin-bottom: var(--section-space);
   grid-template-columns: 1fr 1.05fr 0.65fr;
   overflow: hidden;
   border-radius: var(--radius-lg);
@@ -1364,12 +1367,12 @@ h3 {
 }
 
 .story-section {
-  padding-bottom: 112px;
+  padding-bottom: var(--section-space);
 }
 
 .story-grid {
   display: grid;
-  margin-top: 55px;
+  margin-top: var(--section-heading-space);
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
@@ -2347,11 +2350,13 @@ h3 {
 
 @media (max-width: 1100px) {
   :root {
-    --section: min(100% - 42px, 960px);
+    --section-space: 88px;
+    --section-heading-space: 44px;
+    --section: min(960px, calc(100% - 48px));
   }
 
   .site-header {
-    width: calc(100vw - 42px);
+    width: calc(100% - 48px);
     grid-template-columns: 190px 1fr 220px;
   }
 
@@ -2364,7 +2369,7 @@ h3 {
   }
 
   .services-panel-inner {
-    width: calc(100vw - 84px);
+    width: calc(100% - 64px);
   }
 
   .hero-proof {
@@ -2535,7 +2540,9 @@ h3 {
 
 @media (max-width: 900px) {
   :root {
-    --section: calc(100vw - 32px);
+    --section-space: 72px;
+    --section-heading-space: 36px;
+    --section: calc(100% - 36px);
     --radius-lg: 22px;
   }
 
@@ -2627,7 +2634,7 @@ h3 {
   }
 
   .hero-home {
-    min-height: clamp(650px, calc(100svh - 24px), 780px);
+    min-height: clamp(580px, 82svh, 680px);
     background-position: 59% center;
   }
 
@@ -2645,7 +2652,7 @@ h3 {
 
   .hero h1,
   .hero-detail h1 {
-    font-size: clamp(2.45rem, 11.2vw, 3.8rem);
+    font-size: clamp(2.2rem, 7.5vw, 3rem);
     line-height: 1.02;
   }
 
@@ -2668,16 +2675,34 @@ h3 {
 
   .partner-strip {
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    padding-block: 36px;
+    gap: 20px;
+    padding-block: 30px;
   }
 
   .partner-strip img {
+    height: 42px;
+    max-width: 132px;
     justify-self: center;
   }
 
+  .partner-logo-vdh {
+    max-width: 150px;
+  }
+
+  .partner-logo-priority {
+    max-width: 122px;
+  }
+
+  .partner-logo-martin {
+    max-width: 140px;
+  }
+
+  .partner-logo-spedlog {
+    max-width: 155px;
+  }
+
   .service-marquee {
-    min-height: 132px;
+    min-height: 108px;
     gap: 14px;
     font-size: clamp(2.7rem, 10vw, 5.2rem);
   }
@@ -2693,7 +2718,7 @@ h3 {
   }
 
   .intro-section {
-    padding-block: 90px;
+    padding: 56px 0 var(--section-space);
   }
 
   .intro-heading,
@@ -2717,7 +2742,7 @@ h3 {
   }
 
   .experience-grid {
-    margin-top: 48px;
+    margin-top: var(--section-heading-space);
   }
 
   .experience-photo,
@@ -2731,11 +2756,11 @@ h3 {
 
   .services-panel-inner,
   .process-section {
-    padding-block: 72px;
+    padding-block: var(--section-space);
   }
 
   .services-panel-inner {
-    width: calc(100vw - 32px);
+    width: calc(100% - 32px);
   }
 
   .services-panel-visual {
@@ -2752,7 +2777,7 @@ h3 {
   }
 
   .service-grid {
-    margin-top: 36px;
+    margin-top: 32px;
     grid-template-columns: 1fr;
   }
 
@@ -2772,6 +2797,10 @@ h3 {
     padding: 10px 24px;
   }
 
+  .process-layout {
+    margin-top: var(--section-heading-space);
+  }
+
   .benefit-row,
   .story-grid,
   .fleet-gallery,
@@ -2783,6 +2812,7 @@ h3 {
   }
 
   .benefit-row {
+    margin-top: var(--section-heading-space);
     gap: 32px;
   }
 
@@ -2791,12 +2821,12 @@ h3 {
   }
 
   .quote-panel {
-    padding: 45px 24px;
+    padding: 42px 24px;
   }
 
   .testimonial-section {
     min-height: auto;
-    padding-block: 80px;
+    padding-block: var(--section-space);
     grid-template-columns: 1fr;
     gap: 0;
   }
@@ -2806,7 +2836,7 @@ h3 {
   }
 
   .impact-panel {
-    margin-bottom: 90px;
+    margin-bottom: var(--section-space);
   }
 
   .impact-image {
@@ -2825,11 +2855,23 @@ h3 {
   }
 
   .story-section {
-    padding-bottom: 100px;
+    padding-bottom: var(--section-space);
+  }
+
+  .story-grid {
+    margin-top: var(--section-heading-space);
   }
 
   .site-footer {
-    padding-inline: 16px;
+    padding: var(--section-space) 18px 24px;
+  }
+
+  .footer-top {
+    padding-bottom: 56px;
+  }
+
+  .footer-grid {
+    padding-block: 56px;
   }
 
   .footer-brand > a,
@@ -2986,9 +3028,14 @@ h3 {
 }
 
 @media (max-width: 540px) {
+  :root {
+    --section-space: 64px;
+    --section-heading-space: 32px;
+  }
+
   .hero h1,
   .hero-detail h1 {
-    font-size: clamp(2.35rem, 11.6vw, 3.2rem);
+    font-size: clamp(2rem, 9vw, 2.45rem);
   }
 
   .form-grid {

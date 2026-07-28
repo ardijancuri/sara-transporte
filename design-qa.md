@@ -143,7 +143,18 @@ The full-width section crop is also the focused typography comparison because th
 - Standardized the hero, detail hero, and services panel to an even 18 px outer frame that matches the hero's top inset.
 - Reduced the desktop experience statement to a 25.6–36 px fluid range and increased its line height to 1.13.
 - Increased the shared heading line height to 1.1 for `h2`, 1.18 for `h3`, and 1.02 for hero titles.
+- Reduced the mobile homepage hero to a 580–680 px responsive range so partner content enters the first viewport sooner while all hero content remains contained.
 - Verified at 1280 × 900 and 390 × 844 with no horizontal overflow and no browser console warnings or errors.
+
+### Responsive spacing follow-up
+
+- Reduced the homepage hero title to 35.1 px at 390 px and 32 px at 320 px, with a 48 px tablet maximum.
+- Reduced mobile partner-logo boxes from 50 px to 42 px and tightened the two-column banner gap and vertical padding.
+- Added shared section-spacing and heading-spacing tokens for desktop, tablet, and phone layouts.
+- Standardized general phone containers and framed panels to 18 px outer gutters.
+- Corrected the services panel inner width to use its parent panel as the sizing reference, maintaining 60 px desktop and 16 px phone internal gutters.
+- Normalized homepage intro, services, process, testimonial, impact, story, and footer spacing at each responsive breakpoint.
+- Verified at 1280 × 900, 768 × 900, 390 × 844, and 320 × 568 with no overflow, console warnings, or content collisions.
 
 ## Verification
 
