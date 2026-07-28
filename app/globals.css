@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "tailwindcss/index.css";
 
 @font-face {
   font-family: "Manrope";
@@ -990,10 +990,10 @@ h3 {
 .process-step {
   display: grid;
   min-height: 132px;
-  grid-template-columns: 58px 1fr;
+  grid-template-columns: 62px 1fr;
   align-items: center;
   border-bottom: 1px solid var(--line);
-  gap: 18px;
+  gap: 20px;
 }
 
 .process-step:last-child {
@@ -1001,9 +1001,17 @@ h3 {
 }
 
 .process-step > span {
-  color: var(--blue);
-  font-size: 0.69rem;
-  font-weight: 750;
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ededed;
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1;
 }
 
 .process-step h3 {
@@ -1026,19 +1034,24 @@ h3 {
 
 .benefit-row > div {
   display: grid;
-  grid-template-columns: 54px 1fr;
+  grid-template-columns: 32px 1fr;
+  align-items: start;
   gap: 18px;
 }
 
 .benefit-icon {
-  display: grid;
-  width: 48px;
-  height: 48px;
-  place-items: center;
-  border-radius: 50%;
-  background: #e3e3e3;
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 2px;
   color: var(--blue);
-  font-size: 1.25rem;
+}
+
+.benefit-icon svg {
+  width: 28px;
+  height: 28px;
 }
 
 .benefit-row h3 {
@@ -1304,6 +1317,10 @@ h3 {
   list-style: none;
   color: rgba(255, 255, 255, 0.65);
   font-size: 0.72rem;
+}
+
+.impact-copy > .button {
+  align-self: flex-start;
 }
 
 .impact-image {
@@ -1809,12 +1826,21 @@ h3 {
 }
 
 .workflow-grid span {
-  color: var(--blue);
-  font-size: 0.7rem;
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ededed;
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1;
 }
 
 .workflow-grid h3 {
-  margin: 100px 0 10px;
+  margin: 72px 0 10px;
   font-size: 1.25rem;
 }
 
@@ -3029,7 +3055,13 @@ h3 {
   }
 
   .process-step {
-    grid-template-columns: 40px 1fr;
+    grid-template-columns: 48px 1fr;
+    gap: 14px;
+  }
+
+  .process-step > span {
+    width: 48px;
+    height: 48px;
   }
 
   .footer-grid {

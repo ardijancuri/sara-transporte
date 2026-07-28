@@ -4,11 +4,9 @@ import {
   IconArrowDown,
   IconArrowUpRight,
   IconCheck,
-  IconMessages,
   IconQuote,
-  IconReceipt2,
-  IconRoute,
 } from "@tabler/icons-react";
+import { FaComments, FaReceipt, FaRoute } from "react-icons/fa";
 import {
   FaFileInvoice,
   FaLocationDot,
@@ -243,7 +241,7 @@ export function HomePage() {
           <div className="benefit-row">
             <Reveal>
               <span className="benefit-icon">
-                <IconReceipt2 size={23} stroke={1.6} />
+                <FaReceipt size={28} aria-hidden="true" />
               </span>
               <div>
                 <h3>Transparente Preise</h3>
@@ -252,7 +250,7 @@ export function HomePage() {
             </Reveal>
             <Reveal delay={80}>
               <span className="benefit-icon">
-                <IconRoute size={23} stroke={1.6} />
+                <FaRoute size={28} aria-hidden="true" />
               </span>
               <div>
                 <h3>Volle Sichtbarkeit</h3>
@@ -261,7 +259,7 @@ export function HomePage() {
             </Reveal>
             <Reveal delay={160}>
               <span className="benefit-icon">
-                <IconMessages size={23} stroke={1.6} />
+                <FaComments size={28} aria-hidden="true" />
               </span>
               <div>
                 <h3>Direkte Entscheidungen</h3>
@@ -344,15 +342,15 @@ export function HomePage() {
               <li>Eigene Werkstatt</li>
               <li>Grenznahe Zollteams</li>
             </ul>
-            <Link href="/contact-us" className="button button-outline-light">
+            <Link href="/contact-us" className="button button-light">
               <span>Kontakt aufnehmen</span>
               <ActionIcon />
             </Link>
           </div>
           <div className="impact-image">
             <Image
-              src="/assets/legacy/2023/10/w_versand_03.jpg"
-              alt="Moderne Lager- und Kommissionierungsanlage"
+              src="/assets/legacy/2023/10/image00174.jpeg"
+              alt="Sara Transporte LKW vor Schweizer Berglandschaft"
               fill
               sizes="(max-width: 900px) calc(100vw - 32px), 42vw"
             />

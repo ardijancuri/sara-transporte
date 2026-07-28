@@ -18,3 +18,16 @@ npm run dev
 npm run build
 npm test
 ```
+
+## Netlify deployment
+
+Netlify builds use the Vinext Nitro adapter rather than Netlify's standard
+Next.js runtime. The required build command, publish directory, runtime preset,
+and Next.js plugin opt-out are committed in `netlify.toml`.
+
+```bash
+npm run build:netlify
+```
+
+The build publishes static assets from `dist` and packages the application
+server in `.netlify/functions-internal`.

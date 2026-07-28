@@ -175,6 +175,62 @@ The full-width section crop is also the focused typography comparison because th
 - Updated the Next.js icon metadata, shortcut icon, Apple touch icon, and fallback public favicon.
 - Verified exact dimensions, opaque black-and-white output, successful local HTTP delivery, and clean browser console output.
 
+## CTA and workflow-number visual QA
+
+- Source visual truth: `C:\Users\PC\AppData\Local\Temp\codex-clipboard-372f5c61-da34-441e-b241-52dbb0b325cf.png` at 1071 × 351 px.
+- Browser-rendered implementation: `C:\Users\PC\Documents\sara-transporte\tmp\design-qa\process-after-1440-viewport.png` at 1425 × 990 px from a 1440 × 1000 CSS viewport.
+- Focused CTA evidence: `C:\Users\PC\Documents\sara-transporte\tmp\design-qa\impact-after-1440-viewport.png` at 1425 × 990 px.
+- Combined reference and implementation comparison: `C:\Users\PC\Documents\sara-transporte\tmp\design-qa\reference-vs-process-after-1440.png` at 1071 × 829 px.
+- State: homepage, desktop, default interaction state. Rendering was evaluated at 1× CSS density; the 1320 × 564 px implementation section was proportionally normalized to 1071 px wide only for the combined comparison.
+- Full-view evidence confirms the existing image-led process layout remains intact and the larger number treatment does not change the section proportions.
+- Focused comparison confirms the 52 px light-gray circular markers, bold dark numerals, and ordered hierarchy follow the reference treatment without copying its unrelated vertical-card layout.
+
+**Comparison history**
+
+- [P2] Initial workflow numbers were visually undersized and uncontained: 11.04 px blue text inside a transparent 58 px grid track.
+  - Fix: introduced 52 × 52 px circular neutral markers, 13.76 px numerals at weight 800, and a 48 px narrow-phone size.
+  - Post-fix evidence: four equally sized markers remain aligned with their titles and dividers at desktop; 390 px and 375 px responsive checks have no horizontal overflow.
+- [P2] Initial “Unsere Stärke” CTA stretched to 344.88 px and used the secondary outline treatment.
+  - Fix: changed it to the established primary light button and set the impact-panel action to `align-self: flex-start`.
+  - Post-fix evidence: the CTA measures 193.3 × 48 px, uses the white primary surface, and remains fit-content on desktop and phone.
+
+**Required fidelity surfaces**
+
+- Fonts and typography: existing Manrope family and section hierarchy remain unchanged; only workflow numerals increased to the reference-like optical weight and size.
+- Spacing and layout rhythm: number markers retain consistent 20 px desktop spacing and 14 px narrow-phone spacing; section, image, divider, and content spacing remain stable.
+- Colors and visual tokens: markers use the established neutral gray and ink palette; the CTA reuses the existing primary button token and action icon treatment.
+- Image quality and asset fidelity: no imagery was replaced, recropped, stretched, or regenerated.
+- Copy and content: all step labels, descriptions, CTA text, and destination links remain unchanged.
+- Browser console: no warnings or errors.
+- Responsive evidence: 390 px and 375 px checks show the 193.3 px CTA and 48 px markers without horizontal overflow.
+- Remaining findings: no actionable P0, P1, or P2 issues.
+
+## Benefit-icon visual QA
+
+- Source visual truth: `C:\Users\PC\AppData\Local\Temp\codex-clipboard-c98996d1-8b6b-4a90-a207-18c10ecffd65.png` at 1517 × 155 px.
+- Browser-rendered implementation: `C:\Users\PC\Documents\sara-transporte\tmp\design-qa\benefit-icons-after-1440.png` at 1425 × 990 px from a 1440 × 1000 CSS viewport.
+- Combined focused comparison: `C:\Users\PC\Documents\sara-transporte\tmp\design-qa\reference-vs-benefit-icons-after.png` at 1306 × 236 px.
+- State: homepage benefit row, desktop, default interaction state. Rendering was evaluated at 1× CSS density; the source and implementation row were proportionally normalized to the same 1306 px comparison width.
+- Full-view evidence confirms the icon change preserves the process section, three-column benefit layout, typography, and surrounding section rhythm.
+- Focused evidence confirms each benefit now uses a single filled symbol with no circle, border, shadow, or background container.
+
+**Comparison history**
+
+- [P2] Initial icons used 23 px outlined Tabler symbols inside 48 px gray circles, conflicting with the requested container-free filled treatment.
+  - Fix: replaced them with filled Font Awesome receipt, route, and conversation icons at 28 px; reduced each icon track to 32 px and removed the background and radius.
+  - Post-fix evidence: all three icons render as one filled path, use a transparent background and 0 px radius, and remain aligned to the benefit titles.
+
+**Required fidelity surfaces**
+
+- Fonts and typography: benefit headings and supporting copy retain the established Manrope size, weight, line height, and wrapping.
+- Spacing and layout rhythm: the icon column is reduced from 54 px to 32 px while preserving an 18 px copy gap, matching the lighter reference density.
+- Colors and visual tokens: icons continue using the existing primary accent token with no new color or surface token.
+- Image quality and asset fidelity: no raster imagery changed; the icons come from the installed Font Awesome library rather than custom drawings.
+- Copy and content: all three benefit labels and descriptions remain unchanged.
+- Browser console: no warnings or errors.
+- Responsive evidence: the 390 px check uses a single-column row, keeps the 28 px icons, and has no horizontal overflow.
+- Remaining findings: no actionable P0, P1, or P2 issues.
+
 ## Verification
 
 - Visual comparison pass with the reference at 1024 × 900
