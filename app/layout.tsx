@@ -23,8 +23,25 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description,
     icons: {
-      icon: "/assets/brand/sara-transporte-logo.png",
-      shortcut: "/assets/brand/sara-transporte-logo.png",
+      icon: [
+        {
+          url: "/assets/brand/sara-s-favicon-32.png?v=white-s",
+          sizes: "32x32",
+          type: "image/png",
+        },
+        {
+          url: "/assets/brand/sara-s-favicon-192.png?v=white-s",
+          sizes: "192x192",
+          type: "image/png",
+        },
+        {
+          url: "/assets/brand/sara-s-favicon-512.png?v=white-s",
+          sizes: "512x512",
+          type: "image/png",
+        },
+      ],
+      shortcut: "/assets/brand/sara-s-favicon-32.png?v=white-s",
+      apple: "/assets/brand/sara-s-favicon-192.png?v=white-s",
     },
     openGraph: {
       type: "website",

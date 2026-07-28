@@ -167,14 +167,6 @@ export function HomePage() {
         </div>
 
         <section className="services-panel" id="leistungen">
-          <div className="services-panel-visual" aria-hidden="true">
-            <Image
-              src="/assets/legacy/2023/10/w_versand_03.jpg"
-              alt=""
-              fill
-              sizes="420px"
-            />
-          </div>
           <div className="section services-panel-inner">
             <Reveal className="section-heading section-heading-light">
               <div>

@@ -160,11 +160,20 @@ The full-width section crop is also the focused typography comparison because th
 
 - Reworked the shared palette around white, black, and neutral gray values, retaining `#0758D8` as the only chromatic accent.
 - Replaced the former navy surfaces with neutral black and converted light-blue labels, borders, icon surfaces, shadows, and status treatments to gray or the primary blue.
+- Removed the decorative upper-right warehouse image from the homepage services panel, leaving a clean uninterrupted black surface.
 - Reduced the shared hero overlay from an 84% peak side mask to 58%, with a softer 44% lower gradient, and removed the homepage image's additional blue-black gradient.
 - Reduced the mobile homepage hero to a 550–620 px range and mobile detail heroes to 560 px.
 - Verified settled hero contrast and image visibility on the homepage, About, and Services hero images at desktop and phone sizes.
 - Verified the 320 px homepage and detail hero content remains inside the image frame and clears the header.
 - Confirmed the stylesheet contains no chromatic hex values other than `#0758D8`, with no browser console warnings or errors.
+
+### Favicon follow-up
+
+- Replaced the previous wordmark-derived favicon with the selected square Sara monogram.
+- Removed all exterior padding so the black square reaches every canvas edge and rendered the `S` as solid white.
+- Exported dedicated 16, 32, 48, 192, and 512 px PNG variants plus the full-resolution master.
+- Updated the Next.js icon metadata, shortcut icon, Apple touch icon, and fallback public favicon.
+- Verified exact dimensions, opaque black-and-white output, successful local HTTP delivery, and clean browser console output.
 
 ## Verification
 
