@@ -1,17 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { headers } from "next/headers";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -34,8 +23,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description,
     icons: {
-      icon: "/assets/legacy/2023/10/Logo-Sara-Transporte-AG.png",
-      shortcut: "/assets/legacy/2023/10/Logo-Sara-Transporte-AG.png",
+      icon: "/assets/brand/sara-transporte-logo.png",
+      shortcut: "/assets/brand/sara-transporte-logo.png",
     },
     openGraph: {
       type: "website",
@@ -67,9 +56,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased" suppressHydrationWarning>
         {children}
       </body>
     </html>

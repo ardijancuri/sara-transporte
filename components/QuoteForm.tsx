@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { ActionIcon } from "@/components/ActionIcon";
 import { company } from "@/lib/site-data";
 
 export function QuoteForm({ compact = false }: { compact?: boolean }) {
@@ -73,7 +74,8 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
         />
       </label>
       <button type="submit" className="button button-light">
-        Anfrage vorbereiten <span aria-hidden="true">↗</span>
+        <span>Anfrage vorbereiten</span>
+        <ActionIcon />
       </button>
       {submitted && (
         <p className="form-note" role="status">

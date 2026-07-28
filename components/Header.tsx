@@ -1,8 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import { SiteImage as Image } from "@/components/SiteImage";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import {
+  IconBrandLinkedin,
+  IconMenu2,
+  IconPhone,
+  IconX,
+} from "@tabler/icons-react";
+import { ActionIcon } from "@/components/ActionIcon";
 import { primaryNav } from "@/lib/site-data";
 
 export function Header() {
@@ -12,23 +20,29 @@ export function Header() {
   return (
     <header className="site-header">
       <Link href="/" className="brand" aria-label="Sara Transporte Startseite">
-        <span className="brand-mark">S</span>
-        <span className="brand-copy">
-          <strong>SARA</strong>
-          <small>TRANSPORTE AG</small>
-        </span>
+        <Image
+          className="brand-logo"
+          src="/assets/brand/sara-transporte-logo.png"
+          alt="Sara Transporte AG"
+          width={2065}
+          height={762}
+          priority
+        />
       </Link>
 
       <button
         type="button"
-        className="menu-toggle"
+        className="icon-button menu-toggle"
         aria-expanded={open}
         aria-controls="main-navigation"
         aria-label={open ? "Menü schliessen" : "Menü öffnen"}
         onClick={() => setOpen((current) => !current)}
       >
-        <span />
-        <span />
+        {open ? (
+          <IconX size={20} stroke={1.8} />
+        ) : (
+          <IconMenu2 size={20} stroke={1.8} />
+        )}
       </button>
 
       <nav
@@ -53,9 +67,28 @@ export function Header() {
         ))}
       </nav>
 
-      <Link href="/contact-us#anfrage" className="header-cta">
-        Anfrage <span aria-hidden="true">↗</span>
-      </Link>
+      <div className="header-actions">
+        <a
+          href="https://www.linkedin.com/company/sara-transporte-ag/"
+          target="_blank"
+          rel="noreferrer"
+          className="icon-button icon-button-ghost header-icon-link"
+          aria-label="Sara Transporte auf LinkedIn"
+        >
+          <IconBrandLinkedin size={16} stroke={1.8} />
+        </a>
+        <a
+          href="tel:+41562821181"
+          className="icon-button icon-button-ghost header-icon-link"
+          aria-label="Sara Transporte anrufen"
+        >
+          <IconPhone size={16} stroke={1.8} />
+        </a>
+        <Link href="/contact-us#anfrage" className="header-cta">
+          <span>Anfrage</span>
+          <ActionIcon />
+        </Link>
+      </div>
     </header>
   );
 }

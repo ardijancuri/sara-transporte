@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { SiteImage as Image } from "@/components/SiteImage";
+import { IconCheck } from "@tabler/icons-react";
+import { ActionIcon } from "@/components/ActionIcon";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { QuoteForm } from "@/components/QuoteForm";
@@ -13,6 +16,19 @@ import {
   workflow,
   type PageSlug,
 } from "@/lib/site-data";
+
+function CheckList({ items }: { items: string[] }) {
+  return (
+    <ul className="check-list">
+      {items.map((item) => (
+        <li key={item}>
+          <IconCheck size={16} stroke={1.8} />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 function PageHero({ slug }: { slug: PageSlug }) {
   const page = pages[slug];
@@ -93,9 +109,11 @@ function AboutContent() {
 
       <section className="section image-statement">
         <Reveal className="image-statement-photo">
-          <img
+          <Image
             src="/assets/legacy/2023/10/image00174.jpeg"
             alt="Sara Transporte Fahrzeug in alpiner Landschaft"
+            fill
+            sizes="(max-width: 900px) calc(100vw - 32px), 58vw"
           />
         </Reveal>
         <Reveal className="image-statement-copy" delay={100}>
@@ -106,11 +124,13 @@ function AboutContent() {
             eingespielten Familienunternehmens – für Lösungen, die im Alltag
             wirklich funktionieren.
           </p>
-          <ul className="check-list">
-            <li>Direkte und kurze Kommunikationswege</li>
-            <li>Motiviertes, dynamisches und kompetentes Team</li>
-            <li>Eigene LKW-Flotte und Lagermöglichkeiten</li>
-          </ul>
+          <CheckList
+            items={[
+              "Direkte und kurze Kommunikationswege",
+              "Motiviertes, dynamisches und kompetentes Team",
+              "Eigene LKW-Flotte und Lagermöglichkeiten",
+            ]}
+          />
         </Reveal>
       </section>
 
@@ -159,13 +179,21 @@ function CertificationsContent() {
               rel="noreferrer"
             >
               <div className="certificate-preview">
-                <img src={certificate.image} alt="" />
+                <Image
+                  src={certificate.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 540px) calc(100vw - 64px), 34vw"
+                />
               </div>
               <div>
                 <span>Zertifikat {String(index + 1).padStart(2, "0")}</span>
                 <h3>{certificate.name}</h3>
                 <p>{certificate.text}</p>
-                <strong>PDF öffnen ↗</strong>
+                <strong className="certificate-action">
+                  <span>PDF öffnen</span>
+                  <ActionIcon kind="download" plain />
+                </strong>
               </div>
             </a>
           </Reveal>
@@ -207,13 +235,20 @@ function ServicesContent() {
             <Link className="service-index-row" href={service.href}>
               <span>{service.number}</span>
               <div className="service-index-image">
-                <img src={service.image} alt="" />
+                <Image
+                  src={service.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 540px) calc(100vw - 78px), (max-width: 900px) 105px, 145px"
+                />
               </div>
               <div>
                 <h3>{service.title}</h3>
                 <p>{service.short}</p>
               </div>
-              <i aria-hidden="true">↗</i>
+              <i aria-hidden="true">
+                <ActionIcon plain />
+              </i>
             </Link>
           </Reveal>
         ))}
@@ -281,7 +316,12 @@ function LandTransportContent() {
           ["/assets/legacy/2023/10/image00012.jpeg", "ADR & Thermotransport"],
         ].map(([image, title], index) => (
           <Reveal key={title} delay={index * 80}>
-            <img src={image} alt="" />
+            <Image
+              src={image}
+              alt=""
+              fill
+              sizes="(max-width: 900px) calc(100vw - 32px), 33vw"
+            />
             <h3>{title}</h3>
           </Reveal>
         ))}
@@ -295,9 +335,11 @@ function LandTransportContent() {
         </Reveal>
         <div className="partner-detail-grid">
           <Reveal>
-            <img
+            <Image
               src="/assets/legacy/2023/10/van-der-heijden-transport-logo.png"
               alt="Van der Heijden Transport & Logistiek"
+              width={210}
+              height={82}
             />
             <h3>BeNeLux</h3>
             <p>
@@ -308,9 +350,11 @@ function LandTransportContent() {
             </p>
           </Reveal>
           <Reveal delay={100}>
-            <img
+            <Image
               src="/assets/legacy/2023/10/Priority-Freight.png"
               alt="Priority Freight"
+              width={210}
+              height={82}
             />
             <h3>Grossbritannien</h3>
             <p>
@@ -362,11 +406,7 @@ function CustomsContent() {
           <Reveal key={group.title} delay={index * 70}>
             <span>0{index + 1}</span>
             <h2>{group.title}</h2>
-            <ul className="check-list">
-              {group.items.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+            <CheckList items={group.items} />
           </Reveal>
         ))}
       </section>
@@ -455,13 +495,16 @@ function TrackingContent() {
             rel="noreferrer"
             className="button button-dark"
           >
-            Zum Track & Trace <span aria-hidden="true">↗</span>
+            <span>Zum Track & Trace</span>
+            <ActionIcon />
           </a>
         </Reveal>
         <Reveal className="tracking-visual" delay={100}>
-          <img
+          <Image
             src="/assets/legacy/2026/01/3.jpeg"
             alt="Sara Transporte LKW"
+            fill
+            sizes="(max-width: 1100px) calc(100vw - 42px), 54vw"
           />
           <div className="tracking-status">
             <span className="status-dot" />
@@ -526,20 +569,26 @@ function WarehouseContent() {
       </section>
       <section className="warehouse-gallery">
         <Reveal>
-          <img
+          <Image
             src="/assets/legacy/2023/10/w_versand_0117500.jpg"
             alt="Sara Transporte Lagerstandort Unterkirnach"
+            fill
+            sizes="(max-width: 900px) 100vw, 38vw"
           />
         </Reveal>
         <Reveal delay={80}>
-          <img
+          <Image
             src="/assets/legacy/2023/10/w_versand_03.jpg"
+            fill
+            sizes="(max-width: 900px) 100vw, 27vw"
             alt="Fördertechnik im Lager"
           />
         </Reveal>
         <Reveal delay={160}>
-          <img
+          <Image
             src="/assets/legacy/2023/10/w_versand_04.jpg"
+            fill
+            sizes="(max-width: 900px) 100vw, 34vw"
             alt="Regalreihen im Lager"
           />
         </Reveal>
@@ -548,20 +597,20 @@ function WarehouseContent() {
         <Reveal>
           <span>Branchen</span>
           <h2>Für anspruchsvolle Warenströme.</h2>
-          <ul className="check-list">
-            <li>Konsumgüter</li>
-            <li>Lebensmittel & Getränke</li>
-            <li>Elektronik</li>
-          </ul>
+          <CheckList
+            items={["Konsumgüter", "Lebensmittel & Getränke", "Elektronik"]}
+          />
         </Reveal>
         <Reveal delay={100}>
           <span>Leistungen</span>
           <h2>Flexibel kombinierbar.</h2>
-          <ul className="check-list">
-            <li>Gemeinschaftslagerung</li>
-            <li>Cross-Docking & Transloading</li>
-            <li>Fulfilment- und FBA-Vorbereitung</li>
-          </ul>
+          <CheckList
+            items={[
+              "Gemeinschaftslagerung",
+              "Cross-Docking & Transloading",
+              "Fulfilment- und FBA-Vorbereitung",
+            ]}
+          />
         </Reveal>
       </section>
       <section className="section warehouse-facts">
@@ -664,7 +713,12 @@ function BlogContent() {
           key={story.title}
           delay={(index % 3) * 70}
         >
-          <img src={story.image} alt="" />
+          <Image
+            src={story.image}
+            alt=""
+            width={760}
+            height={720}
+          />
           <span>{story.tag}</span>
           <h2>{story.title}</h2>
           <p>{story.text}</p>

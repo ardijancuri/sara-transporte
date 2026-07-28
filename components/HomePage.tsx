@@ -1,9 +1,30 @@
 import Link from "next/link";
+import { SiteImage as Image } from "@/components/SiteImage";
+import {
+  IconArrowDown,
+  IconArrowUpRight,
+  IconBuildingWarehouse,
+  IconCheck,
+  IconFileInvoice,
+  IconMessages,
+  IconQuote,
+  IconReceipt2,
+  IconRoute,
+  IconTruckDelivery,
+} from "@tabler/icons-react";
+import { ActionIcon } from "@/components/ActionIcon";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
 import { Reveal } from "@/components/Reveal";
 import { services, workflow } from "@/lib/site-data";
+
+const serviceIcons = [
+  IconTruckDelivery,
+  IconFileInvoice,
+  IconRoute,
+  IconBuildingWarehouse,
+];
 
 export function HomePage() {
   return (
@@ -27,10 +48,12 @@ export function HomePage() {
             </p>
             <div className="hero-actions">
               <Link href="/contact-us#anfrage" className="button button-light">
-                Transport anfragen <span aria-hidden="true">↗</span>
+                <span>Transport anfragen</span>
+                <ActionIcon />
               </Link>
               <Link href="/dienstleistungen" className="text-link text-link-light">
-                Leistungen entdecken <span aria-hidden="true">→</span>
+                <span>Leistungen entdecken</span>
+                <ActionIcon kind="forward" plain />
               </Link>
             </div>
           </div>
@@ -41,27 +64,35 @@ export function HomePage() {
           </div>
           <a href="#intro" className="scroll-cue" aria-label="Weiter scrollen">
             <span>Scroll</span>
-            <i aria-hidden="true">↓</i>
+            <IconArrowDown size={16} stroke={1.6} aria-hidden="true" />
           </a>
         </section>
 
         <section className="partner-strip" aria-label="Partner">
           <span>Ein Netzwerk, das trägt</span>
-          <img
+          <Image
             src="/assets/legacy/2023/10/van-der-heijden-transport-logo.png"
             alt="Van der Heijden Transport & Logistiek"
+            width={180}
+            height={50}
           />
-          <img
+          <Image
             src="/assets/legacy/2023/10/Priority-Freight.png"
             alt="Priority Freight"
+            width={180}
+            height={50}
           />
-          <img
+          <Image
             src="/assets/legacy/2023/10/MartinTrux-Logo-e1698833026509.jpeg"
             alt="Martintrux"
+            width={180}
+            height={50}
           />
-          <img
+          <Image
             src="/assets/legacy/2026/04/spedlogswiss-logo.png"
             alt="Spedlogswiss"
+            width={180}
+            height={50}
           />
         </section>
 
@@ -80,9 +111,11 @@ export function HomePage() {
 
           <div className="experience-grid">
             <Reveal className="experience-photo">
-              <img
+              <Image
                 src="/assets/legacy/2026/01/4.jpeg"
                 alt="Sara Transporte LKW am Logistikstandort"
+                fill
+                sizes="(max-width: 900px) calc(100vw - 32px), 38vw"
               />
               <div className="photo-caption">
                 <span>Eigener Fuhrpark</span>
@@ -93,9 +126,9 @@ export function HomePage() {
             <Reveal className="experience-stat" delay={100}>
               <span className="stat-number">12+</span>
               <p>Jahre Erfahrung in Transport, Spedition und Zoll.</p>
-              <Link href="/ueber-uns" className="circle-link">
+              <Link href="/ueber-uns" className="text-link">
                 <span>Mehr über uns</span>
-                <i aria-hidden="true">↗</i>
+                <ActionIcon plain />
               </Link>
             </Reveal>
 
@@ -106,14 +139,28 @@ export function HomePage() {
                 europäische Niederlassungen halten die Wege kurz.
               </p>
               <ul className="check-list">
-                <li>24/7 erreichbar und proaktiv</li>
-                <li>Direkte, kurze Kommunikationswege</li>
-                <li>ADR-geschulte Fahrer und eigener Fuhrpark</li>
-                <li>Transport und Verzollung aus einer Hand</li>
+                {[
+                  "24/7 erreichbar und proaktiv",
+                  "Direkte, kurze Kommunikationswege",
+                  "ADR-geschulte Fahrer und eigener Fuhrpark",
+                  "Transport und Verzollung aus einer Hand",
+                ].map((item) => (
+                  <li key={item}>
+                    <IconCheck size={16} stroke={1.8} />
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </Reveal>
           </div>
         </section>
+
+        <div className="service-marquee" aria-hidden="true">
+          <span className="marquee-icon">
+            <IconArrowUpRight size={34} stroke={1.5} />
+          </span>
+          <span>Best Service</span>
+        </div>
 
         <section className="services-panel">
           <div className="section services-panel-inner">
@@ -123,26 +170,38 @@ export function HomePage() {
                 <h2>Logistik, die weiterdenkt.</h2>
               </div>
               <Link href="/dienstleistungen" className="text-link text-link-light">
-                Alle Leistungen <span aria-hidden="true">→</span>
+                <span>Alle Leistungen</span>
+                <ActionIcon kind="forward" plain />
               </Link>
             </Reveal>
 
             <div className="service-grid">
-              {services.map((service, index) => (
-                <Reveal key={service.href} delay={index * 80}>
-                  <Link href={service.href} className="service-card">
-                    <span className="service-number">{service.number}</span>
-                    <div className="service-card-image">
-                      <img src={service.image} alt="" />
-                    </div>
-                    <h3>{service.title}</h3>
-                    <p>{service.short}</p>
-                    <span className="service-arrow" aria-hidden="true">
-                      ↗
-                    </span>
-                  </Link>
-                </Reveal>
-              ))}
+              {services.map((service, index) => {
+                const ServiceIcon = serviceIcons[index];
+                return (
+                  <Reveal key={service.href} delay={index * 80}>
+                    <Link href={service.href} className="service-card">
+                      <div className="service-card-topline">
+                        <span className="service-number">{service.number}</span>
+                        <ServiceIcon size={22} stroke={1.6} aria-hidden="true" />
+                      </div>
+                      <div className="service-card-image">
+                        <Image
+                          src={service.image}
+                          alt=""
+                          fill
+                          sizes="(max-width: 600px) calc(100vw - 56px), (max-width: 900px) 44vw, 24vw"
+                        />
+                      </div>
+                      <h3>{service.title}</h3>
+                      <p>{service.short}</p>
+                      <span className="service-arrow" aria-hidden="true">
+                        <ActionIcon plain />
+                      </span>
+                    </Link>
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -156,9 +215,11 @@ export function HomePage() {
           </Reveal>
           <div className="process-layout">
             <Reveal className="process-image">
-              <img
+              <Image
                 src="/assets/legacy/2023/10/image00005-e1698833422232.jpeg"
                 alt="Sara Transporte LKW auf europäischer Route"
+                fill
+                sizes="(max-width: 900px) calc(100vw - 32px), 55vw"
               />
               <div className="route-badge">
                 <span>CH</span>
@@ -181,21 +242,27 @@ export function HomePage() {
 
           <div className="benefit-row">
             <Reveal>
-              <span className="benefit-icon">◎</span>
+              <span className="benefit-icon">
+                <IconReceipt2 size={23} stroke={1.6} />
+              </span>
               <div>
                 <h3>Transparente Preise</h3>
                 <p>Ein klares Angebot passend zu Route und Anforderung.</p>
               </div>
             </Reveal>
             <Reveal delay={80}>
-              <span className="benefit-icon">◫</span>
+              <span className="benefit-icon">
+                <IconRoute size={23} stroke={1.6} />
+              </span>
               <div>
                 <h3>Volle Sichtbarkeit</h3>
                 <p>Proaktive Updates und Track & Trace für Ihre Sendung.</p>
               </div>
             </Reveal>
             <Reveal delay={160}>
-              <span className="benefit-icon">↯</span>
+              <span className="benefit-icon">
+                <IconMessages size={23} stroke={1.6} />
+              </span>
               <div>
                 <h3>Direkte Entscheidungen</h3>
                 <p>Ein persönliches Team mit kurzen Kommunikationswegen.</p>
@@ -206,9 +273,11 @@ export function HomePage() {
 
         <section className="section quote-section" id="anfrage">
           <Reveal className="quote-image">
-            <img
+            <Image
               src="/assets/legacy/2023/10/image00174.jpeg"
               alt="Sara Transporte LKW in den Schweizer Bergen"
+              fill
+              sizes="(max-width: 900px) calc(100vw - 32px), 50vw"
             />
             <div>
               <span>Europaweit</span>
@@ -227,7 +296,9 @@ export function HomePage() {
         </section>
 
         <section className="section testimonial-section">
-          <Reveal className="testimonial-mark">“</Reveal>
+          <Reveal className="testimonial-mark">
+            <IconQuote size={72} stroke={1.25} />
+          </Reveal>
           <Reveal className="testimonial-copy" delay={80}>
             <blockquote>
               Zuverlässigkeit und Pünktlichkeit wird hier gross geschrieben.
@@ -241,15 +312,19 @@ export function HomePage() {
           </Reveal>
           <Reveal className="location-orbit" delay={150}>
             <div className="orbit-image orbit-one">
-              <img
+              <Image
                 src="/assets/legacy/2026/01/7.jpeg"
                 alt="Sara Transporte Fahrzeug"
+                fill
+                sizes="190px"
               />
             </div>
             <div className="orbit-image orbit-two">
-              <img
+              <Image
                 src="/assets/legacy/2023/10/w_versand_0117500.jpg"
                 alt="Logistikzentrum"
+                fill
+                sizes="170px"
               />
             </div>
             <div className="orbit-center">
@@ -270,13 +345,16 @@ export function HomePage() {
               <li>Grenznahe Zollteams</li>
             </ul>
             <Link href="/contact-us" className="button button-outline-light">
-              Kontakt aufnehmen <span aria-hidden="true">↗</span>
+              <span>Kontakt aufnehmen</span>
+              <ActionIcon />
             </Link>
           </div>
           <div className="impact-image">
-            <img
+            <Image
               src="/assets/legacy/2023/10/w_versand_03.jpg"
               alt="Moderne Lager- und Kommissionierungsanlage"
+              fill
+              sizes="(max-width: 900px) calc(100vw - 32px), 42vw"
             />
           </div>
           <div className="impact-stats">
@@ -302,30 +380,37 @@ export function HomePage() {
               <h2>Gewachsen mit jeder Verbindung.</h2>
             </div>
             <Link href="/blog" className="text-link">
-              Mehr Einblicke <span aria-hidden="true">→</span>
+              <span>Mehr Einblicke</span>
+              <ActionIcon kind="forward" plain />
             </Link>
           </Reveal>
           <div className="story-grid">
             <Reveal className="story-item">
-              <img
+              <Image
                 src="/assets/legacy/2023/10/image00012.jpeg"
                 alt="Sara Transporte LKW in der Schweiz"
+                width={760}
+                height={620}
               />
               <span>2014 · Döttingen</span>
               <h3>Als Familienunternehmen gestartet.</h3>
             </Reveal>
             <Reveal className="story-item" delay={90}>
-              <img
+              <Image
                 src="/assets/legacy/2023/10/image00164.jpeg"
                 alt="Sara Transporte am Logistikstandort"
+                width={760}
+                height={620}
               />
               <span>2019 · Waldshut-Tiengen</span>
               <h3>Mit eigenem Zollteam über die Grenze gewachsen.</h3>
             </Reveal>
             <Reveal className="story-item" delay={180}>
-              <img
+              <Image
                 src="/assets/legacy/2023/10/w_versand_04.jpg"
                 alt="Lagerhalle in Unterkirnach"
+                width={760}
+                height={620}
               />
               <span>Heute · Europa</span>
               <h3>Transport, Zoll und Lagerung aus einer Hand.</h3>

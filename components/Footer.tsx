@@ -1,4 +1,11 @@
 import Link from "next/link";
+import { SiteImage as Image } from "@/components/SiteImage";
+import {
+  IconBrandLinkedin,
+  IconMail,
+  IconPhone,
+} from "@tabler/icons-react";
+import { ActionIcon } from "@/components/ActionIcon";
 import { company, primaryNav, services } from "@/lib/site-data";
 
 export function Footer() {
@@ -10,27 +17,37 @@ export function Footer() {
           <h2>Ihre Ware in sicheren Händen.</h2>
         </div>
         <Link href="/contact-us#anfrage" className="button button-light">
-          Transport anfragen <span aria-hidden="true">↗</span>
+          <span>Transport anfragen</span>
+          <ActionIcon />
         </Link>
       </div>
 
       <div className="footer-grid">
         <div className="footer-brand">
           <div className="brand brand-footer">
-            <span className="brand-mark">S</span>
-            <span className="brand-copy">
-              <strong>SARA</strong>
-              <small>TRANSPORTE AG</small>
-            </span>
+            <Image
+              className="brand-logo"
+              src="/assets/brand/sara-transporte-logo.png"
+              alt="Sara Transporte AG"
+              width={2065}
+              height={762}
+            />
           </div>
           <p>
             Maßgeschneiderte Transport- und Logistiklösungen für Unternehmen in
             der Schweiz und ganz Europa.
           </p>
-          <a href={`tel:${company.phoneCH.replaceAll(" ", "")}`}>
-            {company.phoneCH}
+          <a
+            className="footer-contact-link"
+            href={`tel:${company.phoneCH.replaceAll(" ", "")}`}
+          >
+            <IconPhone size={16} stroke={1.7} aria-hidden="true" />
+            <span>{company.phoneCH}</span>
           </a>
-          <a href={`mailto:${company.emailCH}`}>{company.emailCH}</a>
+          <a className="footer-contact-link" href={`mailto:${company.emailCH}`}>
+            <IconMail size={16} stroke={1.7} aria-hidden="true" />
+            <span>{company.emailCH}</span>
+          </a>
         </div>
 
         <div>
@@ -73,7 +90,8 @@ export function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          LinkedIn
+          <IconBrandLinkedin size={15} stroke={1.8} aria-hidden="true" />
+          <span>LinkedIn</span>
         </a>
       </div>
     </footer>
