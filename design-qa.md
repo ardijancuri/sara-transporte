@@ -158,14 +158,14 @@ The full-width section crop is also the focused typography comparison because th
 
 ### Monochrome palette and hero follow-up
 
-- Reworked the shared palette around white, black, and neutral gray values, retaining `#0758D8` as the only chromatic accent.
+- Reworked the shared palette around white, black, and neutral gray values, retaining `#FF6702` as the only chromatic accent.
 - Replaced the former navy surfaces with neutral black and converted light-blue labels, borders, icon surfaces, shadows, and status treatments to gray or the primary blue.
 - Removed the decorative upper-right warehouse image from the homepage services panel, leaving a clean uninterrupted black surface.
 - Reduced the shared hero overlay from an 84% peak side mask to 58%, with a softer 44% lower gradient, and removed the homepage image's additional blue-black gradient.
 - Reduced the mobile homepage hero to a 550–620 px range and mobile detail heroes to 560 px.
 - Verified settled hero contrast and image visibility on the homepage, About, and Services hero images at desktop and phone sizes.
 - Verified the 320 px homepage and detail hero content remains inside the image frame and clears the header.
-- Confirmed the stylesheet contains no chromatic hex values other than `#0758D8`, with no browser console warnings or errors.
+- Confirmed the stylesheet contains no chromatic hex values other than `#FF6702`, with no browser console warnings or errors.
 
 ### Favicon follow-up
 

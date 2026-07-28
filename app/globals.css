@@ -30,8 +30,8 @@
   --default-font-family: var(--font-sans);
   --ink: #151515;
   --ink-soft: #565656;
-  --blue: #0758d8;
-  --blue-bright: #0758d8;
+  --blue: #ff6702;
+  --blue-bright: #ff6702;
   --navy: #111111;
   --navy-deep: #080808;
   --ice: #f3f3f3;
@@ -246,7 +246,7 @@ h3 {
 
 .button-dark:hover {
   background: var(--blue);
-  box-shadow: 0 12px 28px rgba(7, 88, 216, 0.18);
+  box-shadow: 0 12px 28px rgba(255, 103, 2, 0.18);
 }
 
 .button-outline-light {
@@ -343,7 +343,7 @@ h3 {
   border: 0;
   border-radius: 999px;
   padding: 6px 32px;
-  background: rgba(105, 105, 105, 0.62);
+  background: rgba(17, 17, 17, 0.82);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
@@ -380,7 +380,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 16px;
 }
 
 .header-utility-links {
@@ -2067,7 +2067,7 @@ h3 {
   height: 9px;
   border-radius: 50%;
   background: var(--blue);
-  box-shadow: 0 0 0 6px rgba(7, 88, 216, 0.12);
+  box-shadow: 0 0 0 6px rgba(255, 103, 2, 0.12);
 }
 
 .tracking-status div {

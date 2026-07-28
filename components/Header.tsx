@@ -6,10 +6,9 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import {
   IconMenu2,
-  IconPhoneCall,
   IconX,
 } from "@tabler/icons-react";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn, FaPhoneAlt } from "react-icons/fa";
 import { ActionIcon } from "@/components/ActionIcon";
 import { primaryNav } from "@/lib/site-data";
 
@@ -83,7 +82,7 @@ export function Header() {
             className="icon-button icon-button-ghost header-icon-link"
             aria-label="Sara Transporte anrufen"
           >
-            <IconPhoneCall size={20} stroke={1.9} aria-hidden="true" />
+            <FaPhoneAlt size={18} aria-hidden="true" />
           </a>
         </div>
         <Link href="/contact-us#anfrage" className="header-cta">
