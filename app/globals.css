@@ -28,14 +28,14 @@
   --font-manrope: "Manrope";
   --font-sans: "Manrope", Arial, Helvetica, sans-serif;
   --default-font-family: var(--font-sans);
-  --ink: #071a31;
-  --ink-soft: #33445a;
+  --ink: #151515;
+  --ink-soft: #565656;
   --blue: #0758d8;
-  --blue-bright: #1675ff;
-  --navy: #03162f;
-  --navy-deep: #020f22;
-  --ice: #eef3f7;
-  --line: rgba(7, 26, 49, 0.13);
+  --blue-bright: #0758d8;
+  --navy: #111111;
+  --navy-deep: #080808;
+  --ice: #f3f3f3;
+  --line: rgba(17, 17, 17, 0.13);
   --white: #ffffff;
   --radius-lg: 22px;
   --radius-md: 16px;
@@ -119,7 +119,7 @@ img {
 }
 
 .eyebrow-light {
-  color: #8ebeff;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 h1,
@@ -230,8 +230,8 @@ h3 {
 }
 
 .button-light:hover {
-  background: #dceaff;
-  box-shadow: 0 12px 28px rgba(0, 24, 58, 0.16);
+  background: #e7e7e7;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
 }
 
 .button-dark {
@@ -305,7 +305,7 @@ h3 {
 }
 
 .text-link-light:hover {
-  color: #a8ceff;
+  color: #d4d4d4;
 }
 
 .site-header {
@@ -344,7 +344,7 @@ h3 {
   border-radius: 999px;
   padding: 6px 20px;
   background: rgba(255, 255, 255, 0.11);
-  box-shadow: 0 10px 28px rgba(1, 11, 27, 0.14);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
   backdrop-filter: blur(12px);
 }
 
@@ -447,17 +447,15 @@ h3 {
   min-height: max(680px, calc(100svh - 36px));
   margin: var(--panel-gutter) auto 0;
   border-radius: var(--radius-md);
-  background:
-    linear-gradient(90deg, rgba(0, 12, 28, 0.1), rgba(0, 12, 28, 0.2)),
-    url("/assets/legacy/2026/01/6.jpeg") center 56% / cover no-repeat;
+  background: url("/assets/legacy/2026/01/6.jpeg") center 56% / cover no-repeat;
 }
 
 .hero-shade {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(0, 12, 28, 0.84) 0%, rgba(0, 12, 28, 0.36) 55%, rgba(0, 12, 28, 0.55) 100%),
-    linear-gradient(0deg, rgba(0, 12, 28, 0.72) 0%, transparent 42%);
+    linear-gradient(90deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.12) 58%, rgba(0, 0, 0, 0.24) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.44) 0%, transparent 48%);
 }
 
 .hero-content {
@@ -469,7 +467,7 @@ h3 {
 }
 
 .hero-eyebrow {
-  color: #c2dcff;
+  color: rgba(255, 255, 255, 0.72);
   opacity: 0;
   animation: hero-in 700ms 80ms ease forwards;
 }
@@ -702,7 +700,7 @@ h3 {
   justify-content: space-between;
   border-radius: 15px;
   padding: 18px 20px;
-  background: rgba(2, 15, 34, 0.72);
+  background: rgba(0, 0, 0, 0.72);
   color: var(--white);
   backdrop-filter: blur(10px);
 }
@@ -783,7 +781,7 @@ h3 {
   justify-content: center;
   gap: clamp(18px, 3vw, 42px);
   overflow: hidden;
-  color: rgba(7, 26, 49, 0.14);
+  color: rgba(17, 17, 17, 0.14);
   font-size: clamp(4rem, 8.7vw, 9.4rem);
   font-weight: 720;
   letter-spacing: -0.065em;
@@ -825,7 +823,7 @@ h3 {
 .services-panel-visual::after {
   position: absolute;
   inset: 0;
-  background: rgba(3, 22, 47, 0.25);
+  background: rgba(0, 0, 0, 0.18);
   content: "";
 }
 
@@ -849,7 +847,7 @@ h3 {
 }
 
 .section-heading-light .eyebrow {
-  color: #83b8ff;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .section-heading-light h2 {
@@ -877,7 +875,7 @@ h3 {
   height: 100%;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid rgba(126, 169, 222, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
   padding: 25px 8px 8px;
   transition:
@@ -887,7 +885,7 @@ h3 {
 }
 
 .service-card:hover {
-  border-color: rgba(126, 169, 222, 0.28);
+  border-color: rgba(255, 255, 255, 0.28);
   background: rgba(255, 255, 255, 0.035);
   transform: translateY(-4px);
 }
@@ -898,7 +896,7 @@ h3 {
   justify-content: space-between;
   gap: 12px;
   padding-inline: 20px;
-  color: #8ebeff;
+  color: #b8b8b8;
 }
 
 .service-card-topline svg {
@@ -994,7 +992,7 @@ h3 {
   gap: 16px;
   border-radius: 999px;
   padding: 14px 20px;
-  background: rgba(2, 15, 34, 0.76);
+  background: rgba(0, 0, 0, 0.76);
   color: var(--white);
   font-size: 0.68rem;
   backdrop-filter: blur(10px);
@@ -1059,7 +1057,7 @@ h3 {
   height: 48px;
   place-items: center;
   border-radius: 50%;
-  background: #dceaff;
+  background: #e3e3e3;
   color: var(--blue);
   font-size: 1.25rem;
 }
@@ -1098,7 +1096,7 @@ h3 {
 .quote-image::after {
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(2, 15, 34, 0.68), transparent 52%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.68), transparent 52%);
   content: "";
 }
 
@@ -1421,7 +1419,7 @@ h3 {
 }
 
 .footer-kicker {
-  color: #79b1ff;
+  color: #bdbdbd;
 }
 
 .footer-grid {
@@ -1453,7 +1451,7 @@ h3 {
 
 .footer-contact-link svg {
   flex: 0 0 auto;
-  color: #7fb6ff;
+  color: #c2c2c2;
 }
 
 .footer-grid h3 {
@@ -1686,7 +1684,7 @@ h3 {
 }
 
 .certificate-card:hover {
-  box-shadow: 0 24px 70px rgba(7, 26, 49, 0.1);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.1);
   transform: translateY(-5px);
 }
 
@@ -1694,7 +1692,7 @@ h3 {
   position: relative;
   min-height: 320px;
   overflow: hidden;
-  background: #dce4eb;
+  background: #e1e1e1;
 }
 
 .certificate-preview img {
@@ -1878,7 +1876,7 @@ h3 {
   margin: 0;
   border-radius: 12px;
   padding: 16px;
-  background: rgba(2, 15, 34, 0.75);
+  background: rgba(0, 0, 0, 0.75);
   color: var(--white);
   font-size: 1rem;
   backdrop-filter: blur(10px);
@@ -1989,7 +1987,7 @@ h3 {
 }
 
 .office-list span {
-  color: #7bb3ff;
+  color: #bdbdbd;
   font-size: 0.65rem;
   text-transform: uppercase;
 }
@@ -2089,8 +2087,8 @@ h3 {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: #10b969;
-  box-shadow: 0 0 0 6px rgba(16, 185, 105, 0.12);
+  background: var(--blue);
+  box-shadow: 0 0 0 6px rgba(7, 88, 216, 0.12);
 }
 
 .tracking-status div {
@@ -2117,7 +2115,7 @@ h3 {
   gap: 18px;
   border-radius: 999px;
   padding: 16px 22px;
-  background: rgba(2, 15, 34, 0.8);
+  background: rgba(0, 0, 0, 0.8);
   color: var(--white);
   font-size: 0.7rem;
   backdrop-filter: blur(10px);
@@ -2634,12 +2632,12 @@ h3 {
   }
 
   .hero-home {
-    min-height: clamp(580px, 82svh, 680px);
+    min-height: clamp(550px, 74svh, 620px);
     background-position: 59% center;
   }
 
   .hero-detail {
-    min-height: 610px;
+    min-height: 560px;
   }
 
   .hero-content,

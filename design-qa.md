@@ -156,6 +156,16 @@ The full-width section crop is also the focused typography comparison because th
 - Normalized homepage intro, services, process, testimonial, impact, story, and footer spacing at each responsive breakpoint.
 - Verified at 1280 × 900, 768 × 900, 390 × 844, and 320 × 568 with no overflow, console warnings, or content collisions.
 
+### Monochrome palette and hero follow-up
+
+- Reworked the shared palette around white, black, and neutral gray values, retaining `#0758D8` as the only chromatic accent.
+- Replaced the former navy surfaces with neutral black and converted light-blue labels, borders, icon surfaces, shadows, and status treatments to gray or the primary blue.
+- Reduced the shared hero overlay from an 84% peak side mask to 58%, with a softer 44% lower gradient, and removed the homepage image's additional blue-black gradient.
+- Reduced the mobile homepage hero to a 550–620 px range and mobile detail heroes to 560 px.
+- Verified settled hero contrast and image visibility on the homepage, About, and Services hero images at desktop and phone sizes.
+- Verified the 320 px homepage and detail hero content remains inside the image frame and clears the header.
+- Confirmed the stylesheet contains no chromatic hex values other than `#0758D8`, with no browser console warnings or errors.
+
 ## Verification
 
 - Visual comparison pass with the reference at 1024 × 900
