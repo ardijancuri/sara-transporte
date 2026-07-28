@@ -3,15 +3,18 @@ import { SiteImage as Image } from "@/components/SiteImage";
 import {
   IconArrowDown,
   IconArrowUpRight,
-  IconBuildingWarehouse,
   IconCheck,
-  IconFileInvoice,
   IconMessages,
   IconQuote,
   IconReceipt2,
   IconRoute,
-  IconTruckDelivery,
 } from "@tabler/icons-react";
+import {
+  FaFileInvoice,
+  FaLocationDot,
+  FaTruckFast,
+  FaWarehouse,
+} from "react-icons/fa6";
 import { ActionIcon } from "@/components/ActionIcon";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -20,10 +23,10 @@ import { Reveal } from "@/components/Reveal";
 import { services, workflow } from "@/lib/site-data";
 
 const serviceIcons = [
-  IconTruckDelivery,
-  IconFileInvoice,
-  IconRoute,
-  IconBuildingWarehouse,
+  FaTruckFast,
+  FaFileInvoice,
+  FaLocationDot,
+  FaWarehouse,
 ];
 
 export function HomePage() {
@@ -34,9 +37,6 @@ export function HomePage() {
           <Header />
           <div className="hero-shade" />
           <div className="hero-content">
-            <p className="hero-eyebrow">
-              Transport · Logistik · Zoll · Lagerung
-            </p>
             <h1>
               Europa bewegen.
               <br />
@@ -69,44 +69,48 @@ export function HomePage() {
         </section>
 
         <section className="partner-strip" aria-label="Partner">
-          <span>Ein Netzwerk, das trägt</span>
           <Image
-            src="/assets/legacy/2023/10/van-der-heijden-transport-logo.png"
+            className="partner-logo partner-logo-vdh"
+            src="/assets/partners/van-der-heijden.png"
             alt="Van der Heijden Transport & Logistiek"
-            width={180}
-            height={50}
+            width={1119}
+            height={234}
+            sizes="(max-width: 600px) 70vw, 220px"
           />
           <Image
-            src="/assets/legacy/2023/10/Priority-Freight.png"
+            className="partner-logo partner-logo-priority"
+            src="/assets/partners/priority-freight.png"
             alt="Priority Freight"
-            width={180}
-            height={50}
+            width={370}
+            height={173}
+            sizes="(max-width: 600px) 42vw, 170px"
           />
           <Image
-            src="/assets/legacy/2023/10/MartinTrux-Logo-e1698833026509.jpeg"
+            className="partner-logo partner-logo-martin"
+            src="/assets/partners/martintrux.png"
             alt="Martintrux"
-            width={180}
-            height={50}
+            width={412}
+            height={110}
+            sizes="(max-width: 600px) 42vw, 200px"
           />
           <Image
-            src="/assets/legacy/2026/04/spedlogswiss-logo.png"
+            className="partner-logo partner-logo-spedlog"
+            src="/assets/partners/spedlogswiss.png"
             alt="Spedlogswiss"
-            width={180}
-            height={50}
+            width={817}
+            height={91}
+            sizes="(max-width: 600px) 70vw, 225px"
           />
         </section>
 
         <section className="section intro-section" id="intro">
           <Reveal className="intro-heading">
-            <div>
-              <p className="eyebrow">Unsere Erfahrung</p>
-              <h2>Ein Logistikpartner. Alle Wege.</h2>
-            </div>
-            <p className="lead">
+            <p className="eyebrow">Unsere Erfahrung</p>
+            <h2 className="intro-statement">
               Sara Transporte AG entwickelt maßgeschneiderte Transport- und
               Logistiklösungen für Unternehmen, die Verlässlichkeit,
               Schnelligkeit und direkte Kommunikation erwarten.
-            </p>
+            </h2>
           </Reveal>
 
           <div className="experience-grid">
@@ -162,7 +166,15 @@ export function HomePage() {
           <span>Best Service</span>
         </div>
 
-        <section className="services-panel">
+        <section className="services-panel" id="leistungen">
+          <div className="services-panel-visual" aria-hidden="true">
+            <Image
+              src="/assets/legacy/2023/10/w_versand_03.jpg"
+              alt=""
+              fill
+              sizes="420px"
+            />
+          </div>
           <div className="section services-panel-inner">
             <Reveal className="section-heading section-heading-light">
               <div>
@@ -182,9 +194,10 @@ export function HomePage() {
                   <Reveal key={service.href} delay={index * 80}>
                     <Link href={service.href} className="service-card">
                       <div className="service-card-topline">
-                        <span className="service-number">{service.number}</span>
-                        <ServiceIcon size={22} stroke={1.6} aria-hidden="true" />
+                        <h3>{service.title}</h3>
+                        <ServiceIcon size={30} aria-hidden="true" />
                       </div>
+                      <p>{service.short}</p>
                       <div className="service-card-image">
                         <Image
                           src={service.image}
@@ -193,11 +206,6 @@ export function HomePage() {
                           sizes="(max-width: 600px) calc(100vw - 56px), (max-width: 900px) 44vw, 24vw"
                         />
                       </div>
-                      <h3>{service.title}</h3>
-                      <p>{service.short}</p>
-                      <span className="service-arrow" aria-hidden="true">
-                        <ActionIcon plain />
-                      </span>
                     </Link>
                   </Reveal>
                 );

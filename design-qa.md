@@ -52,6 +52,99 @@ The content and imagery remain Sara Transporte-specific, while the old site's se
 17. P2: Header navigation type was too light and relied on animated underlines for active and hover states.
     - Removed desktop and mobile underlines, increased navigation size and weight, and retained a clear active state through color and weight only.
 
+## Services panel refinement QA
+
+- Source visual truth: `C:\Users\PC\AppData\Local\Temp\codex-clipboard-bc4a2c00-2256-4b71-8968-f9aea409e612.png`
+- Browser-rendered implementation: `C:\Users\PC\Documents\sara-transporte\tmp\services-implementation-1124.png`
+- Side-by-side comparison: `C:\Users\PC\Documents\sara-transporte\tmp\services-comparison-1124.png`
+- Focused header evidence: `C:\Users\PC\Documents\sara-transporte\tmp\header-icons-1024.jpg`
+- State: homepage `/#leistungen`, desktop, no hover
+- Reference pixels: 1124 × 691
+- Implementation capture: 1109 × 888 from a 1124 × 900 viewport override; normalized proportionally to 1124 × 900 and cropped to 1124 × 691 for equal-size comparison
+- Density: 1× CSS rendering; no device-frame or browser chrome included
+
+### Required fidelity surfaces
+
+- Fonts and typography: Manrope remains active. The section label, two-line heading, service titles, weights, and compact supporting copy match the reference hierarchy while preserving the requested smaller title scale.
+- Spacing and layout rhythm: the dark panel is 673 px high at the comparison breakpoint. Its 75 px internal desktop frame, four equal 368 px cards, 26 px gaps, aligned image bottoms, and rounded corners closely track the reference proportions.
+- Colors and visual tokens: the existing deep-navy, white, muted-blue, and pale-canvas tokens match the source. Borders remain intentionally low contrast.
+- Image quality and asset fidelity: all five visible photographs are real Sara Transporte legacy assets. Card images use a cool desaturated treatment and restore color on hover; the faint upper-right warehouse image replaces the reference's decorative logistics photograph without placeholder or CSS-drawn imagery.
+- Copy and content: the reference structure is retained with German, Sara Transporte-specific service names and descriptions. Summaries clamp to three lines, matching the source's compact editorial density without changing the underlying content.
+
+### Comparison history
+
+1. Initial comparison found a P2 vertical-rhythm mismatch: the heading stayed on one line and the cards began too high.
+   - Fixed with a two-line heading measure, shorter 368 px cards, 155 px bottom-anchored images, and reduced panel padding.
+   - Post-fix evidence showed the card row beginning at 243 px, close to the reference's 235 px.
+2. Second comparison found a P2 horizontal-density mismatch: cards stretched too close to the panel edges and varied in height as descriptions wrapped.
+   - Fixed with a reference-proportional 75 px internal frame, 26 px desktop gaps, equal-height card wrappers, and three-line summaries.
+   - Post-fix evidence shows all four cards at 368 px with images aligned from 447 px to 602 px and the panel ending at 673 px.
+3. Final side-by-side comparison found no remaining P0, P1, or P2 issues.
+   - Intentional differences are limited to Sara Transporte-specific German copy, company photography, and a plain “Alle Leistungen” arrow that preserves the site's established no-circle secondary-action rule.
+
+Focused comparison was required because the utility icons and card typography are too small to judge reliably from a full homepage capture. The services comparison and 1024 px header capture confirm the unbordered 20 px LinkedIn “in” mark, 20 px phone-call icon, 34 px hit-area widths, and zero visual gap between the two utility links.
+
+### Service-card icon refinement
+
+- Removed the sequence number from every homepage service container.
+- Replaced the four outline symbols with filled Font Awesome logistics pictograms.
+- Increased the rendered service icon size to 30 × 30 px and kept a consistent white treatment.
+- Rebalanced each card around the title, icon, description, and bottom-aligned photograph.
+- Verified four-column desktop, two-column tablet, and one-column phone layouts at 1024, 901, 768, 390, and 320 px with no horizontal overflow or title/icon collision.
+
+## Experience heading refinement QA
+
+- Source visual truth: `C:\Users\PC\AppData\Local\Temp\codex-clipboard-2af2617a-efc8-43c0-aee0-ce13d94af7b1.png`
+- Browser-rendered implementation: `C:\Users\PC\Documents\sara-transporte\tmp\experience-implementation-1115-final.jpg`
+- Side-by-side comparison: `C:\Users\PC\Documents\sara-transporte\tmp\experience-comparison-1115-final.png`
+- State: homepage `/#intro`, desktop, no hover
+- Reference pixels: 1115 × 461
+- Implementation capture: 1100 × 710 from a 1115 × 720 viewport override; the first 461 px were normalized to 1115 × 461 for equal-size comparison
+- Density: 1× CSS rendering; no browser chrome included
+
+### Required fidelity surfaces
+
+- Fonts and typography: the active Manrope family is retained. After two user-directed reductions, the right-side statement renders at 28.16 px at 1280 px and 24 px at 390 px. It retains weight 750, a 1.06 line height, and tight display tracking.
+- Spacing and layout rhythm: the eyebrow and statement occupy the reference's narrow-left/wide-right grid. Their visual tops align, and the existing proof content begins at approximately 302 px versus 297 px in the reference.
+- Colors and visual tokens: the existing pale canvas, deep navy text, and blue eyebrow remain consistent with the source.
+- Image quality and asset fidelity: the existing Sara Transporte fleet photography remains unchanged and uses the same rounded media position as before.
+- Copy and content: `Ein Logistikpartner. Alle Wege.` was removed. The former supporting paragraph is now the sole large German statement on the right.
+
+### Comparison history
+
+1. Initial comparison found a P2 vertical-rhythm mismatch: the section content began roughly 75 px lower than the reference.
+   - Fixed by reducing the desktop top padding and preserving the existing space below the proof content.
+   - Post-fix evidence places the eyebrow and statement near the reference's 39 px visual top and the proof row within roughly 5 px of the source.
+2. Responsive inspection found a P2 narrow-phone overflow caused by the long German word `maßgeschneiderte` at the desktop minimum display size.
+   - Fixed with a small-screen fluid title scale that preserves the bold hierarchy while reducing to 32 px at 320 px.
+   - Post-fix checks at 1024, 901, 900, 768, 430, 390, 320, and 280 px show no horizontal page overflow.
+3. Final side-by-side comparison found no remaining P0, P1, or P2 issues.
+   - The different statement wrapping is intentional because the live site uses Sara Transporte's German copy rather than the reference's English placeholder text.
+4. User review found the initial reference-matched statement scale visually too large in the live page context.
+   - Reduced the final desktop range to 28–42.4 px and the responsive range to 24–28 px.
+   - Post-fix evidence shows a 28.16 px desktop statement at 1280 px and a 24 px statement at 390 px with no horizontal overflow.
+
+The full-width section crop is also the focused typography comparison because this change affects only the eyebrow, statement, and the transition into the existing proof row.
+
+### Partner-strip follow-up
+
+- Desktop evidence: `C:\Users\PC\Documents\sara-transporte\tmp\partner-strip-heading-1280-final.jpg`
+- Mobile evidence: `C:\Users\PC\Documents\sara-transporte\tmp\partner-strip-heading-390-final.jpg`
+- Replaced three white-background legacy logo files with brand-faithful transparent PNG derivatives and trimmed the existing transparent Spedlogswiss asset.
+- Set the final desktop logo boxes to 50 px high with individual maximum widths of 145–185 px, raised visual opacity, and the established grayscale treatment.
+- Removed the partner-strip heading and bottom divider so the banner contains only the four partner marks.
+- Centered the logos across four equal desktop columns with 42 px of vertical padding; at 900 px and below, the banner becomes a centered two-column grid with 36 px of vertical padding.
+- Verified transparent computed backgrounds, alpha channels from 0–255, successful image decoding, and no page overflow at 1024, 901, 900, 768, 430, 390, and 320 px.
+
+### Framing and typography follow-up
+
+- Removed the desktop navigation container border while retaining its translucent background and blur treatment.
+- Removed the homepage hero eyebrow and expanded the desktop hero to the available viewport height.
+- Standardized the hero, detail hero, and services panel to an even 18 px outer frame that matches the hero's top inset.
+- Reduced the desktop experience statement to a 25.6–36 px fluid range and increased its line height to 1.13.
+- Increased the shared heading line height to 1.1 for `h2`, 1.18 for `h3`, and 1.02 for hero titles.
+- Verified at 1280 × 900 and 390 × 844 with no horizontal overflow and no browser console warnings or errors.
+
 ## Verification
 
 - Visual comparison pass with the reference at 1024 × 900

@@ -5,11 +5,11 @@ import { SiteImage as Image } from "@/components/SiteImage";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import {
-  IconBrandLinkedin,
   IconMenu2,
-  IconPhone,
+  IconPhoneCall,
   IconX,
 } from "@tabler/icons-react";
+import { FaLinkedinIn } from "react-icons/fa";
 import { ActionIcon } from "@/components/ActionIcon";
 import { primaryNav } from "@/lib/site-data";
 
@@ -68,22 +68,24 @@ export function Header() {
       </nav>
 
       <div className="header-actions">
-        <a
-          href="https://www.linkedin.com/company/sara-transporte-ag/"
-          target="_blank"
-          rel="noreferrer"
-          className="icon-button icon-button-ghost header-icon-link"
-          aria-label="Sara Transporte auf LinkedIn"
-        >
-          <IconBrandLinkedin size={16} stroke={1.8} />
-        </a>
-        <a
-          href="tel:+41562821181"
-          className="icon-button icon-button-ghost header-icon-link"
-          aria-label="Sara Transporte anrufen"
-        >
-          <IconPhone size={16} stroke={1.8} />
-        </a>
+        <div className="header-utility-links">
+          <a
+            href="https://www.linkedin.com/company/sara-transporte-ag/"
+            target="_blank"
+            rel="noreferrer"
+            className="icon-button icon-button-ghost header-icon-link"
+            aria-label="Sara Transporte auf LinkedIn"
+          >
+            <FaLinkedinIn size={20} aria-hidden="true" />
+          </a>
+          <a
+            href="tel:+41562821181"
+            className="icon-button icon-button-ghost header-icon-link"
+            aria-label="Sara Transporte anrufen"
+          >
+            <IconPhoneCall size={20} stroke={1.9} aria-hidden="true" />
+          </a>
+        </div>
         <Link href="/contact-us#anfrage" className="header-cta">
           <span>Anfrage</span>
           <ActionIcon />
