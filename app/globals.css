@@ -343,7 +343,9 @@ h3 {
   border: 0;
   border-radius: 999px;
   padding: 6px 32px;
-  background: #dedfdf;
+  background: rgba(105, 105, 105, 0.62);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
 
 .main-nav a {
@@ -351,7 +353,7 @@ h3 {
   min-height: 40px;
   align-items: center;
   padding: 8px 0;
-  color: rgba(17, 17, 17, 0.72);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 0.8rem;
   font-weight: 720;
   letter-spacing: -0.01em;
@@ -360,7 +362,7 @@ h3 {
 
 .main-nav a:hover,
 .main-nav a.active {
-  color: var(--ink);
+  color: var(--white);
 }
 
 .main-nav a.active {
@@ -2583,6 +2585,8 @@ h3 {
     border: 0;
     border-radius: 0;
     background: var(--navy-deep);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
     opacity: 0;
     transform: translateY(-14px);
     transition:
