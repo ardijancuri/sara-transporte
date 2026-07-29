@@ -2,23 +2,27 @@
 
 import { useState, type FormEvent } from "react";
 import { ActionIcon } from "@/components/ActionIcon";
+import { useI18n } from "@/lib/i18n";
 import { company } from "@/lib/site-data";
 
 export function QuoteForm({ compact = false }: { compact?: boolean }) {
   const [submitted, setSubmitted] = useState(false);
+  const { t } = useI18n();
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
-    const subject = `Transportanfrage von ${form.get("name") || "Website"}`;
+    const subject = `${t("Transportanfrage von")} ${
+      form.get("name") || t("Website")
+    }`;
     const body = [
-      `Name: ${form.get("name") || ""}`,
+      `${t("Name")}: ${form.get("name") || ""}`,
       `E-Mail: ${form.get("email") || ""}`,
-      `Telefon: ${form.get("phone") || ""}`,
-      `Von: ${form.get("from") || ""}`,
-      `Nach: ${form.get("to") || ""}`,
-      `Gewicht: ${form.get("weight") || ""}`,
-      `Nachricht: ${form.get("message") || ""}`,
+      `${t("Telefon")}: ${form.get("phone") || ""}`,
+      `${t("Von")}: ${form.get("from") || ""}`,
+      `${t("Nach")}: ${form.get("to") || ""}`,
+      `${t("Gewicht")}: ${form.get("weight") || ""}`,
+      `${t("Nachricht")}: ${form.get("message") || ""}`,
     ].join("\n");
 
     setSubmitted(true);
@@ -34,8 +38,13 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
     >
       <div className="form-grid">
         <label>
-          <span>Vollständiger Name</span>
-          <input name="name" type="text" required placeholder="Ihr Name" />
+          <span>{t("Vollständiger Name")}</span>
+          <input
+            name="name"
+            type="text"
+            required
+            placeholder={t("Ihr Name")}
+          />
         </label>
         <label>
           <span>E-Mail</span>
@@ -47,39 +56,53 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
           />
         </label>
         <label>
-          <span>Telefon</span>
+          <span>{t("Telefon")}</span>
           <input name="phone" type="tel" placeholder="+41 ..." />
         </label>
         {!compact && (
           <label>
-            <span>Gewicht</span>
-            <input name="weight" type="text" placeholder="z. B. 2.5 t" />
+            <span>{t("Gewicht")}</span>
+            <input
+              name="weight"
+              type="text"
+              placeholder={t("z. B. 2.5 t")}
+            />
           </label>
         )}
         <label>
-          <span>Von</span>
-          <input name="from" type="text" required placeholder="Abholort" />
+          <span>{t("Von")}</span>
+          <input
+            name="from"
+            type="text"
+            required
+            placeholder={t("Abholort")}
+          />
         </label>
         <label>
-          <span>Nach</span>
-          <input name="to" type="text" required placeholder="Zielort" />
+          <span>{t("Nach")}</span>
+          <input
+            name="to"
+            type="text"
+            required
+            placeholder={t("Zielort")}
+          />
         </label>
       </div>
       <label className="message-field">
-        <span>Details</span>
+        <span>{t("Details")}</span>
         <textarea
           name="message"
           rows={compact ? 3 : 4}
-          placeholder="Ware, Termin und besondere Anforderungen"
+          placeholder={t("Ware, Termin und besondere Anforderungen")}
         />
       </label>
       <button type="submit" className="button button-light">
-        <span>Anfrage vorbereiten</span>
+        <span>{t("Anfrage vorbereiten")}</span>
         <ActionIcon />
       </button>
       {submitted && (
         <p className="form-note" role="status">
-          Ihr E-Mail-Programm wird mit der vorbereiteten Anfrage geöffnet.
+          {t("Ihr E-Mail-Programm wird mit der vorbereiteten Anfrage geöffnet.")}
         </p>
       )}
     </form>

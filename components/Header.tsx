@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { SiteImage as Image } from "@/components/SiteImage";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -10,15 +9,24 @@ import {
 } from "@tabler/icons-react";
 import { FaLinkedinIn, FaPhoneAlt } from "react-icons/fa";
 import { ActionIcon } from "@/components/ActionIcon";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { LocalizedLink as Link } from "@/components/LocalizedLink";
+import { stripLocaleFromPathname, useI18n } from "@/lib/i18n";
 import { primaryNav } from "@/lib/site-data";
 
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const { t } = useI18n();
+  const activePath = stripLocaleFromPathname(pathname ?? "/");
 
   return (
     <header className="site-header">
-      <Link href="/" className="brand" aria-label="Sara Transporte Startseite">
+      <Link
+        href="/"
+        className="brand"
+        aria-label={t("Sara Transporte Startseite")}
+      >
         <Image
           className="brand-logo"
           src="/assets/brand/sara-transporte-logo.png"
@@ -34,7 +42,7 @@ export function Header() {
         className="icon-button menu-toggle"
         aria-expanded={open}
         aria-controls="main-navigation"
-        aria-label={open ? "Menü schliessen" : "Menü öffnen"}
+        aria-label={open ? t("Menü schliessen") : t("Menü öffnen")}
         onClick={() => setOpen((current) => !current)}
       >
         {open ? (
@@ -47,23 +55,43 @@ export function Header() {
       <nav
         id="main-navigation"
         className={open ? "main-nav is-open" : "main-nav"}
-        aria-label="Hauptnavigation"
+        aria-label={t("Hauptnavigation")}
       >
         {primaryNav.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className={
-              pathname === item.href ||
-              (item.href !== "/" && pathname?.startsWith(item.href))
+            className={`main-nav-link ${
+              activePath === item.href ||
+              (item.href !== "/" && activePath.startsWith(item.href))
                 ? "active"
                 : ""
-            }
+            }`}
             onClick={() => setOpen(false)}
           >
-            {item.label}
+            {t(item.label)}
           </Link>
         ))}
+
+        <div className="mobile-menu-tools" aria-label={t("Aktuelle Sprache")}>
+          <a
+            href="https://www.linkedin.com/company/sara-transporte-ag/"
+            target="_blank"
+            rel="noreferrer"
+            className="icon-button mobile-tool-button"
+            aria-label={t("Sara Transporte auf LinkedIn")}
+          >
+            <FaLinkedinIn size={22} aria-hidden="true" />
+          </a>
+          <a
+            href="tel:+41562821181"
+            className="icon-button mobile-tool-button"
+            aria-label={t("Sara Transporte anrufen")}
+          >
+            <FaPhoneAlt size={19} aria-hidden="true" />
+          </a>
+          <LanguageSwitcher mobile onSelect={() => setOpen(false)} />
+        </div>
       </nav>
 
       <div className="header-actions">
@@ -73,20 +101,21 @@ export function Header() {
             target="_blank"
             rel="noreferrer"
             className="icon-button icon-button-ghost header-icon-link"
-            aria-label="Sara Transporte auf LinkedIn"
+            aria-label={t("Sara Transporte auf LinkedIn")}
           >
             <FaLinkedinIn size={20} aria-hidden="true" />
           </a>
           <a
             href="tel:+41562821181"
             className="icon-button icon-button-ghost header-icon-link"
-            aria-label="Sara Transporte anrufen"
+            aria-label={t("Sara Transporte anrufen")}
           >
             <FaPhoneAlt size={18} aria-hidden="true" />
           </a>
+          <LanguageSwitcher />
         </div>
         <Link href="/contact-us#anfrage" className="header-cta">
-          <span>Anfrage</span>
+          <span>{t("Anfrage")}</span>
           <ActionIcon />
         </Link>
       </div>

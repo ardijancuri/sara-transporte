@@ -59,3 +59,21 @@ test("keeps migrated routes and assets available", async () => {
   assert.match(pageSource, /zertifizierungen/);
   assert.match(pageSource, /warehouse/);
 });
+
+test("serves English and French locale routes", async () => {
+  const [englishHome, frenchHome, englishContact, frenchContact] =
+    await Promise.all([
+      render("/en"),
+      render("/fr"),
+      render("/en/contact-us"),
+      render("/fr/contact-us"),
+    ]);
+
+  assert.equal(englishHome.status, 200);
+  assert.equal(frenchHome.status, 200);
+  assert.equal(englishContact.status, 200);
+  assert.equal(frenchContact.status, 200);
+
+  assert.match(await englishHome.text(), /Transport &amp; Logistics in Europe/);
+  assert.match(await frenchHome.text(), /Transport et logistique en Europe/);
+});

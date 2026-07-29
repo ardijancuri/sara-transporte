@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LocalizedLink as Link } from "@/components/LocalizedLink";
 import { SiteImage as Image } from "@/components/SiteImage";
 import { IconCheck } from "@tabler/icons-react";
 import { ActionIcon } from "@/components/ActionIcon";

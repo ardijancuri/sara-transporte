@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DetailPage } from "@/components/DetailPage";
-import { languageAlternates } from "@/lib/localized-metadata";
+import {
+  languageAlternates,
+  localizedPageMetadata,
+} from "@/lib/localized-metadata";
 import { pages, type PageSlug } from "@/lib/site-data";
 
 export function generateStaticParams() {
@@ -14,21 +17,22 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const page = pages[slug as PageSlug];
+  const page = localizedPageMetadata[slug as PageSlug]?.fr;
 
-  if (!page) return {};
+  if (!page) {
+    return {};
+  }
 
   return {
-    title: page.eyebrow,
-    description: page.intro,
+    ...page,
     alternates: {
-      canonical: `/${slug}`,
+      canonical: `/fr/${slug}`,
       languages: languageAlternates(`/${slug}`),
     },
   };
 }
 
-export default async function Page({
+export default async function FrenchPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
