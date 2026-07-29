@@ -741,8 +741,10 @@ function ContactContent() {
     <>
       <section className="section contact-layout" id="anfrage">
         <Reveal className="contact-details">
-          <p className="eyebrow">Direkter Kontakt</p>
-          <h2>Wir sind für Sie erreichbar.</h2>
+          <div className="contact-details-heading">
+            <p className="eyebrow">Direkter Kontakt</p>
+            <h2>Wir sind für Sie erreichbar.</h2>
+          </div>
           <div className="contact-channel-list">
             <a className="contact-channel" href="tel:+41562821181">
               <span className="contact-channel-icon">
@@ -788,10 +790,6 @@ function ContactContent() {
               </span>
             </div>
           </div>
-        </Reveal>
-        <Reveal className="contact-form-panel" delay={100}>
-          <h2>Wohin dürfen wir für Sie fahren?</h2>
-          <QuoteForm />
         </Reveal>
       </section>
 
