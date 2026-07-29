@@ -386,7 +386,7 @@ h3 {
 .header-utility-links {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 8px;
 }
 
 .icon-button {
@@ -442,11 +442,11 @@ h3 {
 
 .language-trigger {
   display: inline-flex;
-  width: auto;
-  min-width: 40px;
+  width: 34px;
+  min-width: 34px;
   align-items: center;
   justify-content: center;
-  padding-inline: 5px;
+  padding-inline: 0;
   cursor: pointer;
 }
 
@@ -1160,7 +1160,7 @@ h3 {
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
   border-radius: var(--radius-lg);
-  background: var(--blue);
+  background: #2f2f2f;
   color: var(--white);
 }
 

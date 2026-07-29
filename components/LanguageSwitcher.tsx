@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { IconCheck } from "@tabler/icons-react";
-import { PiTranslateFill } from "react-icons/pi";
+import { IconCheck, IconWorldFilled } from "@tabler/icons-react";
 import {
   localeNames,
   useI18n,
@@ -68,7 +67,10 @@ export function LanguageSwitcher({
         aria-haspopup="menu"
         onClick={() => setOpen((current) => !current)}
       >
-        <PiTranslateFill size={mobile ? 23 : 21} aria-hidden="true" />
+        <IconWorldFilled
+          size={mobile ? 23 : 21}
+          aria-hidden="true"
+        />
       </button>
 
       {open && (
