@@ -524,7 +524,7 @@ h3 {
   position: absolute;
   z-index: 0;
   inset: 0;
-  background: url("/assets/legacy/2026/01/6.jpeg") center 56% / cover no-repeat;
+  background: url("/assets/hero/sara-truck-alpine-hero.webp") center 56% / cover no-repeat;
   content: "";
 }
 
@@ -621,26 +621,6 @@ h3 {
   line-height: 1;
 }
 
-.scroll-cue {
-  position: absolute;
-  z-index: 2;
-  bottom: 28px;
-  left: 50%;
-  display: grid;
-  justify-items: center;
-  gap: 8px;
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 0.63rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  transform: translateX(-50%);
-}
-
-.scroll-cue i {
-  font-style: normal;
-  animation: scroll-bob 1.8s infinite ease-in-out;
-}
-
 .hero-detail {
   width: calc(100% - 36px);
   min-height: 620px;
@@ -682,16 +662,6 @@ h3 {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes scroll-bob {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(6px);
   }
 }
 
@@ -1026,6 +996,10 @@ h3 {
   padding-block: var(--section-space);
 }
 
+.process-section.home-process-section {
+  padding-bottom: clamp(24px, 3vw, 40px);
+}
+
 .centered-heading {
   justify-content: center;
   text-align: center;
@@ -1121,6 +1095,11 @@ h3 {
   margin-top: clamp(36px, 3.5vw, 46px);
   grid-template-columns: repeat(3, 1fr);
   gap: 42px;
+}
+
+.benefit-row-home {
+  padding-bottom: clamp(38px, 4vw, 56px);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.12);
 }
 
 .benefit-row > div {
@@ -2978,7 +2957,6 @@ a.contact-channel:hover .contact-channel-icon {
     gap: 20px;
   }
 
-  .scroll-cue,
   .detail-route {
     display: none;
   }

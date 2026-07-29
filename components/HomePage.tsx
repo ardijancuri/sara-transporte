@@ -1,7 +1,6 @@
 import { LocalizedLink as Link } from "@/components/LocalizedLink";
 import { SiteImage as Image } from "@/components/SiteImage";
 import {
-  IconArrowDown,
   IconArrowUpRight,
   IconCheck,
   IconQuote,
@@ -16,7 +15,6 @@ import {
 import { ActionIcon } from "@/components/ActionIcon";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { QuoteForm } from "@/components/QuoteForm";
 import { Reveal } from "@/components/Reveal";
 import { services, workflow } from "@/lib/site-data";
 
@@ -45,10 +43,6 @@ export function HomePage() {
               Ziel gebracht.
             </p>
             <div className="hero-actions">
-              <Link href="/contact-us#anfrage" className="button button-light">
-                <span>Transport anfragen</span>
-                <ActionIcon />
-              </Link>
               <Link href="/dienstleistungen" className="text-link text-link-light">
                 <span>Leistungen entdecken</span>
                 <ActionIcon kind="forward" plain />
@@ -60,10 +54,6 @@ export function HomePage() {
             <strong>120+</strong>
             <span>LKW im eigenen Fuhrpark</span>
           </div>
-          <a href="#intro" className="scroll-cue" aria-label="Weiter scrollen">
-            <span>Scroll</span>
-            <IconArrowDown size={16} stroke={1.6} aria-hidden="true" />
-          </a>
         </section>
 
         <section className="partner-strip" aria-label="Partner">
@@ -126,7 +116,7 @@ export function HomePage() {
             </Reveal>
 
             <Reveal className="experience-stat" delay={100}>
-              <span className="stat-number">12+</span>
+              <span className="stat-number">25+</span>
               <p>Jahre Erfahrung in Transport, Spedition und Zoll.</p>
               <Link href="/ueber-uns" className="text-link">
                 <span>Mehr über uns</span>
@@ -204,7 +194,7 @@ export function HomePage() {
           </div>
         </section>
 
-        <section className="section process-section">
+        <section className="section process-section home-process-section">
           <Reveal className="section-heading centered-heading">
             <div>
               <p className="eyebrow">So arbeiten wir</p>
@@ -238,7 +228,7 @@ export function HomePage() {
             </div>
           </div>
 
-          <div className="benefit-row">
+          <div className="benefit-row benefit-row-home">
             <Reveal>
               <span className="benefit-icon">
                 <FaReceipt size={28} aria-hidden="true" />
@@ -267,30 +257,6 @@ export function HomePage() {
               </div>
             </Reveal>
           </div>
-        </section>
-
-        <section className="section quote-section" id="anfrage">
-          <Reveal className="quote-image">
-            <Image
-              src="/assets/legacy/2023/10/image00174.jpeg"
-              alt="Sara Transporte LKW in den Schweizer Bergen"
-              fill
-              sizes="(max-width: 900px) calc(100vw - 32px), 50vw"
-            />
-            <div>
-              <span>Europaweit</span>
-              <strong>Von hier bis ans Ziel.</strong>
-            </div>
-          </Reveal>
-          <Reveal className="quote-panel" delay={100}>
-            <p className="eyebrow eyebrow-light">Schnelle Angebotserstellung</p>
-            <h2>Erhalten Sie Ihr persönliches Angebot.</h2>
-            <p>
-              Teilen Sie uns die wichtigsten Eckdaten mit. Wir bereiten Ihre
-              Anfrage direkt für unser Dispositionsteam vor.
-            </p>
-            <QuoteForm compact />
-          </Reveal>
         </section>
 
         <section className="section testimonial-section">
