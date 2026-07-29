@@ -18,7 +18,6 @@ import {
 import { ActionIcon } from "@/components/ActionIcon";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { QuoteForm } from "@/components/QuoteForm";
 import { Reveal } from "@/components/Reveal";
 import {
   certifications,
@@ -359,28 +358,6 @@ function ServicesContent() {
         </div>
       </section>
 
-      <section className="section quote-section services-quote-section" id="anfrage">
-        <Reveal className="quote-image services-quote-image">
-          <Image
-            src="/assets/legacy/2026/01/5.jpeg"
-            alt="Sara Transporte LKW bereit für den nächsten Auftrag"
-            fill
-            sizes="(max-width: 900px) calc(100vw - 32px), 50vw"
-          />
-          <div>
-            <span>Europaweit</span>
-            <strong>Von hier bis ans Ziel.</strong>
-          </div>
-        </Reveal>
-        <Reveal className="quote-panel" delay={100}>
-          <h2>Erhalten Sie Ihr persönliches Angebot.</h2>
-          <p>
-            Teilen Sie uns die wichtigsten Eckdaten mit. Wir bereiten Ihre
-            Anfrage direkt für unser Dispositionsteam vor.
-          </p>
-          <QuoteForm compact />
-        </Reveal>
-      </section>
     </>
   );
 }

@@ -1631,14 +1631,6 @@ h3 {
   padding-top: clamp(96px, 10vw, 140px);
 }
 
-.services-quote-section {
-  margin-bottom: var(--section-space);
-}
-
-.services-quote-image img {
-  object-position: center 42%;
-}
-
 .values-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -2542,7 +2534,7 @@ a.contact-channel:hover .contact-channel-icon {
 
 .editorial-story h2 {
   margin-top: 10px;
-  font-size: clamp(1.8rem, 2.8vw, 3.2rem);
+  font-size: clamp(1.2rem, 1.5vw, 1.7rem);
 }
 
 .editorial-story p {
