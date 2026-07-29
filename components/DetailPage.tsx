@@ -1,6 +1,15 @@
 import { LocalizedLink as Link } from "@/components/LocalizedLink";
 import { SiteImage as Image } from "@/components/SiteImage";
 import { IconCheck } from "@tabler/icons-react";
+import { FaComments, FaReceipt, FaRoute } from "react-icons/fa";
+import {
+  FaEarthEurope,
+  FaFileInvoice,
+  FaHeadset,
+  FaLocationDot,
+  FaTruckFast,
+  FaWarehouse,
+} from "react-icons/fa6";
 import { ActionIcon } from "@/components/ActionIcon";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -16,6 +25,15 @@ import {
   workflow,
   type PageSlug,
 } from "@/lib/site-data";
+
+const detailServiceIcons = [
+  FaTruckFast,
+  FaFileInvoice,
+  FaLocationDot,
+  FaWarehouse,
+  FaEarthEurope,
+  FaHeadset,
+];
 
 function CheckList({ items }: { items: string[] }) {
   return (
@@ -216,7 +234,7 @@ function ServicesContent() {
   }));
   return (
     <>
-      <section className="section detail-intro">
+      <section className="section detail-intro services-page-intro">
         <Reveal>
           <p className="eyebrow">Transportdienste</p>
           <h2>Effizient von der Planung bis zur Zustellung.</h2>
@@ -229,46 +247,135 @@ function ServicesContent() {
           </p>
         </Reveal>
       </section>
-      <section className="section services-index">
-        {[...services, ...extraServices].map((service, index) => (
-          <Reveal key={service.title} delay={(index % 3) * 70}>
-            <Link className="service-index-row" href={service.href}>
-              <span>{service.number}</span>
-              <div className="service-index-image">
-                <Image
-                  src={service.image}
-                  alt=""
-                  fill
-                  sizes="(max-width: 540px) calc(100vw - 78px), (max-width: 900px) 105px, 145px"
-                />
-              </div>
-              <div>
-                <h3>{service.title}</h3>
-                <p>{service.short}</p>
-              </div>
-              <i aria-hidden="true">
-                <ActionIcon plain />
-              </i>
+
+      <section className="services-panel services-page-panel">
+        <div className="section services-panel-inner services-page-panel-inner">
+          <Reveal className="section-heading section-heading-light">
+            <div>
+              <p className="eyebrow">Unsere Leistungen</p>
+              <h2>Logistik, die weiterdenkt.</h2>
+            </div>
+            <Link href="/contact-us#anfrage" className="text-link text-link-light">
+              <span>Transport anfragen</span>
+              <ActionIcon kind="forward" plain />
             </Link>
           </Reveal>
-        ))}
+
+          <div className="service-grid services-page-grid">
+            {[...services, ...extraServices].map((service, index) => {
+              const ServiceIcon = detailServiceIcons[index];
+              return (
+                <Reveal key={service.title} delay={(index % 3) * 80}>
+                  <Link className="service-card" href={service.href}>
+                    <div className="service-card-topline">
+                      <h3>{service.title}</h3>
+                      <ServiceIcon size={30} aria-hidden="true" />
+                    </div>
+                    <p>{service.short}</p>
+                    <div className="service-card-image">
+                      <Image
+                        src={service.image}
+                        alt=""
+                        fill
+                        sizes="(max-width: 600px) calc(100vw - 56px), (max-width: 900px) 44vw, 31vw"
+                      />
+                    </div>
+                  </Link>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
       </section>
-      <section className="section workflow-section">
-        <Reveal className="section-heading">
+
+      <section className="section process-section services-process-section">
+        <Reveal className="section-heading centered-heading">
           <div>
-            <p className="eyebrow">Wie wir arbeiten</p>
-            <h2>Ein transparenter Ablauf in vier Schritten.</h2>
+            <p className="eyebrow">So arbeiten wir</p>
+            <h2>Vom Auftrag bis zur Ankunft.</h2>
           </div>
         </Reveal>
-        <div className="workflow-grid">
-          {workflow.map((step, index) => (
-            <Reveal key={step.number} delay={index * 60}>
-              <span>{step.number}</span>
-              <h3>{step.title}</h3>
-              <p>{step.text}</p>
-            </Reveal>
-          ))}
+
+        <div className="process-layout">
+          <Reveal className="process-image">
+            <Image
+              src="/assets/legacy/2023/10/image00005-e1698833422232.jpeg"
+              alt="Sara Transporte LKW auf europäischer Route"
+              fill
+              sizes="(max-width: 900px) calc(100vw - 32px), 55vw"
+            />
+            <div className="route-badge">
+              <span>CH</span>
+              <i />
+              <span>EU</span>
+            </div>
+          </Reveal>
+          <div className="process-list">
+            {workflow.map((step, index) => (
+              <Reveal className="process-step" key={step.number} delay={index * 70}>
+                <span>{step.number}</span>
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
+
+        <div className="benefit-row">
+          <Reveal>
+            <span className="benefit-icon">
+              <FaReceipt size={28} aria-hidden="true" />
+            </span>
+            <div>
+              <h3>Transparente Preise</h3>
+              <p>Ein klares Angebot passend zu Route und Anforderung.</p>
+            </div>
+          </Reveal>
+          <Reveal delay={80}>
+            <span className="benefit-icon">
+              <FaRoute size={28} aria-hidden="true" />
+            </span>
+            <div>
+              <h3>Volle Sichtbarkeit</h3>
+              <p>Proaktive Updates und Track & Trace für Ihre Sendung.</p>
+            </div>
+          </Reveal>
+          <Reveal delay={160}>
+            <span className="benefit-icon">
+              <FaComments size={28} aria-hidden="true" />
+            </span>
+            <div>
+              <h3>Direkte Entscheidungen</h3>
+              <p>Ein persönliches Team mit kurzen Kommunikationswegen.</p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section quote-section services-quote-section" id="anfrage">
+        <Reveal className="quote-image services-quote-image">
+          <Image
+            src="/assets/legacy/2026/01/5.jpeg"
+            alt="Sara Transporte LKW bereit für den nächsten Auftrag"
+            fill
+            sizes="(max-width: 900px) calc(100vw - 32px), 50vw"
+          />
+          <div>
+            <span>Europaweit</span>
+            <strong>Von hier bis ans Ziel.</strong>
+          </div>
+        </Reveal>
+        <Reveal className="quote-panel" delay={100}>
+          <p className="eyebrow eyebrow-light">Schnelle Angebotserstellung</p>
+          <h2>Erhalten Sie Ihr persönliches Angebot.</h2>
+          <p>
+            Teilen Sie uns die wichtigsten Eckdaten mit. Wir bereiten Ihre
+            Anfrage direkt für unser Dispositionsteam vor.
+          </p>
+          <QuoteForm compact />
+        </Reveal>
       </section>
     </>
   );
