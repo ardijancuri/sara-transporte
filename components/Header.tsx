@@ -74,6 +74,7 @@ export function Header() {
         ))}
 
         <div className="mobile-menu-tools" aria-label={t("Aktuelle Sprache")}>
+          <LanguageSwitcher mobile onSelect={() => setOpen(false)} />
           <a
             href="https://www.linkedin.com/company/sara-transporte-ag/"
             target="_blank"
@@ -83,7 +84,6 @@ export function Header() {
           >
             <FaLinkedinIn size={22} aria-hidden="true" />
           </a>
-          <LanguageSwitcher mobile onSelect={() => setOpen(false)} />
           <a
             href="tel:+41562821181"
             className="icon-button mobile-tool-button"
@@ -96,6 +96,7 @@ export function Header() {
 
       <div className="header-actions">
         <div className="header-utility-links">
+          <LanguageSwitcher />
           <a
             href="https://www.linkedin.com/company/sara-transporte-ag/"
             target="_blank"
@@ -105,7 +106,6 @@ export function Header() {
           >
             <FaLinkedinIn size={20} aria-hidden="true" />
           </a>
-          <LanguageSwitcher />
           <a
             href="tel:+41562821181"
             className="icon-button icon-button-ghost header-icon-link"

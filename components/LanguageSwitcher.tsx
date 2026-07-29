@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { IconCheck, IconWorldFilled } from "@tabler/icons-react";
+import { IconCheck } from "@tabler/icons-react";
 import {
   localeNames,
   useI18n,
@@ -67,7 +67,6 @@ export function LanguageSwitcher({
         aria-haspopup="menu"
         onClick={() => setOpen((current) => !current)}
       >
-        <IconWorldFilled size={mobile ? 22 : 20} aria-hidden="true" />
         <span>{locale.toUpperCase()}</span>
       </button>
 
