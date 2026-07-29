@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { IconCheck } from "@tabler/icons-react";
-import { FaLanguage } from "react-icons/fa6";
+import { PiTranslateFill } from "react-icons/pi";
 import {
   localeNames,
   useI18n,
@@ -68,7 +68,7 @@ export function LanguageSwitcher({
         aria-haspopup="menu"
         onClick={() => setOpen((current) => !current)}
       >
-        <FaLanguage size={mobile ? 22 : 20} aria-hidden="true" />
+        <PiTranslateFill size={mobile ? 23 : 21} aria-hidden="true" />
       </button>
 
       {open && (
