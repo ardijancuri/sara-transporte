@@ -83,6 +83,7 @@ export function Header() {
           >
             <FaLinkedinIn size={22} aria-hidden="true" />
           </a>
+          <LanguageSwitcher mobile onSelect={() => setOpen(false)} />
           <a
             href="tel:+41562821181"
             className="icon-button mobile-tool-button"
@@ -90,7 +91,6 @@ export function Header() {
           >
             <FaPhoneAlt size={19} aria-hidden="true" />
           </a>
-          <LanguageSwitcher mobile onSelect={() => setOpen(false)} />
         </div>
       </nav>
 
@@ -105,6 +105,7 @@ export function Header() {
           >
             <FaLinkedinIn size={20} aria-hidden="true" />
           </a>
+          <LanguageSwitcher />
           <a
             href="tel:+41562821181"
             className="icon-button icon-button-ghost header-icon-link"
@@ -112,7 +113,6 @@ export function Header() {
           >
             <FaPhoneAlt size={18} aria-hidden="true" />
           </a>
-          <LanguageSwitcher />
         </div>
         <Link href="/contact-us#anfrage" className="header-cta">
           <span>{t("Anfrage")}</span>
