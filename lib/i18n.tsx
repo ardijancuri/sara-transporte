@@ -707,6 +707,10 @@ const translations: Record<string, Translation> = {
     en: "Where can we deliver for you?",
     fr: "Où pouvons-nous livrer pour vous ?",
   },
+  "Drei Standorte. Ein direkter Draht.": {
+    en: "Three locations. One direct connection.",
+    fr: "Trois sites. Un contact direct.",
+  },
   "Gründung · 2014": { en: "Foundation · 2014", fr: "Création · 2014" },
   "Ein Familienunternehmen nimmt Fahrt auf.": {
     en: "A family business gets moving.",

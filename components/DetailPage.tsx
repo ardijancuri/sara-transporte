@@ -1,6 +1,11 @@
 import { LocalizedLink as Link } from "@/components/LocalizedLink";
 import { SiteImage as Image } from "@/components/SiteImage";
-import { IconCheck } from "@tabler/icons-react";
+import {
+  IconCheck,
+  IconClock,
+  IconMail,
+  IconPhone,
+} from "@tabler/icons-react";
 import { FaComments, FaReceipt, FaRoute } from "react-icons/fa";
 import {
   FaEarthEurope,
@@ -368,7 +373,6 @@ function ServicesContent() {
           </div>
         </Reveal>
         <Reveal className="quote-panel" delay={100}>
-          <p className="eyebrow eyebrow-light">Schnelle Angebotserstellung</p>
           <h2>Erhalten Sie Ihr persönliches Angebot.</h2>
           <p>
             Teilen Sie uns die wichtigsten Eckdaten mit. Wir bereiten Ihre
@@ -739,43 +743,81 @@ function ContactContent() {
         <Reveal className="contact-details">
           <p className="eyebrow">Direkter Kontakt</p>
           <h2>Wir sind für Sie erreichbar.</h2>
-          <div className="contact-block">
-            <span>Schweiz</span>
-            <a href="tel:+41562821181">{company.phoneCH}</a>
-          </div>
-          <div className="contact-block">
-            <span>Deutschland</span>
-            <a href="tel:+4977518948180">{company.phoneDE}</a>
-          </div>
-          <div className="contact-block">
-            <span>Notfallnummer</span>
-            <a href="tel:+41799323333">{company.emergency}</a>
-          </div>
-          <div className="contact-block">
-            <span>E-Mail</span>
-            <a href={`mailto:${company.emailCH}`}>{company.emailCH}</a>
-            <a href={`mailto:${company.emailDE}`}>{company.emailDE}</a>
+          <div className="contact-channel-list">
+            <a className="contact-channel" href="tel:+41562821181">
+              <span className="contact-channel-icon">
+                <IconPhone size={21} stroke={1.7} />
+              </span>
+              <span className="contact-channel-copy">
+                <small>Schweiz</small>
+                <strong>{company.phoneCH}</strong>
+              </span>
+              <ActionIcon kind="forward" plain />
+            </a>
+            <a className="contact-channel" href="tel:+4977518948180">
+              <span className="contact-channel-icon">
+                <IconPhone size={21} stroke={1.7} />
+              </span>
+              <span className="contact-channel-copy">
+                <small>Deutschland</small>
+                <strong>{company.phoneDE}</strong>
+              </span>
+              <ActionIcon kind="forward" plain />
+            </a>
+            <a
+              className="contact-channel contact-channel-emergency"
+              href="tel:+41799323333"
+            >
+              <span className="contact-channel-icon">
+                <IconClock size={21} stroke={1.7} />
+              </span>
+              <span className="contact-channel-copy">
+                <small>Notfallnummer</small>
+                <strong>{company.emergency}</strong>
+              </span>
+              <ActionIcon kind="forward" plain />
+            </a>
+            <div className="contact-channel contact-email-channel">
+              <span className="contact-channel-icon">
+                <IconMail size={21} stroke={1.7} />
+              </span>
+              <span className="contact-channel-copy">
+                <small>E-Mail</small>
+                <a href={`mailto:${company.emailCH}`}>{company.emailCH}</a>
+                <a href={`mailto:${company.emailDE}`}>{company.emailDE}</a>
+              </span>
+            </div>
           </div>
         </Reveal>
         <Reveal className="contact-form-panel" delay={100}>
-          <p className="eyebrow eyebrow-light">Ihre Anfrage</p>
           <h2>Wohin dürfen wir für Sie fahren?</h2>
           <QuoteForm />
         </Reveal>
       </section>
-      <section className="section address-grid">
-        {company.addresses.map((address, index) => (
-          <Reveal key={address.country} delay={index * 80}>
-            <span>0{index + 1}</span>
-            <h2>{address.country}</h2>
-            <p>
-              <strong>{address.company}</strong>
-              {address.lines.map((line) => (
-                <span key={line}>{line}</span>
-              ))}
-            </p>
-          </Reveal>
-        ))}
+
+      <section className="section contact-locations">
+        <Reveal className="section-heading">
+          <div>
+            <p className="eyebrow">Standorte</p>
+            <h2>Drei Standorte. Ein direkter Draht.</h2>
+          </div>
+        </Reveal>
+        <div className="address-grid">
+          {company.addresses.map((address, index) => (
+            <Reveal key={address.country} delay={index * 80}>
+              <span className="address-card-top">
+                <FaLocationDot size={46} aria-hidden="true" />
+              </span>
+              <h2>{address.country}</h2>
+              <address>
+                <strong>{address.company}</strong>
+                {address.lines.map((line) => (
+                  <span key={line}>{line}</span>
+                ))}
+              </address>
+            </Reveal>
+          ))}
+        </div>
       </section>
     </>
   );
