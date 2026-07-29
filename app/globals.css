@@ -1630,9 +1630,11 @@ h3 {
 }
 
 .values-strip > div {
-  min-height: 230px;
+  display: flex;
+  min-height: 260px;
+  flex-direction: column;
   border-right: 1px solid var(--line);
-  padding: 30px;
+  padding: 28px 30px 34px;
 }
 
 .values-strip > div:last-child {
@@ -1640,13 +1642,27 @@ h3 {
 }
 
 .values-strip span {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   color: var(--blue);
-  font-size: 0.68rem;
-  font-weight: 750;
+  font-size: clamp(3.4rem, 4.8vw, 5.2rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 720;
+  letter-spacing: -0.09em;
+  line-height: 0.88;
+}
+
+.values-strip span::after {
+  width: clamp(30px, 3vw, 48px);
+  height: 1px;
+  background: currentColor;
+  content: "";
+  opacity: 0.45;
 }
 
 .values-strip h3 {
-  margin: 70px 0 8px;
+  margin: auto 0 8px;
   font-size: 1.2rem;
 }
 
