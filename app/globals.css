@@ -448,11 +448,19 @@ h3 {
   min-height: max(680px, calc(100svh - 36px));
   margin: var(--panel-gutter) auto 0;
   border-radius: var(--radius-md);
+}
+
+.hero-home::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
   background: url("/assets/legacy/2026/01/6.jpeg") center 56% / cover no-repeat;
+  content: "";
 }
 
 .hero-shade {
   position: absolute;
+  z-index: 1;
   inset: 0;
   background:
     linear-gradient(90deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.12) 58%, rgba(0, 0, 0, 0.24) 100%),
@@ -494,6 +502,13 @@ h3 {
   line-height: 1.5;
   opacity: 0;
   animation: hero-in 700ms 310ms ease forwards;
+}
+
+@media (min-width: 901px) {
+  .hero-home .hero-copy {
+    max-width: 920px;
+    white-space: nowrap;
+  }
 }
 
 .hero-actions {
@@ -2646,7 +2661,10 @@ h3 {
 
   .hero-home {
     min-height: clamp(590px, 78svh, 670px);
-    background-position: 59% center;
+  }
+
+  .hero-home::before {
+    background-position: 36% center;
   }
 
   .hero-detail {
