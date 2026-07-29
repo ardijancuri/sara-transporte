@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { IconCheck } from "@tabler/icons-react";
+import { FaLanguage } from "react-icons/fa6";
 import {
   localeNames,
   useI18n,
@@ -67,7 +68,7 @@ export function LanguageSwitcher({
         aria-haspopup="menu"
         onClick={() => setOpen((current) => !current)}
       >
-        <span>{locale.toUpperCase()}</span>
+        <FaLanguage size={mobile ? 22 : 20} aria-hidden="true" />
       </button>
 
       {open && (
