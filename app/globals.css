@@ -2645,7 +2645,7 @@ h3 {
   }
 
   .hero-home {
-    min-height: clamp(550px, 74svh, 620px);
+    min-height: clamp(590px, 78svh, 670px);
     background-position: 59% center;
   }
 
@@ -2659,6 +2659,10 @@ h3 {
     bottom: 94px;
     left: 16px;
     width: auto;
+  }
+
+  .hero-home .hero-content {
+    bottom: max(32px, env(safe-area-inset-bottom));
   }
 
   .hero h1,

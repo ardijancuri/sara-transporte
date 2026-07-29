@@ -349,8 +349,8 @@ export function HomePage() {
           </div>
           <div className="impact-image">
             <Image
-              src="/assets/legacy/2023/10/image00174.jpeg"
-              alt="Sara Transporte LKW vor Schweizer Berglandschaft"
+              src="/assets/legacy/2026/01/5.jpeg"
+              alt="Orangefarbener Scania LKW am Logistikstandort"
               fill
               sizes="(max-width: 900px) calc(100vw - 32px), 42vw"
             />
