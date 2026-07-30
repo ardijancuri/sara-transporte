@@ -67,6 +67,76 @@ body {
   overflow-x: hidden;
 }
 
+.page-loader {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  overflow: hidden;
+  animation: loader-safety 1ms 2.8s forwards;
+  pointer-events: none;
+}
+
+.page-loader__panel {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% + 1px);
+  background: #090909;
+  will-change: transform;
+}
+
+.page-loader__panel--top {
+  top: 0;
+}
+
+.page-loader__panel--bottom {
+  bottom: 0;
+}
+
+.page-loader__mark {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  min-width: 184px;
+  justify-items: center;
+  gap: 16px;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+}
+
+.page-loader__symbol {
+  width: 56px;
+  height: 56px;
+}
+
+.page-loader__route {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+}
+
+.page-loader__route-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--blue);
+}
+
+@keyframes loader-safety {
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
 body,
 button,
 input,
@@ -520,12 +590,17 @@ h3 {
   border-radius: var(--radius-md);
 }
 
-.hero-home::before {
+.hero-media {
   position: absolute;
   z-index: 0;
   inset: 0;
+  background-position: center;
+  background-size: cover;
+  will-change: transform;
+}
+
+.hero-media-home {
   background: url("/assets/hero/sara-truck-alpine-hero.webp") center 56% / cover no-repeat;
-  content: "";
 }
 
 .hero-shade {
@@ -552,8 +627,6 @@ h3 {
 
 .hero-eyebrow {
   color: rgba(255, 255, 255, 0.72);
-  opacity: 0;
-  animation: hero-in 700ms 80ms ease forwards;
 }
 
 .hero h1 {
@@ -563,10 +636,9 @@ h3 {
   font-weight: 720;
   letter-spacing: -0.055em;
   line-height: 1.02;
+  hyphens: auto;
+  overflow-wrap: break-word;
   text-wrap: balance;
-  opacity: 0;
-  transform: translateY(28px);
-  animation: hero-in 800ms 170ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .hero-copy {
@@ -575,8 +647,6 @@ h3 {
   color: rgba(255, 255, 255, 0.82);
   font-size: clamp(0.92rem, 1.15vw, 1.08rem);
   line-height: 1.5;
-  opacity: 0;
-  animation: hero-in 700ms 310ms ease forwards;
 }
 
 @media (min-width: 901px) {
@@ -591,8 +661,6 @@ h3 {
   margin-top: 28px;
   align-items: center;
   gap: 28px;
-  opacity: 0;
-  animation: hero-in 700ms 420ms ease forwards;
 }
 
 .hero-proof {
@@ -604,8 +672,6 @@ h3 {
   width: 180px;
   padding-left: 22px;
   border-left: 1px solid rgba(255, 255, 255, 0.5);
-  opacity: 0;
-  animation: hero-in 700ms 520ms ease forwards;
 }
 
 .hero-proof span {
@@ -626,8 +692,6 @@ h3 {
   min-height: 620px;
   margin: var(--panel-gutter) auto 0;
   border-radius: var(--radius-md);
-  background-position: center;
-  background-size: cover;
 }
 
 .hero-detail .hero-content {
@@ -656,13 +720,6 @@ h3 {
   display: inline-flex;
   min-height: 40px;
   align-items: center;
-}
-
-@keyframes hero-in {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .partner-strip {
@@ -2561,6 +2618,10 @@ a.contact-channel:hover .contact-channel-icon {
     scroll-behavior: auto;
   }
 
+  .page-loader {
+    display: none;
+  }
+
   *,
   *::before,
   *::after {
@@ -2911,7 +2972,7 @@ a.contact-channel:hover .contact-channel-icon {
     min-height: clamp(590px, 78svh, 670px);
   }
 
-  .hero-home::before {
+  .hero-media-home {
     background-position: 36% center;
   }
 

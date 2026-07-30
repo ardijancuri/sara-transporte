@@ -55,10 +55,11 @@ function CheckList({ items }: { items: string[] }) {
 function PageHero({ slug }: { slug: PageSlug }) {
   const page = pages[slug];
   return (
-    <section
-      className="hero hero-detail"
-      style={{ backgroundImage: `url("${page.image}")` }}
-    >
+    <section className="hero hero-detail">
+      <div
+        className="hero-media"
+        style={{ backgroundImage: `url("${page.image}")` }}
+      />
       <Header />
       <div className="hero-shade" />
       <div className="hero-content">

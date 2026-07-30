@@ -30,6 +30,7 @@ export function HomePage() {
     <>
       <main>
         <section className="hero hero-home">
+          <div className="hero-media hero-media-home" />
           <Header />
           <div className="hero-shade" />
           <div className="hero-content">
