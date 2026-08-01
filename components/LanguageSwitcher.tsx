@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { IconCheck, IconWorldFilled } from "@tabler/icons-react";
+import { IconCheck } from "@tabler/icons-react";
+import { SiteImage as Image } from "@/components/SiteImage";
 import {
   localeNames,
   useI18n,
@@ -9,6 +10,11 @@ import {
 } from "@/lib/i18n";
 
 const locales: Locale[] = ["de", "en", "fr"];
+const localeFlags: Record<Locale, string> = {
+  de: "/assets/flags/de.svg",
+  en: "/assets/flags/gb.svg",
+  fr: "/assets/flags/fr.svg",
+};
 
 export function LanguageSwitcher({
   mobile = false,
@@ -67,9 +73,12 @@ export function LanguageSwitcher({
         aria-haspopup="menu"
         onClick={() => setOpen((current) => !current)}
       >
-        <IconWorldFilled
-          size={mobile ? 23 : 21}
-          aria-hidden="true"
+        <Image
+          className="language-flag"
+          src={localeFlags[locale]}
+          alt=""
+          width={36}
+          height={36}
         />
       </button>
 

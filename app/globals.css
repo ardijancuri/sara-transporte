@@ -454,6 +454,16 @@ h3 {
   cursor: pointer;
 }
 
+.language-flag {
+  display: block;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+  object-fit: cover;
+}
+
 .language-menu {
   position: absolute;
   z-index: 40;
@@ -2906,6 +2916,11 @@ a.contact-channel:hover .contact-channel-icon {
     width: 48px;
     min-width: 48px;
     padding-inline: 0;
+  }
+
+  .mobile-tool-button.language-trigger .language-flag {
+    width: 24px;
+    height: 24px;
   }
 
   .language-switcher.is-mobile .language-menu {
