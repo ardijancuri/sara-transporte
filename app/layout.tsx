@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { I18nProvider } from "@/lib/i18n";
-import { PageLoadTransition } from "@/components/PageLoadTransition";
+import { HeroEntrance } from "@/components/HeroEntrance";
 import "./globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -77,7 +77,7 @@ export default function RootLayout({
     <html lang="de">
       <body className="antialiased" suppressHydrationWarning>
         <I18nProvider>
-          <PageLoadTransition />
+          <HeroEntrance />
           {children}
         </I18nProvider>
       </body>

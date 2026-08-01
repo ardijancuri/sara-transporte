@@ -37,20 +37,23 @@ export function Header() {
         />
       </Link>
 
-      <button
-        type="button"
-        className="icon-button menu-toggle"
-        aria-expanded={open}
-        aria-controls="main-navigation"
-        aria-label={open ? t("Menü schliessen") : t("Menü öffnen")}
-        onClick={() => setOpen((current) => !current)}
-      >
-        {open ? (
-          <IconX size={20} stroke={1.8} />
-        ) : (
-          <IconMenu2 size={20} stroke={1.8} />
-        )}
-      </button>
+      <div className="mobile-header-controls">
+        <LanguageSwitcher mobile />
+        <button
+          type="button"
+          className="icon-button menu-toggle"
+          aria-expanded={open}
+          aria-controls="main-navigation"
+          aria-label={open ? t("Menü schliessen") : t("Menü öffnen")}
+          onClick={() => setOpen((current) => !current)}
+        >
+          {open ? (
+            <IconX size={20} stroke={1.8} />
+          ) : (
+            <IconMenu2 size={20} stroke={1.8} />
+          )}
+        </button>
+      </div>
 
       <nav
         id="main-navigation"
@@ -73,8 +76,7 @@ export function Header() {
           </Link>
         ))}
 
-        <div className="mobile-menu-tools" aria-label={t("Aktuelle Sprache")}>
-          <LanguageSwitcher mobile onSelect={() => setOpen(false)} />
+        <div className="mobile-menu-tools">
           <a
             href="https://www.linkedin.com/company/sara-transporte-ag/"
             target="_blank"
