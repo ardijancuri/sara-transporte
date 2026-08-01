@@ -2,7 +2,7 @@
 
 import { SiteImage as Image } from "@/components/SiteImage";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   IconMenu2,
   IconX,
@@ -19,6 +19,25 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const { t } = useI18n();
   const activePath = stripLocaleFromPathname(pathname ?? "/");
+
+  useEffect(() => {
+    const mobileViewport = window.matchMedia("(max-width: 900px)");
+
+    function syncScrollLock() {
+      document.documentElement.classList.toggle(
+        "mobile-menu-open",
+        open && mobileViewport.matches,
+      );
+    }
+
+    syncScrollLock();
+    mobileViewport.addEventListener("change", syncScrollLock);
+
+    return () => {
+      mobileViewport.removeEventListener("change", syncScrollLock);
+      document.documentElement.classList.remove("mobile-menu-open");
+    };
+  }, [open]);
 
   return (
     <header className="site-header">

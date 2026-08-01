@@ -5,7 +5,6 @@ import {
   IconCheck,
   IconQuote,
 } from "@tabler/icons-react";
-import { FaComments, FaReceipt, FaRoute } from "react-icons/fa";
 import {
   FaFileInvoice,
   FaLocationDot,
@@ -232,36 +231,6 @@ export function HomePage() {
                 </Reveal>
               ))}
             </div>
-          </div>
-
-          <div className="benefit-row benefit-row-home">
-            <Reveal>
-              <span className="benefit-icon">
-                <FaReceipt size={28} aria-hidden="true" />
-              </span>
-              <div>
-                <h3>Transparente Preise</h3>
-                <p>Ein klares Angebot passend zu Route und Anforderung.</p>
-              </div>
-            </Reveal>
-            <Reveal delay={80}>
-              <span className="benefit-icon">
-                <FaRoute size={28} aria-hidden="true" />
-              </span>
-              <div>
-                <h3>Volle Sichtbarkeit</h3>
-                <p>Proaktive Updates und Track & Trace für Ihre Sendung.</p>
-              </div>
-            </Reveal>
-            <Reveal delay={160}>
-              <span className="benefit-icon">
-                <FaComments size={28} aria-hidden="true" />
-              </span>
-              <div>
-                <h3>Direkte Entscheidungen</h3>
-                <p>Ein persönliches Team mit kurzen Kommunikationswegen.</p>
-              </div>
-            </Reveal>
           </div>
         </section>
 

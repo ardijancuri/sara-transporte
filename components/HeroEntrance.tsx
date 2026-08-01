@@ -19,7 +19,7 @@ export function HeroEntrance() {
     const detailRoute = hero.querySelector<HTMLElement>(".detail-route");
     const headerSelector = window.matchMedia("(min-width: 901px)").matches
       ? ".site-header .brand, .site-header .main-nav, .site-header .header-actions"
-      : ".site-header .brand, .site-header .menu-toggle";
+      : ".site-header .brand, .site-header .language-switcher.is-mobile, .site-header .menu-toggle";
     const headerTargets = Array.from(
       hero.querySelectorAll<HTMLElement>(headerSelector),
     ).filter((node) => window.getComputedStyle(node).display !== "none");

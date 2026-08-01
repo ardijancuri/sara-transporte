@@ -58,6 +58,12 @@ html {
   background: var(--ice);
 }
 
+html.mobile-menu-open,
+html.mobile-menu-open body {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
 body {
   margin: 0;
   background: var(--ice);
@@ -1091,51 +1097,6 @@ h3 {
   margin: 0;
   color: var(--ink-soft);
   font-size: 0.82rem;
-}
-
-.benefit-row {
-  display: grid;
-  margin-top: clamp(36px, 3.5vw, 46px);
-  grid-template-columns: repeat(3, 1fr);
-  gap: 42px;
-}
-
-.benefit-row-home {
-  padding-bottom: clamp(38px, 4vw, 56px);
-  border-bottom: 1px solid rgba(17, 17, 17, 0.12);
-}
-
-.benefit-row > div {
-  display: grid;
-  grid-template-columns: 32px 1fr;
-  align-items: start;
-  gap: 18px;
-}
-
-.benefit-icon {
-  display: flex;
-  width: 32px;
-  height: 32px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding-top: 2px;
-  color: var(--blue);
-}
-
-.benefit-icon svg {
-  width: 28px;
-  height: 28px;
-}
-
-.benefit-row h3 {
-  margin: 0 0 8px;
-  font-size: 1rem;
-}
-
-.benefit-row p {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 0.78rem;
 }
 
 .quote-section {
@@ -3107,7 +3068,6 @@ a.contact-channel:hover .contact-channel-icon {
     margin-top: var(--section-heading-space);
   }
 
-  .benefit-row,
   .story-grid,
   .fleet-gallery,
   .customs-groups,
@@ -3115,11 +3075,6 @@ a.contact-channel:hover .contact-channel-icon {
   .address-grid,
   .editorial-grid {
     grid-template-columns: 1fr;
-  }
-
-  .benefit-row {
-    margin-top: var(--section-heading-space);
-    gap: 32px;
   }
 
   .quote-image {
