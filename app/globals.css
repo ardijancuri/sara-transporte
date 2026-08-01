@@ -107,8 +107,9 @@ body {
 }
 
 .page-loader__symbol {
-  width: 56px;
-  height: 56px;
+  width: clamp(170px, 18vw, 220px);
+  height: auto;
+  filter: invert(1);
 }
 
 .page-loader__route {

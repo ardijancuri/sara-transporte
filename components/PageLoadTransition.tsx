@@ -1,18 +1,15 @@
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import { SiteImage as Image } from "@/components/SiteImage";
 
 export function PageLoadTransition() {
-  const pathname = usePathname();
   const loaderRef = useRef<HTMLDivElement>(null);
   const panelTopRef = useRef<HTMLDivElement>(null);
   const panelBottomRef = useRef<HTMLDivElement>(null);
   const loaderMarkRef = useRef<HTMLDivElement>(null);
   const routeLineRef = useRef<HTMLElement>(null);
-  const hasPlayedRef = useRef(false);
 
   useLayoutEffect(() => {
     const loader = loaderRef.current;
@@ -221,14 +218,10 @@ export function PageLoadTransition() {
         );
       }
 
-      if (hasPlayedRef.current) {
-        timeline.timeScale(1.35);
-      }
-      hasPlayedRef.current = true;
     });
 
     return () => context.revert();
-  }, [pathname]);
+  }, []);
 
   return (
     <div className="page-loader" ref={loaderRef} aria-hidden="true">
@@ -243,10 +236,10 @@ export function PageLoadTransition() {
       <div className="page-loader__mark" ref={loaderMarkRef}>
         <Image
           className="page-loader__symbol"
-          src="/assets/brand/sara-s-favicon-192.png"
+          src="/assets/brand/sara-transporte-logo.png"
           alt=""
-          width={56}
-          height={56}
+          width={2065}
+          height={762}
           priority
         />
         <div className="page-loader__route">
