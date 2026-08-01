@@ -3343,6 +3343,46 @@ a.contact-channel:hover .contact-channel-icon {
   }
 }
 
+@media (max-width: 600px) {
+  .service-grid {
+    display: flex;
+    width: calc(100% + 32px);
+    margin: 32px -16px 0;
+    padding: 4px calc(12% + 16px) 16px 16px;
+    gap: 16px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: 16px;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: var(--blue) rgba(255, 255, 255, 0.12);
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .service-grid::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  .service-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .service-grid::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: var(--blue);
+  }
+
+  .service-grid > div {
+    height: auto;
+    flex: 0 0 88%;
+    scroll-snap-align: start;
+  }
+
+  .service-grid .service-card {
+    min-height: 420px;
+  }
+}
+
 @media (max-width: 540px) {
   :root {
     --section-space: 64px;

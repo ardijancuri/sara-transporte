@@ -168,7 +168,12 @@ export function HomePage() {
               </Link>
             </Reveal>
 
-            <div className="service-grid">
+            <div
+              className="service-grid"
+              role="region"
+              aria-label="Unsere Leistungen"
+              tabIndex={0}
+            >
               {services.map((service, index) => {
                 const ServiceIcon = serviceIcons[index];
                 return (

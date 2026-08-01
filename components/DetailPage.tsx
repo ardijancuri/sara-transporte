@@ -266,7 +266,12 @@ function ServicesContent() {
             </Link>
           </Reveal>
 
-          <div className="service-grid services-page-grid">
+          <div
+            className="service-grid services-page-grid"
+            role="region"
+            aria-label="Unsere Leistungen"
+            tabIndex={0}
+          >
             {[...services, ...extraServices].map((service, index) => {
               const ServiceIcon = detailServiceIcons[index];
               return (
