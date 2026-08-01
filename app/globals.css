@@ -544,7 +544,7 @@ h3 {
 }
 
 .hero-media-home {
-  background: url("/assets/hero/sara-truck-alpine-hero.webp") center 56% / cover no-repeat;
+  background: url("/assets/hero/sara-fleet-hero-enhanced.webp") center 54% / cover no-repeat;
 }
 
 .hero-shade {
@@ -557,8 +557,10 @@ h3 {
 }
 
 .hero-home .hero-shade {
-  background: #000;
-  opacity: 0.32;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.3) 52%, rgba(0, 0, 0, 0.12) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.42) 0%, transparent 60%);
+  opacity: 1;
 }
 
 .hero-content {
