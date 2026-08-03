@@ -3057,7 +3057,7 @@ a.contact-channel:hover .contact-channel-icon {
 
   .services-submenu-link {
     min-height: 44px;
-    padding: 10px 14px;
+    padding: 10px 14px 10px 30px;
     background: transparent;
   }
 
@@ -3679,6 +3679,10 @@ a.contact-channel:hover .contact-channel-icon {
 
   .main-nav > .main-nav-link,
   .main-nav-service-row > .main-nav-link {
+    padding-left: 28px;
+  }
+
+  .services-submenu-link {
     padding-left: 28px;
   }
 
