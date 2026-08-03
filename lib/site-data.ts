@@ -206,7 +206,7 @@ export const pages = {
     title: "Mehr Raum für eine effiziente Lieferkette.",
     intro:
       "Flexible Lager-, Fulfilment- und Umschlagslösungen an unserem Standort in Unterkirnach.",
-    image: "/assets/legacy/2023/10/w_versand_04.jpg",
+    image: "/assets/hero/warehouse-hero-enhanced.webp",
   },
   "contact-us": {
     eyebrow: "Kontakt",
