@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { IconCheck } from "@tabler/icons-react";
 import { SiteImage as Image } from "@/components/SiteImage";
 import {
   localeNames,
@@ -99,9 +98,6 @@ export function LanguageSwitcher({
             >
               <span>{localeNames[item]}</span>
               <small>{item.toUpperCase()}</small>
-              {locale === item && (
-                <IconCheck size={16} stroke={2} aria-hidden="true" />
-              )}
             </button>
           ))}
         </div>

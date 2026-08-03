@@ -2,8 +2,9 @@
 
 import { SiteImage as Image } from "@/components/SiteImage";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
+  IconChevronDown,
   IconMenu2,
   IconX,
 } from "@tabler/icons-react";
@@ -12,13 +13,23 @@ import { ActionIcon } from "@/components/ActionIcon";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { LocalizedLink as Link } from "@/components/LocalizedLink";
 import { stripLocaleFromPathname, useI18n } from "@/lib/i18n";
-import { primaryNav } from "@/lib/site-data";
+import { primaryNav, services } from "@/lib/site-data";
 
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesNavRef = useRef<HTMLDivElement>(null);
+  const servicesToggleRef = useRef<HTMLButtonElement>(null);
   const { t } = useI18n();
   const activePath = stripLocaleFromPathname(pathname ?? "/");
+  const servicesActive =
+    activePath === "/dienstleistungen" ||
+    services.some(
+      (service) =>
+        activePath === service.href ||
+        activePath.startsWith(`${service.href}/`),
+    );
 
   useEffect(() => {
     const mobileViewport = window.matchMedia("(max-width: 900px)");
@@ -38,6 +49,44 @@ export function Header() {
       document.documentElement.classList.remove("mobile-menu-open");
     };
   }, [open]);
+
+  useEffect(() => {
+    function handlePointerDown(event: PointerEvent) {
+      if (!servicesNavRef.current?.contains(event.target as Node)) {
+        setServicesOpen(false);
+      }
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key !== "Escape") return;
+
+      if (servicesOpen) {
+        setServicesOpen(false);
+        servicesToggleRef.current?.focus();
+      } else if (open) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open, servicesOpen]);
+
+  function closeNavigation() {
+    setOpen(false);
+    setServicesOpen(false);
+  }
+
+  function toggleNavigation() {
+    const nextOpen = !open;
+    setOpen(nextOpen);
+    if (!nextOpen) setServicesOpen(false);
+  }
 
   return (
     <header className="site-header">
@@ -64,7 +113,7 @@ export function Header() {
           aria-expanded={open}
           aria-controls="main-navigation"
           aria-label={open ? t("Menü schliessen") : t("Menü öffnen")}
-          onClick={() => setOpen((current) => !current)}
+          onClick={toggleNavigation}
         >
           {open ? (
             <IconX size={20} stroke={1.8} />
@@ -76,24 +125,90 @@ export function Header() {
 
       <nav
         id="main-navigation"
-        className={open ? "main-nav is-open" : "main-nav"}
+        className={`main-nav${open ? " is-open" : ""}${
+          servicesOpen ? " has-expanded-submenu" : ""
+        }`}
         aria-label={t("Hauptnavigation")}
       >
-        {primaryNav.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={`main-nav-link ${
-              activePath === item.href ||
-              (item.href !== "/" && activePath.startsWith(item.href))
-                ? "active"
-                : ""
-            }`}
-            onClick={() => setOpen(false)}
-          >
-            {t(item.label)}
-          </Link>
-        ))}
+        {primaryNav.map((item) => {
+          if (item.href !== "/dienstleistungen") {
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`main-nav-link ${
+                  activePath === item.href ||
+                  (item.href !== "/" && activePath.startsWith(item.href))
+                    ? "active"
+                    : ""
+                }`}
+                onClick={closeNavigation}
+              >
+                {t(item.label)}
+              </Link>
+            );
+          }
+
+          return (
+            <div
+              ref={servicesNavRef}
+              className={`main-nav-group main-nav-group-services${
+                servicesOpen ? " is-open" : ""
+              }`}
+              key={item.href}
+              onBlur={(event) => {
+                if (
+                  !event.currentTarget.contains(
+                    event.relatedTarget as Node | null,
+                  )
+                ) {
+                  setServicesOpen(false);
+                }
+              }}
+            >
+              <div className="main-nav-service-row">
+                <Link
+                  href={item.href}
+                  className={`main-nav-link ${servicesActive ? "active" : ""}`}
+                  onClick={closeNavigation}
+                >
+                  {t(item.label)}
+                </Link>
+                <button
+                  ref={servicesToggleRef}
+                  type="button"
+                  className="services-menu-toggle"
+                  aria-expanded={servicesOpen}
+                  aria-controls="services-navigation"
+                  aria-label={`${t(item.label)}: ${
+                    servicesOpen ? t("Menü schliessen") : t("Menü öffnen")
+                  }`}
+                  onClick={() => setServicesOpen((current) => !current)}
+                >
+                  <IconChevronDown size={16} stroke={2} aria-hidden="true" />
+                </button>
+              </div>
+
+              <div
+                id="services-navigation"
+                className="services-submenu"
+              >
+                {services.map((service) => (
+                  <Link
+                    href={service.href}
+                    className={`services-submenu-link${
+                      activePath === service.href ? " active" : ""
+                    }`}
+                    key={service.href}
+                    onClick={closeNavigation}
+                  >
+                    <strong>{t(service.title)}</strong>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          );
+        })}
 
         <div className="mobile-menu-tools">
           <a
