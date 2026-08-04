@@ -1,7 +1,6 @@
 import { LocalizedLink as Link } from "@/components/LocalizedLink";
 import { SiteImage as Image } from "@/components/SiteImage";
 import {
-  IconBrandLinkedin,
   IconMail,
   IconPhone,
   IconWorld,
@@ -98,14 +97,17 @@ export function Footer() {
 
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} Sara Transporte AG</span>
-        <a
-          href="https://www.linkedin.com/company/sara-transporte-ag/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <IconBrandLinkedin size={15} stroke={1.8} aria-hidden="true" />
-          <span>LinkedIn</span>
-        </a>
+        <span className="footer-credit">
+          Developed by{" "}
+          <a
+            className="footer-credit-link"
+            href="https://oninova.net"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Oninova
+          </a>
+        </span>
       </div>
     </footer>
   );

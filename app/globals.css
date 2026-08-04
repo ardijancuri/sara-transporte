@@ -1615,6 +1615,21 @@ h3 {
   gap: 8px;
 }
 
+.footer-bottom .footer-credit-link {
+  display: inline;
+  min-height: 0;
+  color: var(--blue-bright);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 180ms ease;
+}
+
+.footer-bottom .footer-credit-link:hover,
+.footer-bottom .footer-credit-link:focus-visible {
+  color: #ff9a57;
+}
+
 /* Detail pages */
 
 .detail-intro {
