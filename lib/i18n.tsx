@@ -83,6 +83,7 @@ const translations: Record<string, Translation> = {
   Navigation: { en: "Navigation", fr: "Navigation" },
   Leistungen: { en: "Services", fr: "Services" },
   Standorte: { en: "Locations", fr: "Sites" },
+  "Entwickelt von": { en: "Developed by", fr: "Développé par" },
   Partner: { en: "Partners", fr: "Partenaires" },
   Anfrage: { en: "Request a quote", fr: "Demande de devis" },
   "Transport anfragen": {

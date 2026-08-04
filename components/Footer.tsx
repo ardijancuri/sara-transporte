@@ -98,7 +98,7 @@ export function Footer() {
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} Sara Transporte AG</span>
         <span className="footer-credit">
-          Developed by{" "}
+          Entwickelt von{" "}
           <a
             className="footer-credit-link"
             href="https://oninova.net"
