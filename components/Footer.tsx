@@ -4,6 +4,7 @@ import {
   IconBrandLinkedin,
   IconMail,
   IconPhone,
+  IconWorld,
 } from "@tabler/icons-react";
 import { ActionIcon } from "@/components/ActionIcon";
 import { company, primaryNav, services } from "@/lib/site-data";
@@ -48,6 +49,15 @@ export function Footer() {
             <IconMail size={16} stroke={1.7} aria-hidden="true" />
             <span>{company.emailCH}</span>
           </a>
+          <a
+            className="footer-contact-link"
+            href="https://spedlogswiss.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IconWorld size={16} stroke={1.7} aria-hidden="true" />
+            <span>spedlogswiss.com</span>
+          </a>
         </div>
 
         <div>
@@ -72,7 +82,10 @@ export function Footer() {
         <div>
           <h3>Standorte</h3>
           {company.addresses.map((address) => (
-            <div className="footer-address" key={address.country}>
+            <div
+              className="footer-address"
+              key={`${address.country}-${address.company}-${address.lines[0]}`}
+            >
               <strong>{address.country}</strong>
               <span>{address.company}</span>
               {address.lines.map((line) => (

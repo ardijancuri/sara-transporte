@@ -15,6 +15,7 @@ import {
   FaWarehouse,
 } from "react-icons/fa6";
 import { ActionIcon } from "@/components/ActionIcon";
+import { CustomsSlider } from "@/components/CustomsSlider";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Reveal } from "@/components/Reveal";
@@ -24,7 +25,6 @@ import {
   pages,
   serviceExtras,
   services,
-  team,
   workflow,
   type PageSlug,
 } from "@/lib/site-data";
@@ -54,7 +54,7 @@ function CheckList({ items }: { items: string[] }) {
 function PageHero({ slug }: { slug: PageSlug }) {
   const page = pages[slug];
   return (
-    <section className="hero hero-detail">
+    <section className={`hero hero-detail hero-detail-${slug}`}>
       <div
         className="hero-media"
         style={{ backgroundImage: `url("${page.image}")` }}
@@ -78,37 +78,97 @@ function PageHero({ slug }: { slug: PageSlug }) {
 function AboutContent() {
   return (
     <>
-      <section className="section detail-intro">
+      <section className="section detail-intro about-story-intro">
         <Reveal>
           <p className="eyebrow">Unsere Geschichte</p>
-          <h2>Logistik mit Verantwortung und persönlicher Nähe.</h2>
+          <h2>Über Sara Transporte AG</h2>
         </Reveal>
         <Reveal className="prose-columns" delay={80}>
           <div>
             <p>
-              Sara Transporte AG wurde 2014 als familiengeführtes Unternehmen
-              in der Schweiz gegründet. Langjährige Erfahrung in Logistik und
-              Spedition, ein engagiertes Team sowie starke Kunden- und
-              Partnerbeziehungen liessen das Unternehmen rasch wachsen.
+              Die Sara Transporte AG wurde im Jahr 2014 als familiengeführtes
+              Transportunternehmen in der Schweiz gegründet. Von Beginn an
+              verfolgten wir eine klare Vision: unseren Kunden sämtliche
+              Logistikdienstleistungen aus einer Hand anzubieten – von der
+              Abholung der Ware über die Verzollung bis hin zur termingerechten
+              Auslieferung. Dieses Konzept bildet bis heute die Grundlage
+              unseres Handelns und hat massgeblich zu unserem kontinuierlichen
+              Wachstum beigetragen.
             </p>
             <p>
-              Am Hauptsitz in Döttingen wird der gesamte Fuhrpark disponiert
-              und koordiniert. Unser Team betreut Kunden rund um die Uhr und
-              garantiert dadurch eine schnelle, verlässliche Abwicklung.
+              Dank langjähriger Erfahrung in den Bereichen Transport, Logistik
+              und Zollabwicklung, einem engagierten Team sowie vertrauensvollen
+              und langfristigen Kunden- und Partnerbeziehungen entwickelte sich
+              die Sara Transporte AG innerhalb weniger Jahre zu einem
+              leistungsstarken Logistikdienstleister mit europaweiter
+              Ausrichtung.
+            </p>
+            <p>
+              An unserem Hauptsitz in Döttingen (Schweiz) werden sämtliche
+              Transporte disponiert und koordiniert. Unser erfahrenes
+              Dispositionsteam steht unseren Kunden täglich zur Verfügung und
+              sorgt für eine schnelle, flexible und zuverlässige Abwicklung
+              ihrer Transportaufträge.
+            </p>
+            <p>
+              Die technische Betreuung unseres stetig wachsenden Fuhrparks
+              erfolgt an unserem Standort in Möhlin. Dort kümmern sich unsere
+              eigenen Werkstattleiter und Mechaniker um Wartung, Reparaturen und
+              die laufende Instandhaltung unserer Fahrzeuge. Dadurch
+              gewährleisten wir höchste Zuverlässigkeit und Einsatzbereitschaft
+              unserer Flotte.
+            </p>
+            <p>
+              Mit der Gründung unseres deutschen Schwesterunternehmens in
+              Waldshut-Tiengen im Jahr 2019 konnten wir unsere Präsenz im
+              grenznahen Raum weiter ausbauen und unseren Kunden umfassende
+              Verzollungsdienstleistungen sowie eine noch effizientere Betreuung
+              im deutsch-schweizerischen Warenverkehr anbieten.
             </p>
           </div>
           <div>
             <p>
-              In Möhlin wird der Fuhrpark durch unsere eigenen Werkstattleiter
-              und Mechaniker geprüft und gewartet. Seit 2019 betreut unser
-              Schwesterunternehmen in Waldshut-Tiengen deutsche Kunden und
-              übernimmt grenznahe Verzollungsdienstleistungen.
+              Ein weiterer wichtiger Meilenstein folgte im Jahr 2020 mit der
+              Eröffnung unseres Zollbüros direkt am Zollhof in Weil am Rhein.
+              Dieser strategisch optimale Standort ermöglicht es uns, die
+              täglichen Import- und Exportverzollungen für unsere Kunden mit
+              eigenem Fachpersonal durchzuführen. Durch unsere eigenen Zollbüros
+              sind wir unabhängig von externen Dienstleistern und können
+              Verzollungen schnell, flexibel und effizient abwickeln.
             </p>
             <p>
-              Mit dem Standort Durham stärken wir seit 2021 den Linienverkehr
-              von und nach Grossbritannien. Unser Lager in Unterkirnach
-              erweitert die Gruppe um flexible Lager- und
-              Kommissionierungslösungen.
+              Seit 2021 verfügen wir zudem über einen eigenen Standort in Durham
+              (Grossbritannien). Dadurch konnten wir unsere Transportlösungen im
+              Verkehr zwischen Grossbritannien und Europa weiter ausbauen und
+              bieten unseren Kunden auch nach dem Brexit einen zuverlässigen
+              und professionellen Service im Import- und Exportgeschäft.
+            </p>
+            <p>
+              Ein weiterer zentraler Bestandteil unserer Unternehmensgruppe ist
+              unser eigenes Logistikzentrum in Unterkirnach. Seit über vier
+              Jahren stehen dort mehr als 2&apos;500 m² Lagerfläche sowie rund
+              10&apos;000 m² Grundstücksfläche für Lagerung, Kommissionierung,
+              Umschlag und individuelle Logistiklösungen zur Verfügung. Damit
+              bieten wir unseren Kunden flexible Lagerkapazitäten und können
+              auch komplexe Logistikprozesse effizient aus einer Hand
+              übernehmen.
+            </p>
+            <p>
+              Heute zählt die SARA Transporte AG zu den wenigen Schweizer
+              Transport- und Logistikunternehmen, die sämtliche Kernleistungen
+              mit eigenen Ressourcen erbringen. Mit über 120 eigenen Lastwagen,
+              eigenen Zollbüros, eigenen Lagerkapazitäten und einem europaweiten
+              Partnernetzwerk bieten wir unseren Kunden individuelle Transport-
+              und Logistiklösungen auf höchstem Niveau.
+            </p>
+            <p>
+              Trotz unseres kontinuierlichen Wachstums sind wir unseren Werten
+              treu geblieben: Als familiengeführtes Unternehmen stehen wir für
+              persönliche Betreuung, flache Hierarchien, kurze Entscheidungswege
+              und langfristige Partnerschaften. Unser Ziel ist es, für unsere
+              Kunden nicht nur ein Transportdienstleister, sondern ein
+              verlässlicher Logistikpartner zu sein, der Qualität, Flexibilität
+              und Zuverlässigkeit miteinander verbindet.
             </p>
           </div>
         </Reveal>
@@ -156,24 +216,56 @@ function AboutContent() {
         </Reveal>
       </section>
 
-      <section className="section team-section">
+      <section className="section heritage-section">
         <Reveal className="section-heading">
           <div>
-            <p className="eyebrow">Unser Team</p>
-            <h2>Menschen, die Ihre Sendung begleiten.</h2>
+            <p className="eyebrow">Unsere Wurzeln</p>
+            <h2>Mit Herzblut auf Europas Strassen.</h2>
           </div>
         </Reveal>
-        <div className="team-roster">
-          {team.map(([name, role], index) => (
-            <Reveal className="team-member" key={name} delay={(index % 4) * 50}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <div>
-                <h3>{name}</h3>
-                <p>{role}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal className="heritage-image" delay={70}>
+          <Image
+            src="/assets/editorial/company-history.webp"
+            alt="Historische Lastwagen und die Entwicklung der Sara Transporte AG"
+            width={1666}
+            height={944}
+            sizes="(max-width: 900px) calc(100vw - 36px), 1320px"
+          />
+        </Reveal>
+        <Reveal className="heritage-copy" delay={120}>
+          <div>
+            <p>
+              Bereits Anfang der 2000er-Jahre war unsere Familie auf den Strassen
+              Europas unterwegs. Damals gehörten vor allem Transporte in den
+              Balkan zu unserem Alltag – viele erinnern sich noch an die Zeit,
+              als wir die grossen, schweren Röhrenfernseher und andere Stückgüter
+              zuverlässig zu ihren Empfängern brachten.
+            </p>
+            <p>
+              Auf dem Bild zu sehen sind einige unserer ersten Lastwagen, unser
+              damaliges Logo und unser Gründer Sadik Alijovi. Es sind Erinnerungen
+              an eine Zeit, in der harte Arbeit, lange Nächte und unzählige
+              Kilometer den Grundstein für das legten, was die Sara Transporte AG
+              heute ist.
+            </p>
+          </div>
+          <div>
+            <p>
+              Transport war für uns nie einfach nur ein Beruf. Es war und ist
+              eine Leidenschaft, die unsere Familie seit Generationen begleitet.
+              Die Begeisterung für Lastwagen, die Verantwortung gegenüber unseren
+              Kunden und der Stolz, jede Sendung sicher ans Ziel zu bringen,
+              gehören seit jeher zu unserer Geschichte.
+            </p>
+            <p>
+              Heute ist aus den ersten Fahrzeugen ein modernes
+              Transportunternehmen mit über 130 Mitarbeitenden, einem eigenen
+              Fuhrpark, eigenen Zollbüros und eigenen Logistikstandorten geworden.
+              Doch eines hat sich bis heute nicht verändert: Wir machen unseren
+              Beruf mit Herzblut.
+            </p>
+          </div>
+        </Reveal>
       </section>
     </>
   );
@@ -432,7 +524,11 @@ function LandTransportContent() {
 }
 
 function CustomsContent() {
-  const groups = [
+  const groups: Array<{
+    title: string;
+    items?: string[];
+    description?: string;
+  }> = [
     {
       title: "Ausfuhrabfertigungen",
       items: [
@@ -460,18 +556,74 @@ function CustomsContent() {
         "Verzollung für Privatpersonen",
       ],
     },
+    {
+      title: "Zollabfertigung",
+      description:
+        "Wir übernehmen die komplette Zollabwicklung schnell, zuverlässig und effizient.",
+    },
+    {
+      title: "Import- und Exportabwicklung",
+      description:
+        "Professionelle Abwicklung aller Import- und Exportprozesse – von der Anmeldung bis zur Freigabe.",
+    },
+    {
+      title: "Zollanmeldungen",
+      description:
+        "Erstellung und Übermittlung aller erforderlichen Zollanmeldungen für Ihre Waren.",
+    },
+    {
+      title: "Tarifierung von Waren",
+      description:
+        "Fachgerechte Einreihung Ihrer Waren nach den geltenden Zolltarifen.",
+    },
+    {
+      title: "Ursprungsnachweise",
+      description:
+        "Erstellung von Ursprungszeugnissen und Präferenznachweisen für den internationalen Handel.",
+    },
+    {
+      title: "Zollberatung",
+      description:
+        "Kompetente Beratung zu Zollvorschriften, Verfahren und internationalen Handelsbestimmungen.",
+    },
+    {
+      title: "Transitverfahren",
+      description:
+        "Abwicklung nationaler und internationaler Transitverfahren inklusive aller notwendigen Dokumente.",
+    },
+    {
+      title: "Einfuhrabgaben berechnen",
+      description:
+        "Präzise Berechnung von Zöllen, Steuern und weiteren Einfuhrabgaben.",
+    },
+    {
+      title: "Zollbewilligungen",
+      description:
+        "Unterstützung bei der Beantragung von Zollbewilligungen und den erforderlichen Unterlagen.",
+    },
   ];
   return (
     <>
-      <section className="section customs-groups">
+      <CustomsSlider>
         {groups.map((group, index) => (
-          <Reveal key={group.title} delay={index * 70}>
-            <span>0{index + 1}</span>
+          <Reveal
+            className={
+              group.items
+                ? "customs-card customs-card-detailed"
+                : "customs-card"
+            }
+            key={group.title}
+            delay={(index % 3) * 70}
+          >
+            <span>{String(index + 1).padStart(2, "0")}</span>
             <h2>{group.title}</h2>
-            <CheckList items={group.items} />
+            {group.items ? <CheckList items={group.items} /> : null}
+            {group.description ? (
+              <p className="customs-card-description">{group.description}</p>
+            ) : null}
           </Reveal>
         ))}
-      </section>
+      </CustomsSlider>
       <section className="section offices-panel">
         <Reveal className="offices-copy">
           <p className="eyebrow eyebrow-light">Verzollungsstandorte</p>
@@ -500,34 +652,6 @@ function CustomsContent() {
               zoll@sara-transporte.de
             </a>
           </Reveal>
-        </div>
-      </section>
-      <section className="section customs-partners">
-        <Reveal className="section-heading">
-          <div>
-            <p className="eyebrow">Partnernetzwerk</p>
-            <h2>Zollkompetenz über Grenzen hinweg.</h2>
-          </div>
-        </Reveal>
-        <div className="compact-columns">
-          <div>
-            <span>Niederlande</span>
-            <h3>Customs Support</h3>
-            <p>Marketing 19, NL-6921 RE Duiven</p>
-            <p>+31 26 370 8622</p>
-          </div>
-          <div>
-            <span>Belgien</span>
-            <h3>Customs Support</h3>
-            <p>Nicolaasstraat – Haven 1147, BE-9130 Kallo-Beveren</p>
-            <p>+32 3 750 33 60</p>
-          </div>
-          <div>
-            <span>Grossbritannien</span>
-            <h3>Martintrux Group Ltd.</h3>
-            <p>Lord Warden House, GB-CT17 9EQ Dover</p>
-            <p>+44 130 421 31 22</p>
-          </div>
         </div>
       </section>
     </>
@@ -748,12 +872,15 @@ function ContactContent() {
         <Reveal className="section-heading">
           <div>
             <p className="eyebrow">Standorte</p>
-            <h2>Drei Standorte. Ein direkter Draht.</h2>
+            <h2>Fünf Standorte. Ein direkter Draht.</h2>
           </div>
         </Reveal>
         <div className="address-grid">
           {company.addresses.map((address, index) => (
-            <Reveal key={address.country} delay={index * 80}>
+            <Reveal
+              key={`${address.country}-${address.company}-${address.lines[0]}`}
+              delay={index * 80}
+            >
               <span className="address-card-top">
                 <FaLocationDot size={46} aria-hidden="true" />
               </span>
@@ -778,13 +905,13 @@ function BlogContent() {
       tag: "Gründung · 2014",
       title: "Ein Familienunternehmen nimmt Fahrt auf.",
       text: "In Döttingen beginnt Sara Transporte mit klarer Mission: verlässliche Logistik, persönlich geführt.",
-      image: "/assets/legacy/2023/10/image00012.jpeg",
+      image: "/assets/editorial/journey-alpine-truck.webp",
     },
     {
       tag: "Expansion · 2019",
       title: "Grenznahe Zollkompetenz in Deutschland.",
       text: "Der Standort Waldshut-Tiengen schafft direkte Wege für deutsche Kunden und Zollabwicklung.",
-      image: "/assets/legacy/2023/10/image00164.jpeg",
+      image: "/assets/editorial/journey-red-truck.webp",
     },
     {
       tag: "Grossbritannien · 2021",

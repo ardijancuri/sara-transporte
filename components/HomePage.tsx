@@ -56,41 +56,6 @@ export function HomePage() {
           </div>
         </section>
 
-        <section className="partner-strip" aria-label="Partner">
-          <Image
-            className="partner-logo partner-logo-vdh"
-            src="/assets/partners/van-der-heijden.png"
-            alt="Van der Heijden Transport & Logistiek"
-            width={1119}
-            height={234}
-            sizes="(max-width: 600px) 70vw, 220px"
-          />
-          <Image
-            className="partner-logo partner-logo-priority"
-            src="/assets/partners/priority-freight.png"
-            alt="Priority Freight"
-            width={370}
-            height={173}
-            sizes="(max-width: 600px) 42vw, 170px"
-          />
-          <Image
-            className="partner-logo partner-logo-martin"
-            src="/assets/partners/martintrux.png"
-            alt="Martintrux"
-            width={412}
-            height={110}
-            sizes="(max-width: 600px) 42vw, 200px"
-          />
-          <Image
-            className="partner-logo partner-logo-spedlog"
-            src="/assets/partners/spedlogswiss.png"
-            alt="Spedlogswiss"
-            width={817}
-            height={91}
-            sizes="(max-width: 600px) 70vw, 225px"
-          />
-        </section>
-
         <section className="section intro-section" id="intro">
           <Reveal className="intro-heading">
             <p className="eyebrow">Unsere Erfahrung</p>
@@ -185,7 +150,11 @@ export function HomePage() {
                       <p>{service.short}</p>
                       <div className="service-card-image">
                         <Image
-                          src={service.image}
+                          src={
+                            service.href === "/zollabwicklung"
+                              ? "/assets/editorial/customs-clearance.webp"
+                              : service.image
+                          }
                           alt=""
                           fill
                           sizes="(max-width: 600px) calc(100vw - 56px), (max-width: 900px) 44vw, 24vw"
@@ -326,20 +295,22 @@ export function HomePage() {
           <div className="story-grid">
             <Reveal className="story-item">
               <Image
-                src="/assets/legacy/2023/10/image00012.jpeg"
+                src="/assets/editorial/journey-alpine-truck.webp"
                 alt="Sara Transporte LKW in der Schweiz"
-                width={760}
-                height={620}
+                width={1600}
+                height={1200}
+                sizes="(max-width: 900px) calc(100vw - 36px), 32vw"
               />
               <span>2014 · Döttingen</span>
               <h3>Als Familienunternehmen gestartet.</h3>
             </Reveal>
             <Reveal className="story-item" delay={90}>
               <Image
-                src="/assets/legacy/2023/10/image00164.jpeg"
+                src="/assets/editorial/journey-red-truck.webp"
                 alt="Sara Transporte am Logistikstandort"
-                width={760}
-                height={620}
+                width={1600}
+                height={1200}
+                sizes="(max-width: 900px) calc(100vw - 36px), 32vw"
               />
               <span>2019 · Waldshut-Tiengen</span>
               <h3>Mit eigenem Zollteam über die Grenze gewachsen.</h3>

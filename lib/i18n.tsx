@@ -453,6 +453,50 @@ const translations: Record<string, Translation> = {
   },
 
   "Unsere Geschichte": { en: "Our story", fr: "Notre histoire" },
+  "Über Sara Transporte AG": {
+    en: "About Sara Transporte AG",
+    fr: "À propos de Sara Transporte AG",
+  },
+  "Die Sara Transporte AG wurde im Jahr 2014 als familiengeführtes Transportunternehmen in der Schweiz gegründet. Von Beginn an verfolgten wir eine klare Vision: unseren Kunden sämtliche Logistikdienstleistungen aus einer Hand anzubieten – von der Abholung der Ware über die Verzollung bis hin zur termingerechten Auslieferung. Dieses Konzept bildet bis heute die Grundlage unseres Handelns und hat massgeblich zu unserem kontinuierlichen Wachstum beigetragen.": {
+    en: "Sara Transporte AG was founded in Switzerland in 2014 as a family-run transport company. From the outset, we pursued a clear vision: to offer our customers every logistics service from a single source – from collecting the goods and handling customs clearance to delivering them on time. This concept remains the foundation of our work and has played a key role in our continuous growth.",
+    fr: "Sara Transporte AG a été fondée en Suisse en 2014 en tant qu’entreprise de transport familiale. Dès le départ, nous avons poursuivi une vision claire : proposer à nos clients l’ensemble des services logistiques auprès d’un seul partenaire, de l’enlèvement des marchandises au dédouanement, jusqu’à la livraison dans les délais. Ce concept reste aujourd’hui encore le fondement de notre activité et a largement contribué à notre croissance continue.",
+  },
+  "Dank langjähriger Erfahrung in den Bereichen Transport, Logistik und Zollabwicklung, einem engagierten Team sowie vertrauensvollen und langfristigen Kunden- und Partnerbeziehungen entwickelte sich die Sara Transporte AG innerhalb weniger Jahre zu einem leistungsstarken Logistikdienstleister mit europaweiter Ausrichtung.": {
+    en: "Thanks to many years of experience in transport, logistics and customs clearance, a dedicated team, and trusted long-term relationships with customers and partners, Sara Transporte AG developed within just a few years into a highly capable logistics provider with a Europe-wide focus.",
+    fr: "Grâce à de nombreuses années d’expérience dans le transport, la logistique et le dédouanement, à une équipe engagée ainsi qu’à des relations de confiance durables avec nos clients et partenaires, Sara Transporte AG est devenue en quelques années un prestataire logistique performant à l’échelle européenne.",
+  },
+  "An unserem Hauptsitz in Döttingen (Schweiz) werden sämtliche Transporte disponiert und koordiniert. Unser erfahrenes Dispositionsteam steht unseren Kunden täglich zur Verfügung und sorgt für eine schnelle, flexible und zuverlässige Abwicklung ihrer Transportaufträge.": {
+    en: "All transport operations are dispatched and coordinated from our headquarters in Döttingen, Switzerland. Our experienced dispatch team is available to customers every day and ensures that their transport orders are handled quickly, flexibly and reliably.",
+    fr: "Tous les transports sont planifiés et coordonnés depuis notre siège de Döttingen, en Suisse. Notre équipe d’exploitation expérimentée est chaque jour à la disposition de nos clients et assure un traitement rapide, flexible et fiable de leurs missions de transport.",
+  },
+  "Die technische Betreuung unseres stetig wachsenden Fuhrparks erfolgt an unserem Standort in Möhlin. Dort kümmern sich unsere eigenen Werkstattleiter und Mechaniker um Wartung, Reparaturen und die laufende Instandhaltung unserer Fahrzeuge. Dadurch gewährleisten wir höchste Zuverlässigkeit und Einsatzbereitschaft unserer Flotte.": {
+    en: "Our steadily growing fleet receives technical support at our Möhlin location. There, our own workshop managers and mechanics take care of maintenance, repairs and the ongoing upkeep of our vehicles. This ensures the highest levels of reliability and fleet availability.",
+    fr: "Le suivi technique de notre flotte en constante expansion est assuré sur notre site de Möhlin. Nos propres responsables d’atelier et mécaniciens y prennent en charge l’entretien, les réparations et la maintenance continue de nos véhicules. Nous garantissons ainsi une fiabilité et une disponibilité maximales de notre flotte.",
+  },
+  "Mit der Gründung unseres deutschen Schwesterunternehmens in Waldshut-Tiengen im Jahr 2019 konnten wir unsere Präsenz im grenznahen Raum weiter ausbauen und unseren Kunden umfassende Verzollungsdienstleistungen sowie eine noch effizientere Betreuung im deutsch-schweizerischen Warenverkehr anbieten.": {
+    en: "The founding of our German sister company in Waldshut-Tiengen in 2019 enabled us to expand our presence near the border and offer customers comprehensive customs clearance services and even more efficient support for goods moving between Germany and Switzerland.",
+    fr: "La création de notre société sœur allemande à Waldshut-Tiengen en 2019 nous a permis de renforcer notre présence dans la région frontalière et de proposer à nos clients des services complets de dédouanement ainsi qu’un accompagnement encore plus efficace des flux de marchandises entre l’Allemagne et la Suisse.",
+  },
+  "Ein weiterer wichtiger Meilenstein folgte im Jahr 2020 mit der Eröffnung unseres Zollbüros direkt am Zollhof in Weil am Rhein. Dieser strategisch optimale Standort ermöglicht es uns, die täglichen Import- und Exportverzollungen für unsere Kunden mit eigenem Fachpersonal durchzuführen. Durch unsere eigenen Zollbüros sind wir unabhängig von externen Dienstleistern und können Verzollungen schnell, flexibel und effizient abwickeln.": {
+    en: "Another important milestone followed in 2020 with the opening of our customs office directly at the customs yard in Weil am Rhein. This strategically ideal location allows our own specialists to handle customers’ daily import and export clearances. With customs offices of our own, we remain independent of external service providers and can process clearances quickly, flexibly and efficiently.",
+    fr: "Une nouvelle étape importante a été franchie en 2020 avec l’ouverture de notre bureau de douane directement sur le site douanier de Weil am Rhein. Cet emplacement stratégique optimal permet à nos propres spécialistes d’effectuer chaque jour les dédouanements import et export de nos clients. Grâce à nos bureaux de douane, nous sommes indépendants des prestataires externes et pouvons traiter les formalités rapidement, avec flexibilité et efficacité.",
+  },
+  "Seit 2021 verfügen wir zudem über einen eigenen Standort in Durham (Grossbritannien). Dadurch konnten wir unsere Transportlösungen im Verkehr zwischen Grossbritannien und Europa weiter ausbauen und bieten unseren Kunden auch nach dem Brexit einen zuverlässigen und professionellen Service im Import- und Exportgeschäft.": {
+    en: "Since 2021, we have also operated our own location in Durham, United Kingdom. This has enabled us to further expand transport solutions between the United Kingdom and Europe and to continue offering customers reliable, professional import and export services after Brexit.",
+    fr: "Depuis 2021, nous disposons également de notre propre site à Durham, au Royaume-Uni. Nous avons ainsi pu développer davantage nos solutions de transport entre le Royaume-Uni et l’Europe et continuons à proposer à nos clients un service fiable et professionnel pour leurs opérations d’importation et d’exportation après le Brexit.",
+  },
+  "Ein weiterer zentraler Bestandteil unserer Unternehmensgruppe ist unser eigenes Logistikzentrum in Unterkirnach. Seit über vier Jahren stehen dort mehr als 2'500 m² Lagerfläche sowie rund 10'000 m² Grundstücksfläche für Lagerung, Kommissionierung, Umschlag und individuelle Logistiklösungen zur Verfügung. Damit bieten wir unseren Kunden flexible Lagerkapazitäten und können auch komplexe Logistikprozesse effizient aus einer Hand übernehmen.": {
+    en: "Another central part of our group is our own logistics centre in Unterkirnach. For more than four years, it has provided over 2,500 m² of warehouse space on a site of around 10,000 m² for storage, order picking, transshipment and tailored logistics solutions. This gives our customers flexible storage capacity and allows us to manage even complex logistics processes efficiently from a single source.",
+    fr: "Notre propre centre logistique d’Unterkirnach constitue un autre pilier essentiel de notre groupe. Depuis plus de quatre ans, il met à disposition plus de 2 500 m² d’espace d’entreposage sur un terrain d’environ 10 000 m² pour le stockage, la préparation de commandes, le transbordement et des solutions logistiques personnalisées. Nous offrons ainsi à nos clients des capacités flexibles et pouvons prendre en charge efficacement des processus logistiques complexes auprès d’un seul partenaire.",
+  },
+  "Heute zählt die SARA Transporte AG zu den wenigen Schweizer Transport- und Logistikunternehmen, die sämtliche Kernleistungen mit eigenen Ressourcen erbringen. Mit über 120 eigenen Lastwagen, eigenen Zollbüros, eigenen Lagerkapazitäten und einem europaweiten Partnernetzwerk bieten wir unseren Kunden individuelle Transport- und Logistiklösungen auf höchstem Niveau.": {
+    en: "Today, SARA Transporte AG is one of the few Swiss transport and logistics companies to provide every core service with its own resources. With more than 120 trucks of our own, our own customs offices and warehouse capacity, and a Europe-wide partner network, we offer customers tailored transport and logistics solutions at the highest level.",
+    fr: "Aujourd’hui, SARA Transporte AG compte parmi les rares entreprises suisses de transport et de logistique à assurer l’ensemble de leurs prestations essentielles avec leurs propres ressources. Avec plus de 120 camions, nos propres bureaux de douane et capacités d’entreposage ainsi qu’un réseau de partenaires dans toute l’Europe, nous proposons à nos clients des solutions de transport et de logistique personnalisées au plus haut niveau.",
+  },
+  "Trotz unseres kontinuierlichen Wachstums sind wir unseren Werten treu geblieben: Als familiengeführtes Unternehmen stehen wir für persönliche Betreuung, flache Hierarchien, kurze Entscheidungswege und langfristige Partnerschaften. Unser Ziel ist es, für unsere Kunden nicht nur ein Transportdienstleister, sondern ein verlässlicher Logistikpartner zu sein, der Qualität, Flexibilität und Zuverlässigkeit miteinander verbindet.": {
+    en: "Despite our continuous growth, we have remained true to our values. As a family-run company, we stand for personal service, flat hierarchies, short decision paths and long-term partnerships. Our goal is to be more than a transport provider for our customers: we aim to be a reliable logistics partner that combines quality, flexibility and dependability.",
+    fr: "Malgré notre croissance continue, nous sommes restés fidèles à nos valeurs. En tant qu’entreprise familiale, nous défendons un accompagnement personnalisé, une hiérarchie horizontale, des décisions rapides et des partenariats durables. Notre objectif est d’être pour nos clients non seulement un transporteur, mais aussi un partenaire logistique fiable qui conjugue qualité, flexibilité et fiabilité.",
+  },
   "Logistik mit Verantwortung und persönlicher Nähe.": {
     en: "Responsible logistics with a personal touch.",
     fr: "Une logistique responsable et proche de vous.",
@@ -516,6 +560,31 @@ const translations: Record<string, Translation> = {
   "Menschen, die Ihre Sendung begleiten.": {
     en: "People who look after your shipment.",
     fr: "Des personnes qui veillent sur votre envoi.",
+  },
+  "Unsere Wurzeln": { en: "Our roots", fr: "Nos racines" },
+  "Mit Herzblut auf Europas Strassen.": {
+    en: "Driven by passion on Europe’s roads.",
+    fr: "La passion au cœur des routes européennes.",
+  },
+  "Bereits Anfang der 2000er-Jahre war unsere Familie auf den Strassen Europas unterwegs. Damals gehörten vor allem Transporte in den Balkan zu unserem Alltag – viele erinnern sich noch an die Zeit, als wir die grossen, schweren Röhrenfernseher und andere Stückgüter zuverlässig zu ihren Empfängern brachten.": {
+    en: "Our family was already travelling Europe’s roads in the early 2000s. At the time, transport to the Balkans was a major part of our daily work – many still remember when we reliably delivered large, heavy tube televisions and other groupage goods to their recipients.",
+    fr: "Dès le début des années 2000, notre famille sillonnait déjà les routes d’Europe. À l’époque, les transports vers les Balkans faisaient partie de notre quotidien. Beaucoup se souviennent encore du temps où nous livrions de manière fiable les grands et lourds téléviseurs à tube ainsi que d’autres marchandises de groupage à leurs destinataires.",
+  },
+  "Auf dem Bild zu sehen sind einige unserer ersten Lastwagen, unser damaliges Logo und unser Gründer Sadik Alijovi. Es sind Erinnerungen an eine Zeit, in der harte Arbeit, lange Nächte und unzählige Kilometer den Grundstein für das legten, was die Sara Transporte AG heute ist.": {
+    en: "The image shows some of our first trucks, our logo at the time, and our founder Sadik Alijovi. These are memories of an era when hard work, long nights and countless kilometres laid the foundations for what Sara Transporte AG is today.",
+    fr: "L’image montre quelques-uns de nos premiers camions, notre logo de l’époque et notre fondateur Sadik Alijovi. Elle rappelle une période où le travail acharné, les longues nuits et d’innombrables kilomètres ont posé les bases de ce qu’est aujourd’hui Sara Transporte AG.",
+  },
+  "Transport war für uns nie einfach nur ein Beruf. Es war und ist eine Leidenschaft, die unsere Familie seit Generationen begleitet. Die Begeisterung für Lastwagen, die Verantwortung gegenüber unseren Kunden und der Stolz, jede Sendung sicher ans Ziel zu bringen, gehören seit jeher zu unserer Geschichte.": {
+    en: "For us, transport has never simply been a job. It was and remains a passion that has accompanied our family for generations. Our enthusiasm for trucks, our responsibility to customers, and the pride we take in delivering every shipment safely have always been part of our story.",
+    fr: "Pour nous, le transport n’a jamais été un simple métier. C’était et cela reste une passion qui accompagne notre famille depuis des générations. L’enthousiasme pour les camions, la responsabilité envers nos clients et la fierté de livrer chaque envoi à destination en toute sécurité font depuis toujours partie de notre histoire.",
+  },
+  "Heute ist aus den ersten Fahrzeugen ein modernes Transportunternehmen mit über 130 Mitarbeitenden, einem eigenen Fuhrpark, eigenen Zollbüros und eigenen Logistikstandorten geworden. Doch eines hat sich bis heute nicht verändert: Wir machen unseren Beruf mit Herzblut.": {
+    en: "Those first vehicles have since grown into a modern transport company with more than 130 employees, its own fleet, its own customs offices and its own logistics locations. Yet one thing remains unchanged: we put our heart into our work.",
+    fr: "À partir de ces premiers véhicules est née une entreprise de transport moderne comptant plus de 130 collaborateurs, sa propre flotte, ses propres bureaux de douane et ses propres sites logistiques. Une chose n’a toutefois jamais changé : nous exerçons notre métier avec passion.",
+  },
+  "Historische Lastwagen und die Entwicklung der Sara Transporte AG": {
+    en: "Historic trucks and the development of Sara Transporte AG",
+    fr: "Camions historiques et évolution de Sara Transporte AG",
   },
   "Zertifizierte Prozesse": { en: "Certified processes", fr: "Processus certifiés" },
   "Dokumentiert. Geprüft. Verlässlich.": {
@@ -618,6 +687,72 @@ const translations: Record<string, Translation> = {
     en: "Customs clearance for private individuals",
     fr: "Dédouanement pour les particuliers",
   },
+  Zollabfertigung: { en: "Customs clearance", fr: "Dédouanement" },
+  "Wir übernehmen die komplette Zollabwicklung schnell, zuverlässig und effizient.": {
+    en: "We handle the entire customs clearance process quickly, reliably and efficiently.",
+    fr: "Nous prenons en charge l’ensemble du dédouanement de manière rapide, fiable et efficace.",
+  },
+  "Import- und Exportabwicklung": {
+    en: "Import and export processing",
+    fr: "Traitement des importations et exportations",
+  },
+  "Professionelle Abwicklung aller Import- und Exportprozesse – von der Anmeldung bis zur Freigabe.": {
+    en: "Professional handling of every import and export process – from declaration through to release.",
+    fr: "Traitement professionnel de tous les processus d’importation et d’exportation, de la déclaration jusqu’à la mainlevée.",
+  },
+  Zollanmeldungen: {
+    en: "Customs declarations",
+    fr: "Déclarations en douane",
+  },
+  "Erstellung und Übermittlung aller erforderlichen Zollanmeldungen für Ihre Waren.": {
+    en: "Preparation and submission of all customs declarations required for your goods.",
+    fr: "Préparation et transmission de toutes les déclarations en douane requises pour vos marchandises.",
+  },
+  "Tarifierung von Waren": {
+    en: "Goods tariff classification",
+    fr: "Classement tarifaire des marchandises",
+  },
+  "Fachgerechte Einreihung Ihrer Waren nach den geltenden Zolltarifen.": {
+    en: "Professional classification of your goods under the applicable customs tariffs.",
+    fr: "Classement professionnel de vos marchandises selon les tarifs douaniers applicables.",
+  },
+  Ursprungsnachweise: {
+    en: "Proof of origin",
+    fr: "Preuves d’origine",
+  },
+  "Erstellung von Ursprungszeugnissen und Präferenznachweisen für den internationalen Handel.": {
+    en: "Preparation of certificates of origin and preferential origin documents for international trade.",
+    fr: "Établissement de certificats d’origine et de justificatifs d’origine préférentielle pour le commerce international.",
+  },
+  Zollberatung: { en: "Customs consulting", fr: "Conseil douanier" },
+  "Kompetente Beratung zu Zollvorschriften, Verfahren und internationalen Handelsbestimmungen.": {
+    en: "Expert advice on customs regulations, procedures and international trade requirements.",
+    fr: "Conseils spécialisés sur les réglementations douanières, les procédures et les règles du commerce international.",
+  },
+  Transitverfahren: {
+    en: "Transit procedures",
+    fr: "Procédures de transit",
+  },
+  "Abwicklung nationaler und internationaler Transitverfahren inklusive aller notwendigen Dokumente.": {
+    en: "Handling of national and international transit procedures, including all required documents.",
+    fr: "Traitement des procédures de transit nationales et internationales, y compris tous les documents nécessaires.",
+  },
+  "Einfuhrabgaben berechnen": {
+    en: "Calculate import duties",
+    fr: "Calcul des droits à l’importation",
+  },
+  "Präzise Berechnung von Zöllen, Steuern und weiteren Einfuhrabgaben.": {
+    en: "Precise calculation of customs duties, taxes and other import charges.",
+    fr: "Calcul précis des droits de douane, taxes et autres prélèvements à l’importation.",
+  },
+  Zollbewilligungen: {
+    en: "Customs authorisations",
+    fr: "Autorisations douanières",
+  },
+  "Unterstützung bei der Beantragung von Zollbewilligungen und den erforderlichen Unterlagen.": {
+    en: "Support with customs authorisation applications and the required documentation.",
+    fr: "Assistance pour les demandes d’autorisations douanières et la préparation des documents requis.",
+  },
   Verzollungsstandorte: { en: "Customs locations", fr: "Sites de dédouanement" },
   "Direkt an der Grenze für Sie da.": {
     en: "Here for you, right at the border.",
@@ -707,9 +842,9 @@ const translations: Record<string, Translation> = {
     en: "Where can we deliver for you?",
     fr: "Où pouvons-nous livrer pour vous ?",
   },
-  "Drei Standorte. Ein direkter Draht.": {
-    en: "Three locations. One direct connection.",
-    fr: "Trois sites. Un contact direct.",
+  "Fünf Standorte. Ein direkter Draht.": {
+    en: "Five locations. One direct connection.",
+    fr: "Cinq sites. Un contact direct.",
   },
   "Gründung · 2014": { en: "Foundation · 2014", fr: "Création · 2014" },
   "Ein Familienunternehmen nimmt Fahrt auf.": {

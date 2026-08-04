@@ -795,44 +795,8 @@ h3 {
   align-items: center;
 }
 
-.partner-strip {
-  display: grid;
-  width: var(--section);
-  margin-inline: auto;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-items: center;
-  justify-items: center;
-  gap: clamp(20px, 3vw, 44px);
-  padding-block: 42px;
-}
-
-.partner-strip img {
-  width: 100%;
-  height: 50px;
-  max-width: 155px;
-  object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.72;
-}
-
-.partner-logo-vdh {
-  max-width: 180px;
-}
-
-.partner-logo-priority {
-  max-width: 145px;
-}
-
-.partner-logo-martin {
-  max-width: 165px;
-}
-
-.partner-logo-spedlog {
-  max-width: 185px;
-}
-
 .intro-section {
-  padding: clamp(24px, 2.5vw, 36px) 0 var(--section-space);
+  padding: clamp(72px, 6.5vw, 96px) 0 clamp(120px, 9vw, 148px);
 }
 
 .intro-heading {
@@ -1664,6 +1628,19 @@ h3 {
   max-width: 640px;
 }
 
+.about-story-intro {
+  grid-template-columns: 1fr;
+  gap: clamp(48px, 6vw, 82px);
+}
+
+.about-story-intro h2 {
+  max-width: 880px;
+}
+
+.about-story-intro .prose-columns {
+  gap: clamp(48px, 6vw, 82px);
+}
+
 .prose-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1811,59 +1788,38 @@ h3 {
   color: var(--ink-soft);
 }
 
-.team-section,
+.heritage-section,
 .certificates-section,
-.partner-detail,
-.customs-partners {
+.partner-detail {
   padding-bottom: 140px;
 }
 
-.team-roster {
+.heritage-image {
+  margin-top: var(--section-heading-space);
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+}
+
+.heritage-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.heritage-copy {
   display: grid;
-  margin-top: 55px;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line);
-}
-
-.team-member {
-  display: grid;
-  min-height: 130px;
-  grid-template-columns: 62px 1fr;
-  align-items: center;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  gap: 15px;
-  padding: 20px 28px 20px 20px;
-}
-
-.team-member:nth-child(3n) {
-  border-right: 0;
-}
-
-.team-member > span {
-  display: grid;
-  width: 52px;
-  height: 52px;
-  place-items: center;
-  border-radius: 50%;
-  background: #fff;
-  color: var(--ink);
-  font-size: 0.86rem;
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  line-height: 1;
-}
-
-.team-member h3 {
-  margin: 0 0 7px;
-  font-size: 1rem;
-}
-
-.team-member p {
-  margin: 0;
+  max-width: 1080px;
+  margin: 54px auto 0;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(48px, 6vw, 82px);
   color: var(--ink-soft);
-  font-size: 0.67rem;
-  text-transform: uppercase;
+  font-size: 0.96rem;
+  line-height: 1.72;
+}
+
+.heritage-copy p {
+  margin: 0 0 22px;
 }
 
 .certificates-section {
@@ -1917,8 +1873,7 @@ h3 {
 }
 
 .certificate-card span,
-.warehouse-offers > div > span,
-.compact-columns span {
+.warehouse-offers > div > span {
   color: var(--blue);
   font-size: 0.63rem;
   font-weight: 750;
@@ -2143,24 +2098,56 @@ h3 {
   gap: 18px;
 }
 
+.customs-slider-progress {
+  display: none;
+}
+
 .customs-groups > div {
+  display: flex;
   min-width: 0;
-  min-height: 480px;
+  min-height: 320px;
+  flex-direction: column;
   border-radius: var(--radius-md);
   padding: 38px;
   background: var(--white);
 }
 
+.customs-groups > .customs-card-detailed {
+  min-height: 420px;
+}
+
 .customs-groups > div > span {
+  display: block;
   color: var(--blue);
-  font-size: 0.68rem;
-  font-weight: 750;
+  font-size: clamp(1.35rem, 1.65vw, 1.65rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 720;
+  letter-spacing: -0.08em;
+  line-height: 0.9;
 }
 
 .customs-groups h2 {
-  margin: 110px 0 35px;
-  font-size: clamp(1.8rem, 2.6vw, 2.8rem);
+  margin: 24px 0 0;
+  font-size: clamp(2rem, 3.15vw, 2.8rem);
   overflow-wrap: anywhere;
+}
+
+@media (min-width: 901px) {
+  .customs-groups h2 {
+    font-size: clamp(1.65rem, 2.25vw, 2rem);
+  }
+}
+
+.customs-groups .check-list {
+  margin-top: 24px;
+}
+
+.customs-card-description {
+  max-width: 34ch;
+  margin: 22px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.65;
 }
 
 .offices-panel {
@@ -2222,34 +2209,6 @@ h3 {
   min-height: 40px;
   align-items: center;
   margin-top: 8px;
-  font-size: 0.78rem;
-}
-
-.compact-columns {
-  display: grid;
-  margin-top: 55px;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line);
-}
-
-.compact-columns > div {
-  min-height: 250px;
-  border-right: 1px solid var(--line);
-  padding: 32px;
-}
-
-.compact-columns > div:last-child {
-  border-right: 0;
-}
-
-.compact-columns h3 {
-  margin: 65px 0 12px;
-  font-size: 1.2rem;
-}
-
-.compact-columns p {
-  margin: 5px 0;
-  color: var(--ink-soft);
   font-size: 0.78rem;
 }
 
@@ -3133,6 +3092,10 @@ a.contact-channel:hover .contact-channel-icon {
     min-height: 560px;
   }
 
+  .hero-detail-zollabwicklung .hero-media {
+    background-position: 36% center;
+  }
+
   .hero-content,
   .hero-detail .hero-content {
     right: 16px;
@@ -3167,34 +3130,6 @@ a.contact-channel:hover .contact-channel-icon {
     display: none;
   }
 
-  .partner-strip {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding-block: 30px;
-  }
-
-  .partner-strip img {
-    height: 42px;
-    max-width: 132px;
-    justify-self: center;
-  }
-
-  .partner-logo-vdh {
-    max-width: 150px;
-  }
-
-  .partner-logo-priority {
-    max-width: 122px;
-  }
-
-  .partner-logo-martin {
-    max-width: 140px;
-  }
-
-  .partner-logo-spedlog {
-    max-width: 155px;
-  }
-
   .service-marquee {
     min-height: 108px;
     gap: 14px;
@@ -3212,7 +3147,7 @@ a.contact-channel:hover .contact-channel-icon {
   }
 
   .intro-section {
-    padding: 56px 0 var(--section-space);
+    padding: 88px 0 112px;
   }
 
   .intro-heading,
@@ -3295,7 +3230,6 @@ a.contact-channel:hover .contact-channel-icon {
   .story-grid,
   .fleet-gallery,
   .customs-groups,
-  .compact-columns,
   .address-grid,
   .editorial-grid {
     grid-template-columns: 1fr;
@@ -3399,6 +3333,7 @@ a.contact-channel:hover .contact-channel-icon {
   }
 
   .prose-columns,
+  .heritage-copy,
   .certificate-grid,
   .services-index,
   .partner-detail-grid,
@@ -3420,18 +3355,6 @@ a.contact-channel:hover .contact-channel-icon {
     min-height: 430px;
   }
 
-  .team-roster {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .team-member:nth-child(3n) {
-    border-right: 1px solid var(--line);
-  }
-
-  .team-member:nth-child(2n) {
-    border-right: 0;
-  }
-
   .certificate-card {
     grid-template-columns: 0.7fr 1fr;
   }
@@ -3441,12 +3364,49 @@ a.contact-channel:hover .contact-channel-icon {
   }
 
   .customs-groups {
-    padding-block: 90px;
+    width: 100%;
+    margin-inline: 0;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    gap: 14px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 90px 46px 24px 18px;
+    scroll-padding-inline: 18px 46px;
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .customs-groups::-webkit-scrollbar {
+    display: none;
   }
 
   .customs-groups > div {
-    min-height: 410px;
-    padding-inline: 30px;
+    min-height: 0;
+    padding: 32px 30px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .customs-slider-progress {
+    display: block;
+    height: 3px;
+    margin: 0 18px 63px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(21, 21, 21, 0.14);
+  }
+
+  .customs-slider-progress span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--blue);
+    transform-origin: left center;
+    transition: transform 100ms linear;
   }
 
   .offices-panel {
@@ -3461,12 +3421,6 @@ a.contact-channel:hover .contact-channel-icon {
     min-height: 350px;
     border-top: 1px solid rgba(255, 255, 255, 0.14);
     border-left: 0;
-  }
-
-  .compact-columns > div {
-    min-height: 210px;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
   }
 
   .warehouse-gallery {
@@ -3611,15 +3565,12 @@ a.contact-channel:hover .contact-channel-icon {
 
   .values-strip,
   .workflow-grid,
-  .team-roster,
   .warehouse-facts {
     grid-template-columns: 1fr;
   }
 
   .values-strip > div,
-  .workflow-grid > div,
-  .team-member,
-  .team-member:nth-child(3n) {
+  .workflow-grid > div {
     border-right: 0;
   }
 

@@ -17,6 +17,16 @@ export const company = {
       lines: ["Georg-Witting-Strasse 2", "DE-79761 Waldshut-Tiengen"],
     },
     {
+      country: "Deutschland",
+      company: "Sara Transporte AG",
+      lines: ["Weidstrasse 4", "79576 Weil am Rhein"],
+    },
+    {
+      country: "Deutschland",
+      company: "Sara Transporte + Logistik Gmbh",
+      lines: ["Döbeleweg 1", "78089 Unterkirnach"],
+    },
+    {
       country: "England",
       company: "Sara Transporte LTD",
       lines: ["4 Sunderland Road", "DH1 2LH Durham"],
@@ -101,24 +111,6 @@ export const workflow = [
   },
 ];
 
-export const team = [
-  ["Hamzi Alijovi", "Geschäftsführer"],
-  ["Rushit Aliju", "Disposition International"],
-  ["Sadik Alijovi", "Geschäftsleitung & Leitung Fuhrpark"],
-  ["Suheib Aliju", "Disposition International"],
-  ["Nehar Alijovi", "Leitung Verkauf & Kundenservice"],
-  ["Medina Alijovi", "Sachbearbeiterin International"],
-  ["Neval Aliju", "Sachbearbeiterin International"],
-  ["Tanja Petrella", "Sachbearbeiterin International"],
-  ["Henning Clausen", "Standortleiter Waldshut"],
-  ["Aleksandar Pekija", "Disposition International"],
-  ["Alexander Litterst", "Verkaufsleiter Deutschland"],
-  ["Teuta Asipi", "Standortleiterin Basel-Weil am Rhein"],
-  ["Tonny Bibby", "Business Development Manager"],
-  ["Hebun Özgül", "Auszubildender"],
-  ["Hrstina Aljush", "Team"],
-];
-
 export const certifications = [
   {
     name: "Transportlizenz",
@@ -192,7 +184,7 @@ export const pages = {
     title: "Für Ihre Anforderungen kennen wir keine Grenzen.",
     intro:
       "Ausfuhr, Einfuhr und Transit werden von unseren Zollteams vollständig und zuverlässig abgewickelt.",
-    image: "/assets/legacy/2023/10/image00164.jpeg",
+    image: "/assets/editorial/journey-alpine-truck.webp",
   },
   "track-and-trace": {
     eyebrow: "Track & Trace",
@@ -220,7 +212,7 @@ export const pages = {
     title: "Unterwegs mit Sara Transporte.",
     intro:
       "Einblicke in unser Unternehmen, unsere Standorte und die Entwicklung unserer Leistungen.",
-    image: "/assets/legacy/2023/10/image00012.jpeg",
+    image: "/assets/legacy/2026/01/6.jpeg",
   },
 } as const;
 
