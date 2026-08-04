@@ -51,12 +51,12 @@ export function Footer() {
           </a>
           <a
             className="footer-contact-link"
-            href="https://spedlogswiss.com/"
+            href="https://sara.websped.winsped.de/"
             target="_blank"
             rel="noreferrer"
           >
             <IconWorld size={16} stroke={1.7} aria-hidden="true" />
-            <span>spedlogswiss.com</span>
+            <span>sara.websped.winsped.de</span>
           </a>
         </div>
 
