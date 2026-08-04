@@ -11,7 +11,7 @@ import {
 const locales: Locale[] = ["de", "en", "fr"];
 const localeFlags: Record<Locale, string> = {
   de: "/assets/flags/de.svg",
-  en: "/assets/flags/gb.svg",
+  en: "/assets/flags/us.svg",
   fr: "/assets/flags/fr.svg",
 };
 
