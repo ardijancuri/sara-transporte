@@ -52,10 +52,25 @@ export function Footer() {
             className="footer-contact-link"
             href="https://sara.websped.winsped.de/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <IconWorld size={16} stroke={1.7} aria-hidden="true" />
             <span>sara.websped.winsped.de</span>
+          </a>
+          <a
+            className="footer-partner-link"
+            href="https://spedlogswiss.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="SpedlogSwiss Website"
+          >
+            <Image
+              className="footer-partner-logo"
+              src="/assets/partners/spedlogswiss-footer.png"
+              alt="SpedlogSwiss"
+              width={805}
+              height={79}
+            />
           </a>
         </div>
 

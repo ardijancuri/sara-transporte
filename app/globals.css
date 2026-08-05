@@ -1568,6 +1568,28 @@ h3 {
   color: #c2c2c2;
 }
 
+.footer-brand > .footer-partner-link {
+  width: fit-content;
+  min-height: 0;
+  margin-top: 16px;
+  padding: 6px 0;
+}
+
+.footer-partner-logo {
+  display: block;
+  width: min(260px, 100%);
+  height: auto;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.footer-partner-link:hover .footer-partner-logo,
+.footer-partner-link:focus-visible .footer-partner-logo {
+  opacity: 0.82;
+  transform: translateY(-1px);
+}
+
 .footer-grid h3 {
   margin: 0 0 20px;
   color: rgba(255, 255, 255, 0.42);

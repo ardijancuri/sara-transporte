@@ -34,6 +34,8 @@ test("server-renders the Sara Transporte homepage", async () => {
   assert.match(html, /Verbindungen schaffen/);
   assert.match(html, /Dienstleistungen/);
   assert.match(html, /Transport anfragen/);
+  assert.match(html, /https:\/\/spedlogswiss\.com\//);
+  assert.match(html, /\/assets\/partners\/spedlogswiss-footer\.png/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/i);
 });
 
