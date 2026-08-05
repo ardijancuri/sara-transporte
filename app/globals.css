@@ -1577,7 +1577,7 @@ h3 {
 
 .footer-partner-logo {
   display: block;
-  width: min(260px, 100%);
+  width: min(230px, 100%);
   height: auto;
   transition:
     opacity 180ms ease,
