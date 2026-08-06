@@ -232,40 +232,6 @@ function AboutContent() {
             sizes="(max-width: 900px) calc(100vw - 36px), 1320px"
           />
         </Reveal>
-        <Reveal className="heritage-copy" delay={120}>
-          <div>
-            <p>
-              Bereits Anfang der 2000er-Jahre war unsere Familie auf den Strassen
-              Europas unterwegs. Damals gehörten vor allem Transporte in den
-              Balkan zu unserem Alltag – viele erinnern sich noch an die Zeit,
-              als wir die grossen, schweren Röhrenfernseher und andere Stückgüter
-              zuverlässig zu ihren Empfängern brachten.
-            </p>
-            <p>
-              Auf dem Bild zu sehen sind einige unserer ersten Lastwagen, unser
-              damaliges Logo und unser Gründer Sadik Alijovi. Es sind Erinnerungen
-              an eine Zeit, in der harte Arbeit, lange Nächte und unzählige
-              Kilometer den Grundstein für das legten, was die Sara Transporte AG
-              heute ist.
-            </p>
-          </div>
-          <div>
-            <p>
-              Transport war für uns nie einfach nur ein Beruf. Es war und ist
-              eine Leidenschaft, die unsere Familie seit Generationen begleitet.
-              Die Begeisterung für Lastwagen, die Verantwortung gegenüber unseren
-              Kunden und der Stolz, jede Sendung sicher ans Ziel zu bringen,
-              gehören seit jeher zu unserer Geschichte.
-            </p>
-            <p>
-              Heute ist aus den ersten Fahrzeugen ein modernes
-              Transportunternehmen mit über 130 Mitarbeitenden, einem eigenen
-              Fuhrpark, eigenen Zollbüros und eigenen Logistikstandorten geworden.
-              Doch eines hat sich bis heute nicht verändert: Wir machen unseren
-              Beruf mit Herzblut.
-            </p>
-          </div>
-        </Reveal>
       </section>
     </>
   );
