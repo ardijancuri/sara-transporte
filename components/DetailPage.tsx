@@ -606,7 +606,7 @@ function CustomsContent() {
           <Reveal>
             <span>Hauptsitz</span>
             <h3>Koblenz / Waldshut-Tiengen</h3>
-            <p>Lonzaring 9, DE-79761 Waldshut-Tiengen</p>
+            <p>Georg-Witting-Strasse 2, DE-79761 Waldshut-Tiengen</p>
             <a href="tel:+4977518948177">+49 7751 8948 177</a>
             <a href="mailto:zoll@sara-transporte.de">
               zoll@sara-transporte.de

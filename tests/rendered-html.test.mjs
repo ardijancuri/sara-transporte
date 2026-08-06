@@ -45,12 +45,14 @@ test("keeps migrated routes and assets available", async () => {
     contactResponse,
     aboutResponse,
     landTransportResponse,
+    customsResponse,
     pageSource,
   ] = await Promise.all([
     render("/dienstleistungen"),
     render("/contact-us"),
     render("/ueber-uns"),
     render("/landverkehr"),
+    render("/zollabwicklung"),
     readFile(new URL("../lib/site-data.ts", import.meta.url), "utf8"),
     access(
       new URL(
@@ -65,6 +67,7 @@ test("keeps migrated routes and assets available", async () => {
   assert.equal(contactResponse.status, 200);
   assert.equal(aboutResponse.status, 200);
   assert.equal(landTransportResponse.status, 200);
+  assert.equal(customsResponse.status, 200);
   assert.match(await servicesResponse.text(), /Eine Lieferkette/);
   assert.match(await contactResponse.text(), /Reden wir über Ihre nächste Sendung/);
   assert.doesNotMatch(
@@ -75,6 +78,9 @@ test("keeps migrated routes and assets available", async () => {
     await landTransportResponse.text(),
     /\/assets\/editorial\/adr-thermotransport-truck\.jpeg/,
   );
+  const customsHtml = await customsResponse.text();
+  assert.match(customsHtml, /Georg-Witting-Strasse 2/);
+  assert.doesNotMatch(customsHtml, /Lonzaring 9/);
   assert.match(pageSource, /track-and-trace/);
   assert.match(pageSource, /zertifizierungen/);
   assert.match(pageSource, /warehouse/);
