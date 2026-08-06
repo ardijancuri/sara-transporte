@@ -40,29 +40,40 @@ test("server-renders the Sara Transporte homepage", async () => {
 });
 
 test("keeps migrated routes and assets available", async () => {
-  const [servicesResponse, contactResponse, aboutResponse, pageSource] =
-    await Promise.all([
-      render("/dienstleistungen"),
-      render("/contact-us"),
-      render("/ueber-uns"),
-      readFile(new URL("../lib/site-data.ts", import.meta.url), "utf8"),
-      access(
-        new URL(
-          "../public/assets/legacy/2023/10/CH-Transportlizenz-1.pdf",
-          import.meta.url,
-        ),
+  const [
+    servicesResponse,
+    contactResponse,
+    aboutResponse,
+    landTransportResponse,
+    pageSource,
+  ] = await Promise.all([
+    render("/dienstleistungen"),
+    render("/contact-us"),
+    render("/ueber-uns"),
+    render("/landverkehr"),
+    readFile(new URL("../lib/site-data.ts", import.meta.url), "utf8"),
+    access(
+      new URL(
+        "../public/assets/legacy/2023/10/CH-Transportlizenz-1.pdf",
+        import.meta.url,
       ),
-      access(new URL("../public/og.png", import.meta.url)),
-    ]);
+    ),
+    access(new URL("../public/og.png", import.meta.url)),
+  ]);
 
   assert.equal(servicesResponse.status, 200);
   assert.equal(contactResponse.status, 200);
   assert.equal(aboutResponse.status, 200);
+  assert.equal(landTransportResponse.status, 200);
   assert.match(await servicesResponse.text(), /Eine Lieferkette/);
   assert.match(await contactResponse.text(), /Reden wir über Ihre nächste Sendung/);
   assert.doesNotMatch(
     await aboutResponse.text(),
     /Bereits Anfang der 2000er-Jahre|Transport war für uns nie einfach nur ein Beruf/,
+  );
+  assert.match(
+    await landTransportResponse.text(),
+    /\/assets\/editorial\/adr-thermotransport-truck\.jpeg/,
   );
   assert.match(pageSource, /track-and-trace/);
   assert.match(pageSource, /zertifizierungen/);

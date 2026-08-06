@@ -433,7 +433,10 @@ function LandTransportContent() {
         {[
           ["/assets/legacy/2026/01/4.jpeg", "Plane & Mega"],
           ["/assets/legacy/2026/01/6.jpeg", "Teil- & Komplettladung"],
-          ["/assets/legacy/2023/10/image00012.jpeg", "ADR & Thermotransport"],
+          [
+            "/assets/editorial/adr-thermotransport-truck.jpeg",
+            "ADR & Thermotransport",
+          ],
         ].map(([image, title], index) => (
           <Reveal key={title} delay={index * 80}>
             <Image
