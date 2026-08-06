@@ -99,6 +99,14 @@ const translations: Record<string, Translation> = {
   "Mehr über uns": { en: "More about us", fr: "En savoir plus" },
   "Mehr Einblicke": { en: "More stories", fr: "Plus d’actualités" },
   "PDF öffnen": { en: "Open PDF", fr: "Ouvrir le PDF" },
+  "Benelux-Flyer als PDF öffnen": {
+    en: "Open the Benelux flyer as a PDF",
+    fr: "Ouvrir la brochure Benelux au format PDF",
+  },
+  "Grossbritannien-Flyer als PDF öffnen": {
+    en: "Open the United Kingdom flyer as a PDF",
+    fr: "Ouvrir la brochure Royaume-Uni au format PDF",
+  },
   "Zum Track & Trace": {
     en: "Go to Track & Trace",
     fr: "Accéder au suivi",

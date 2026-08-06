@@ -457,12 +457,12 @@ function LandTransportContent() {
           </div>
         </Reveal>
         <div className="partner-detail-grid">
-          <Reveal>
+          <Reveal className="partner-detail-card">
             <Image
               src="/assets/legacy/2023/10/van-der-heijden-transport-logo.png"
               alt="Van der Heijden Transport & Logistiek"
-              width={210}
-              height={82}
+              width={280}
+              height={110}
             />
             <h3>BeNeLux</h3>
             <p>
@@ -471,13 +471,25 @@ function LandTransportContent() {
               Ladekran und termingenaue Zustellungen in der gesamten
               BeNeLux-Region.
             </p>
+            <div className="partner-flyer-action">
+              <Link
+                className="button button-dark partner-flyer-button"
+                href="/assets/flyers/sara-transporte-flyer-benelux.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Benelux-Flyer als PDF öffnen"
+              >
+                <span>PDF öffnen</span>
+                <ActionIcon />
+              </Link>
+            </div>
           </Reveal>
-          <Reveal delay={100}>
+          <Reveal className="partner-detail-card" delay={100}>
             <Image
               src="/assets/legacy/2023/10/Priority-Freight.png"
               alt="Priority Freight"
-              width={210}
-              height={82}
+              width={280}
+              height={110}
             />
             <h3>Grossbritannien</h3>
             <p>
@@ -485,6 +497,18 @@ function LandTransportContent() {
               Express-, Sonder- und Stückguttransporte mit flächendeckender
               Zustellung und Track & Trace.
             </p>
+            <div className="partner-flyer-action">
+              <Link
+                className="button button-dark partner-flyer-button"
+                href="/assets/flyers/sara-transporte-flyer-grossbritannien.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Grossbritannien-Flyer als PDF öffnen"
+              >
+                <span>PDF öffnen</span>
+                <ActionIcon />
+              </Link>
+            </div>
           </Reveal>
         </div>
       </section>
