@@ -996,6 +996,11 @@ h3 {
   gap: 26px;
 }
 
+.services-page-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
 .service-grid > div {
   min-width: 0;
   height: 100%;
