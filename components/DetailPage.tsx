@@ -453,17 +453,11 @@ function LandTransportContent() {
         <Reveal className="section-heading">
           <div>
             <p className="eyebrow">Unsere Partner</p>
-            <h2>Starke Verbindungen für BeNeLux und Grossbritannien.</h2>
+            <h2>Starke Verbindungen für BeNeLux, Grossbritannien und das Ruhrgebiet.</h2>
           </div>
         </Reveal>
         <div className="partner-detail-grid">
           <Reveal className="partner-detail-card">
-            <Image
-              src="/assets/legacy/2023/10/van-der-heijden-transport-logo.png"
-              alt="Van der Heijden Transport & Logistiek"
-              width={280}
-              height={110}
-            />
             <h3>BeNeLux</h3>
             <p>
               Tägliche Abfahrten zwischen der Schweiz und Hapert verbinden uns
@@ -485,12 +479,6 @@ function LandTransportContent() {
             </div>
           </Reveal>
           <Reveal className="partner-detail-card" delay={100}>
-            <Image
-              src="/assets/legacy/2023/10/Priority-Freight.png"
-              alt="Priority Freight"
-              width={280}
-              height={110}
-            />
             <h3>Grossbritannien</h3>
             <p>
               Über das Verteilzentrum Dover bietet unser Partner zeitkritische
@@ -504,6 +492,26 @@ function LandTransportContent() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Grossbritannien-Flyer als PDF öffnen"
+              >
+                <span>PDF öffnen</span>
+                <ActionIcon />
+              </Link>
+            </div>
+          </Reveal>
+          <Reveal className="partner-detail-card" delay={200}>
+            <h3>Ruhrgebiet</h3>
+            <p>
+              Regelverkehr jeden Dienstag und Freitag verbindet das Ruhrgebiet
+              mit der gesamten Schweiz - zuverlässig für Stückgut- und
+              Teilladungen.
+            </p>
+            <div className="partner-flyer-action">
+              <Link
+                className="button button-dark partner-flyer-button"
+                href="/assets/flyers/sara-transporte-flyer-ruhrgebiet.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ruhrgebiet-Flyer als PDF öffnen"
               >
                 <span>PDF öffnen</span>
                 <ActionIcon />

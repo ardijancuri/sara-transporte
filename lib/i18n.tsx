@@ -107,6 +107,10 @@ const translations: Record<string, Translation> = {
     en: "Open the United Kingdom flyer as a PDF",
     fr: "Ouvrir la brochure Royaume-Uni au format PDF",
   },
+  "Ruhrgebiet-Flyer als PDF öffnen": {
+    en: "Open the Ruhr area flyer as a PDF",
+    fr: "Ouvrir la brochure de la Ruhr au format PDF",
+  },
   "Zum Track & Trace": {
     en: "Go to Track & Trace",
     fr: "Accéder au suivi",
@@ -324,6 +328,7 @@ const translations: Record<string, Translation> = {
   Niederlande: { en: "Netherlands", fr: "Pays-Bas" },
   Belgien: { en: "Belgium", fr: "Belgique" },
   Grossbritannien: { en: "United Kingdom", fr: "Royaume-Uni" },
+  Ruhrgebiet: { en: "Ruhr area", fr: "Région de la Ruhr" },
   Geschäftsführer: { en: "Managing Director", fr: "Directeur général" },
   "Disposition International": {
     en: "International Dispatch",
@@ -650,9 +655,9 @@ const translations: Record<string, Translation> = {
     fr: "ADR et transport sous température dirigée",
   },
   "Unsere Partner": { en: "Our partners", fr: "Nos partenaires" },
-  "Starke Verbindungen für BeNeLux und Grossbritannien.": {
-    en: "Strong connections for Benelux and the United Kingdom.",
-    fr: "Des liaisons solides pour le Benelux et le Royaume-Uni.",
+  "Starke Verbindungen für BeNeLux, Grossbritannien und das Ruhrgebiet.": {
+    en: "Strong connections for Benelux, the United Kingdom and the Ruhr area.",
+    fr: "Des liaisons solides pour le Benelux, le Royaume-Uni et la région de la Ruhr.",
   },
   "Tägliche Abfahrten zwischen der Schweiz und Hapert verbinden uns mit einem erfahrenen Spezialisten für Warehousing, Hebebühnen, Ladekran und termingenaue Zustellungen in der gesamten BeNeLux-Region.": {
     en: "Daily departures between Switzerland and Hapert connect us with an experienced specialist in warehousing, tail lifts, truck-mounted cranes and on-time delivery across the Benelux region.",
@@ -661,6 +666,10 @@ const translations: Record<string, Translation> = {
   "Über das Verteilzentrum Dover bietet unser Partner zeitkritische Express-, Sonder- und Stückguttransporte mit flächendeckender Zustellung und Track & Trace.": {
     en: "Through its Dover distribution centre, our partner provides time-critical express, special and groupage transport with nationwide delivery and Track & Trace.",
     fr: "Via son centre de distribution de Douvres, notre partenaire propose des transports express, spéciaux et de groupage urgents, avec une couverture nationale et un suivi complet.",
+  },
+  "Regelverkehr jeden Dienstag und Freitag verbindet das Ruhrgebiet mit der gesamten Schweiz - zuverlässig für Stückgut- und Teilladungen.": {
+    en: "Scheduled services every Tuesday and Friday connect the Ruhr area with all of Switzerland for reliable groupage and part-load transport.",
+    fr: "Des liaisons régulières chaque mardi et vendredi relient la Ruhr à toute la Suisse pour des transports fiables de groupage et de charges partielles.",
   },
 
   Ausfuhrabfertigungen: { en: "Export clearance", fr: "Dédouanement à l’exportation" },
