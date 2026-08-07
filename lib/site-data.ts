@@ -75,6 +75,22 @@ export const services = [
     href: "/warehouse",
     image: "/assets/legacy/2023/10/w_versand_04.jpg",
   },
+  {
+    number: "05",
+    title: "Expressfahrten",
+    short:
+      "Zeitkritische Express- und Direktfahrten rund um die Uhr - ohne Umladung und europaweit.",
+    href: "/expressfahrten",
+    image: "/assets/services/expressfahrten-scania.png",
+  },
+  {
+    number: "06",
+    title: "Seefracht",
+    short:
+      "Weltweite FCL- und LCL-Seefracht inklusive Vorlauf, Zollabwicklung und Zustellung.",
+    href: "/seefracht",
+    image: "/assets/services/seefracht-container.png",
+  },
 ];
 
 export const serviceExtras = [
@@ -199,6 +215,20 @@ export const pages = {
     intro:
       "Flexible Lager-, Fulfilment- und Umschlagslösungen an unserem Standort in Unterkirnach.",
     image: "/assets/hero/warehouse-hero-enhanced.webp",
+  },
+  expressfahrten: {
+    eyebrow: "Expressfahrten",
+    title: "Expressfahrten – Wenn jede Minute zählt",
+    intro:
+      "Direktfahrten ohne Umladung - 24 Stunden am Tag, 365 Tage im Jahr.",
+    image: "/assets/services/expressfahrten-scania.png",
+  },
+  seefracht: {
+    eyebrow: "Seefracht",
+    title: "Seefracht weltweit – Wirtschaftlich, zuverlässig und persönlich",
+    intro:
+      "Globale Import- und Exportlösungen mit persönlicher Betreuung und kompletter Transportkette aus einer Hand.",
+    image: "/assets/services/seefracht-container.png",
   },
   "contact-us": {
     eyebrow: "Kontakt",

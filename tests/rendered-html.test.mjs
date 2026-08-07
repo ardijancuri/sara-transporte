@@ -46,6 +46,8 @@ test("keeps migrated routes and assets available", async () => {
     aboutResponse,
     landTransportResponse,
     customsResponse,
+    expressResponse,
+    seaFreightResponse,
     pageSource,
   ] = await Promise.all([
     render("/dienstleistungen"),
@@ -53,6 +55,8 @@ test("keeps migrated routes and assets available", async () => {
     render("/ueber-uns"),
     render("/landverkehr"),
     render("/zollabwicklung"),
+    render("/expressfahrten"),
+    render("/seefracht"),
     readFile(new URL("../lib/site-data.ts", import.meta.url), "utf8"),
     access(
       new URL(
@@ -61,6 +65,18 @@ test("keeps migrated routes and assets available", async () => {
       ),
     ),
     access(new URL("../public/og.png", import.meta.url)),
+    access(
+      new URL(
+        "../public/assets/services/expressfahrten-scania.png",
+        import.meta.url,
+      ),
+    ),
+    access(
+      new URL(
+        "../public/assets/services/seefracht-container.png",
+        import.meta.url,
+      ),
+    ),
   ]);
 
   assert.equal(servicesResponse.status, 200);
@@ -68,6 +84,8 @@ test("keeps migrated routes and assets available", async () => {
   assert.equal(aboutResponse.status, 200);
   assert.equal(landTransportResponse.status, 200);
   assert.equal(customsResponse.status, 200);
+  assert.equal(expressResponse.status, 200);
+  assert.equal(seaFreightResponse.status, 200);
   assert.match(await servicesResponse.text(), /Eine Lieferkette/);
   assert.match(await contactResponse.text(), /Reden wir über Ihre nächste Sendung/);
   assert.doesNotMatch(
@@ -81,6 +99,10 @@ test("keeps migrated routes and assets available", async () => {
   const customsHtml = await customsResponse.text();
   assert.match(customsHtml, /Georg-Witting-Strasse 2/);
   assert.doesNotMatch(customsHtml, /Lonzaring 9/);
+  assert.match(await expressResponse.text(), /Wenn jede Minute zählt/);
+  assert.match(await seaFreightResponse.text(), /Seefracht weltweit/);
+  assert.match(pageSource, /expressfahrten/);
+  assert.match(pageSource, /seefracht/);
   assert.match(pageSource, /track-and-trace/);
   assert.match(pageSource, /zertifizierungen/);
   assert.match(pageSource, /warehouse/);

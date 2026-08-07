@@ -6,8 +6,10 @@ import {
   IconQuote,
 } from "@tabler/icons-react";
 import {
+  FaBolt,
   FaFileInvoice,
   FaLocationDot,
+  FaShip,
   FaTruckFast,
   FaWarehouse,
 } from "react-icons/fa6";
@@ -22,6 +24,8 @@ const serviceIcons = [
   FaFileInvoice,
   FaLocationDot,
   FaWarehouse,
+  FaBolt,
+  FaShip,
 ];
 
 export function HomePage() {

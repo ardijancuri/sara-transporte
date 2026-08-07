@@ -101,6 +101,30 @@ export const localizedPageMetadata: Record<
         "Des solutions flexibles d’entreposage, de fulfilment et de transbordement sur notre site d’Unterkirnach.",
     },
   },
+  expressfahrten: {
+    en: {
+      title: "Express Deliveries",
+      description:
+        "Direct express deliveries without transshipment, available 24 hours a day, 365 days a year.",
+    },
+    fr: {
+      title: "Transports express",
+      description:
+        "Des transports express directs sans transbordement, disponibles 24 heures sur 24, 365 jours par an.",
+    },
+  },
+  seefracht: {
+    en: {
+      title: "Ocean Freight",
+      description:
+        "Global import and export solutions with personal support and a complete end-to-end transport chain.",
+    },
+    fr: {
+      title: "Fret maritime",
+      description:
+        "Des solutions mondiales d’import-export avec un suivi personnalisé et une chaîne de transport complète.",
+    },
+  },
   "contact-us": {
     en: {
       title: "Contact",

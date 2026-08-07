@@ -7,10 +7,12 @@ import {
   IconPhone,
 } from "@tabler/icons-react";
 import {
+  FaBolt,
   FaEarthEurope,
   FaFileInvoice,
   FaHeadset,
   FaLocationDot,
+  FaShip,
   FaTruckFast,
   FaWarehouse,
 } from "react-icons/fa6";
@@ -34,6 +36,8 @@ const detailServiceIcons = [
   FaFileInvoice,
   FaLocationDot,
   FaWarehouse,
+  FaBolt,
+  FaShip,
   FaEarthEurope,
   FaHeadset,
 ];
@@ -286,7 +290,7 @@ function CertificationsContent() {
 function ServicesContent() {
   const extraServices = serviceExtras.map((item, index) => ({
     ...item,
-    number: `0${index + 5}`,
+    number: String(index + services.length + 1).padStart(2, "0"),
     href: "/contact-us",
     image:
       index === 0
@@ -389,6 +393,276 @@ function ServicesContent() {
             ))}
           </div>
         </div>
+      </section>
+    </>
+  );
+}
+
+function NumberedFeatureList({ items }: { items: string[] }) {
+  return (
+    <ol className="specialty-feature-list">
+      {items.map((item, index) => (
+        <li key={item}>
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <p>{item}</p>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+function ExpressTransportContent() {
+  const benefits = [
+    "Express- und Direktfahrten in der Schweiz und ganz Europa",
+    "24/7-Erreichbarkeit über unsere Notfallnummer",
+    "Eigene Fahrzeugflotte – vom PKW bis zum Sattelzug",
+    "Schnelle Reaktionszeiten und flexible Disposition",
+    "Keine Umladung – direkte Zustellung zum Empfänger",
+    "GPS-Überwachung und laufende Sendungsinformationen",
+    "Erfahrene Fahrer mit europaweiter Transporterfahrung",
+    "Eigene Zollbüros für eine schnelle und unkomplizierte Verzollung",
+    "Persönlicher Ansprechpartner während des gesamten Transportablaufs",
+  ];
+
+  return (
+    <>
+      <section className="section specialty-intro">
+        <Reveal>
+          <p className="eyebrow">Direkt. Ohne Umladung.</p>
+          <h2>Für jede Sendung das passende Fahrzeug.</h2>
+        </Reveal>
+        <Reveal className="specialty-copy" delay={90}>
+          <p>
+            Zeitkritische Sendungen erfordern einen zuverlässigen Partner. Mit
+            den Expressfahrten der Sara Transporte AG bringen wir Ihre Ware
+            schnell, sicher und direkt ans Ziel – ohne Umwege und ohne
+            Umladung.
+          </p>
+          <p>
+            Ob PKW, Kurierfahrzeug, Sprinter, kleiner Lastwagen oder
+            40-Tonnen-Sattelzug – dank unserer eigenen Fahrzeugflotte finden
+            wir für nahezu jede Sendungsgrösse die passende Lösung. Von
+            wichtigen Dokumenten über Ersatzteile bis hin zu palettierten Waren
+            oder kompletten Maschinen bieten wir Ihnen rund um die Uhr eine
+            flexible und zuverlässige Transportlösung.
+          </p>
+        </Reveal>
+      </section>
+
+      <section className="specialty-band specialty-band-express">
+        <div className="section specialty-band-inner">
+          <Reveal>
+            <p className="eyebrow">24/7 Express-Service</p>
+            <h2>24 Stunden – 365 Tage im Einsatz</h2>
+            <p>
+              Ein Maschinenausfall, ein Produktionsstillstand oder eine
+              dringend benötigte Lieferung halten sich nicht an Bürozeiten.
+              Deshalb stehen wir Ihnen 24 Stunden am Tag, 7 Tage die Woche zur
+              Verfügung.
+            </p>
+            <p>
+              Egal ob früh morgens, spät abends, am Wochenende oder an
+              Feiertagen – im Notfall erreichen Sie uns jederzeit. Gemeinsam
+              finden wir schnell die passende Transportlösung.
+            </p>
+          </Reveal>
+          <Reveal className="express-hotline" delay={100}>
+            <span>Unsere Express-Hotline</span>
+            <a href="tel:+41765840709">+41 76 584 07 09</a>
+            <small>24 Stunden am Tag erreichbar</small>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section specialty-features">
+        <Reveal className="section-heading">
+          <div>
+            <p className="eyebrow">Express-Kompetenz</p>
+            <h2>Ihre Vorteile auf einen Blick</h2>
+          </div>
+        </Reveal>
+        <NumberedFeatureList items={benefits} />
+      </section>
+
+      <section className="section specialty-narrative">
+        <Reveal>
+          <p className="eyebrow">Bereit, wenn es zählt</p>
+          <h2>Kurze Wege. Schnelle Entscheidungen.</h2>
+        </Reveal>
+        <Reveal className="specialty-copy" delay={90}>
+          <p>
+            Dank unserer eigenen Flotte, kurzen Entscheidungswegen und einer
+            erfahrenen Disposition können wir auch kurzfristige Anfragen
+            schnell umsetzen. Wo andere erst nach einem verfügbaren Fahrzeug
+            suchen müssen, können wir häufig sofort reagieren.
+          </p>
+          <p>
+            Ganz gleich, ob es sich um eine einzelne Palette, ein wichtiges
+            Ersatzteil oder eine komplette Fahrzeugladung handelt – wir setzen
+            alles daran, Ihre Sendung schnellstmöglich und zuverlässig an den
+            gewünschten Bestimmungsort zu bringen.
+          </p>
+        </Reveal>
+      </section>
+
+      <section className="section specialty-closing">
+        <Reveal>
+          <h2>
+            Sara Transporte AG – Ihr Partner für Expressfahrten, wenn es
+            wirklich darauf ankommt.
+          </h2>
+        </Reveal>
+        <Reveal className="specialty-closing-actions" delay={90}>
+          <Link href="/contact-us#anfrage" className="button button-dark">
+            <span>Expressfahrt anfragen</span>
+            <ActionIcon />
+          </Link>
+          <a className="specialty-phone-link" href="tel:+41765840709">
+            <IconPhone size={17} stroke={1.8} aria-hidden="true" />
+            <span>+41 76 584 07 09</span>
+          </a>
+        </Reveal>
+      </section>
+    </>
+  );
+}
+
+function SeaFreightContent() {
+  const servicesList = [
+    "Weltweite Import- und Exportabwicklung",
+    "FCL (Full Container Load)",
+    "LCL (Less than Container Load)",
+    "Door-to-Door-Lösungen",
+    "Vorlauf und Nachlauf mit eigener Fahrzeugflotte",
+    "Eigene Zollabwicklung über unsere Zollbüros",
+    "Import- und Exportverzollung",
+    "Projekt- und Spezialtransporte",
+    "Persönliche Beratung und Betreuung",
+    "Laufende Sendungsinformationen und Statusmeldungen",
+    "Flexible Lösungen für zeitkritische Sendungen",
+    "Attraktive Frachtraten dank internationalem Partnernetzwerk",
+  ];
+  const benefits = [
+    "Persönliche Betreuung durch erfahrene Seefrachtspezialisten",
+    "Attraktive Frachtraten, insbesondere für Verkehre aus und nach China",
+    "Eigene LKW-Flotte für flexible Vor- und Nachläufe",
+    "Eigene Zollbüros für eine schnelle und effiziente Zollabwicklung",
+    "Weltweites Netzwerk zuverlässiger Partner und Agenten",
+    "Transparente Kommunikation und hohe Termintreue",
+    "Individuelle Lösungen für Industrie, Handel und Produktion",
+    "Transport, Verzollung und Logistik aus einer Hand",
+  ];
+
+  return (
+    <>
+      <section className="section specialty-intro">
+        <Reveal>
+          <p className="eyebrow">Globale Verbindungen</p>
+          <h2>Internationale Seefracht mit persönlicher Betreuung.</h2>
+        </Reveal>
+        <Reveal className="specialty-copy" delay={90}>
+          <p>
+            Die Seefracht ist eine der wirtschaftlichsten Lösungen für den
+            internationalen Warenverkehr. Ob Import oder Export – die Sara
+            Transporte AG organisiert Ihre Seefrachtsendungen weltweit und
+            begleitet Sie persönlich von der ersten Anfrage bis zur
+            erfolgreichen Zustellung.
+          </p>
+          <p>
+            Dank unseres internationalen Partnernetzwerks und langjähriger
+            Zusammenarbeit mit renommierten Reedereien und Agenten profitieren
+            unsere Kunden von attraktiven Frachtraten, zuverlässigen Laufzeiten
+            und einer professionellen Abwicklung. Besonders im Warenverkehr mit
+            China verfügen wir über sehr gute Einkaufskonditionen und können
+            Ihnen wettbewerbsfähige Seefrachtlösungen anbieten.
+          </p>
+        </Reveal>
+      </section>
+
+      <section className="specialty-band specialty-band-sea">
+        <div className="section specialty-band-inner specialty-band-copy">
+          <Reveal>
+            <p className="eyebrow">Komplette Transportkette</p>
+            <h2>Alles aus einer Hand</h2>
+          </Reveal>
+          <Reveal className="specialty-copy" delay={90}>
+            <p>
+              Unsere Stärke liegt darin, dass wir nicht nur die Seefracht
+              organisieren, sondern die komplette Transportkette übernehmen.
+            </p>
+            <p>
+              Vom Vorlauf Ihrer Ware zum Hafen über die Seefracht, die
+              Verzollung bis hin zum Nachlauf zum Endempfänger erhalten Sie
+              sämtliche Dienstleistungen aus einer Hand.
+            </p>
+            <p>
+              Gerade bei zeitkritischen Sendungen können wir den Vor- oder
+              Nachlauf mit unserer eigenen LKW-Flotte flexibel und kurzfristig
+              selbst übernehmen. Dadurch sind wir unabhängig von externen
+              Dienstleistern und können schnell auf kurzfristige Änderungen
+              oder dringende Kundenwünsche reagieren.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section specialty-features">
+        <Reveal className="section-heading">
+          <div>
+            <p className="eyebrow">Seefracht-Service</p>
+            <h2>Unsere Leistungen im Bereich Seefracht</h2>
+          </div>
+        </Reveal>
+        <NumberedFeatureList items={servicesList} />
+      </section>
+
+      <section className="section specialty-narrative specialty-narrative-compact">
+        <Reveal>
+          <p className="eyebrow">Direkte Kommunikation</p>
+          <h2>Persönliche Betreuung statt Callcenter</h2>
+        </Reveal>
+        <Reveal className="specialty-copy" delay={90}>
+          <p>
+            Jede Sendung ist anders. Deshalb erhalten Sie bei uns einen festen
+            Ansprechpartner, der Ihr Projekt kennt und Sie während des gesamten
+            Transportablaufs begleitet. Kurze Entscheidungswege und eine
+            direkte Kommunikation ermöglichen es uns, schnell und flexibel auf
+            Ihre Anforderungen zu reagieren.
+          </p>
+        </Reveal>
+      </section>
+
+      <section className="section specialty-features specialty-features-secondary">
+        <Reveal className="section-heading">
+          <div>
+            <p className="eyebrow">Ihre Vorteile</p>
+            <h2>Seefracht mit Sara Transporte AG</h2>
+          </div>
+        </Reveal>
+        <NumberedFeatureList items={benefits} />
+      </section>
+
+      <section className="section specialty-closing specialty-closing-sea">
+        <Reveal className="specialty-closing-copy">
+          <p>
+            Ob einzelne Paletten, Sammelcontainer oder komplette
+            Containerladungen – wir entwickeln für jede Sendung die passende
+            Lösung. Mit der Sara Transporte AG profitieren Sie von einem
+            erfahrenen Logistikpartner, der internationale Seefracht mit
+            persönlichem Service, kurzen Entscheidungswegen und hoher
+            Flexibilität verbindet.
+          </p>
+          <h2>
+            Sara Transporte AG – Ihre Verbindung zu den internationalen
+            Märkten. Weltweit. Persönlich. Zuverlässig.
+          </h2>
+        </Reveal>
+        <Reveal className="specialty-closing-actions" delay={90}>
+          <Link href="/contact-us#anfrage" className="button button-dark">
+            <span>Seefracht anfragen</span>
+            <ActionIcon />
+          </Link>
+        </Reveal>
       </section>
     </>
   );
@@ -977,6 +1251,12 @@ export function DetailPage({ slug }: { slug: PageSlug }) {
       break;
     case "warehouse":
       content = <WarehouseContent />;
+      break;
+    case "expressfahrten":
+      content = <ExpressTransportContent />;
+      break;
+    case "seefracht":
+      content = <SeaFreightContent />;
       break;
     case "contact-us":
       content = <ContactContent />;

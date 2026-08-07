@@ -992,7 +992,7 @@ h3 {
 .service-grid {
   display: grid;
   margin-top: var(--section-heading-space);
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 26px;
 }
 
@@ -1728,6 +1728,213 @@ h3 {
 
 .services-process-section {
   padding-top: clamp(96px, 10vw, 140px);
+}
+
+.hero-detail-expressfahrten .hero-media {
+  background-position: center 58%;
+}
+
+.hero-detail-seefracht .hero-media {
+  background-position: center 54%;
+}
+
+.specialty-intro,
+.specialty-narrative {
+  display: grid;
+  padding-block: clamp(96px, 9vw, 132px);
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: clamp(64px, 9vw, 140px);
+}
+
+.specialty-intro h2,
+.specialty-narrative h2 {
+  max-width: 620px;
+}
+
+.specialty-copy {
+  max-width: 720px;
+  color: var(--ink-soft);
+  font-size: clamp(1rem, 1.15vw, 1.12rem);
+  line-height: 1.76;
+}
+
+.specialty-copy p + p {
+  margin-top: 24px;
+}
+
+.specialty-band {
+  width: calc(100% - 36px);
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--navy);
+  color: var(--white);
+}
+
+.specialty-band-inner {
+  display: grid;
+  padding-block: clamp(78px, 8vw, 110px);
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  gap: clamp(60px, 9vw, 140px);
+}
+
+.specialty-band h2 {
+  max-width: 660px;
+  color: var(--white);
+}
+
+.specialty-band p {
+  max-width: 720px;
+  margin-top: 24px;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: clamp(0.95rem, 1.08vw, 1.08rem);
+  line-height: 1.72;
+}
+
+.specialty-band .eyebrow {
+  color: var(--blue-bright);
+}
+
+.specialty-band-copy {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+}
+
+.specialty-band .specialty-copy {
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.specialty-band .specialty-copy p {
+  margin-top: 0;
+}
+
+.specialty-band .specialty-copy p + p {
+  margin-top: 22px;
+}
+
+.express-hotline {
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
+  padding-left: clamp(40px, 6vw, 82px);
+}
+
+.express-hotline span,
+.express-hotline small {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.express-hotline a {
+  margin-block: 18px 22px;
+  color: var(--white);
+  font-size: clamp(2rem, 3.4vw, 3.55rem);
+  font-weight: 750;
+  letter-spacing: -0.065em;
+  line-height: 1;
+}
+
+.specialty-features {
+  padding-block: clamp(100px, 9vw, 132px);
+}
+
+.specialty-features-secondary {
+  padding-top: 0;
+}
+
+.specialty-feature-list {
+  display: grid;
+  margin-top: clamp(48px, 6vw, 76px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  padding: 0;
+  list-style: none;
+}
+
+.specialty-feature-list li {
+  display: grid;
+  min-height: 96px;
+  grid-template-columns: 46px minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding: 24px 28px 24px 0;
+}
+
+.specialty-feature-list li:nth-child(odd) {
+  border-right: 1px solid var(--line);
+}
+
+.specialty-feature-list li:nth-child(even) {
+  padding-left: 28px;
+}
+
+.specialty-feature-list span {
+  color: var(--blue);
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+.specialty-feature-list p {
+  margin: 0;
+  font-size: clamp(0.94rem, 1.08vw, 1.08rem);
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.specialty-narrative {
+  border-top: 1px solid var(--line);
+}
+
+.specialty-narrative-compact {
+  padding-bottom: clamp(84px, 8vw, 116px);
+}
+
+.specialty-closing {
+  display: grid;
+  padding-block: clamp(72px, 7vw, 100px) clamp(110px, 10vw, 150px);
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 60px;
+  border-top: 1px solid var(--line);
+}
+
+.specialty-closing h2 {
+  max-width: 840px;
+}
+
+.specialty-closing-copy {
+  max-width: 860px;
+}
+
+.specialty-closing-copy > p {
+  max-width: 720px;
+  margin-bottom: 40px;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  line-height: 1.76;
+}
+
+.specialty-closing-actions {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.specialty-phone-link {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 720;
 }
 
 .values-strip {
@@ -2708,6 +2915,15 @@ a.contact-channel:hover .contact-channel-icon {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .specialty-intro,
+  .specialty-narrative {
+    gap: 64px;
+  }
+
+  .specialty-band-inner {
+    gap: 64px;
+  }
+
   .process-layout {
     grid-template-columns: 1fr;
   }
@@ -3143,6 +3359,14 @@ a.contact-channel:hover .contact-channel-icon {
     background-position: 36% center;
   }
 
+  .hero-detail-expressfahrten .hero-media {
+    background-position: 44% center;
+  }
+
+  .hero-detail-seefracht .hero-media {
+    background-position: 23% center;
+  }
+
   .hero-content,
   .hero-detail .hero-content {
     right: 16px;
@@ -3394,6 +3618,36 @@ a.contact-channel:hover .contact-channel-icon {
     padding-block: 90px;
   }
 
+  .specialty-intro,
+  .specialty-narrative,
+  .specialty-band-inner,
+  .specialty-band-copy,
+  .specialty-closing {
+    grid-template-columns: 1fr;
+  }
+
+  .specialty-intro,
+  .specialty-narrative {
+    gap: 44px;
+  }
+
+  .specialty-band-inner {
+    gap: 52px;
+  }
+
+  .express-hotline {
+    min-height: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    border-left: 0;
+    padding-top: 42px;
+    padding-left: 0;
+  }
+
+  .specialty-closing {
+    align-items: start;
+    gap: 40px;
+  }
+
   .image-statement {
     margin-block: 90px;
   }
@@ -3524,6 +3778,38 @@ a.contact-channel:hover .contact-channel-icon {
 }
 
 @media (max-width: 600px) {
+  .specialty-band {
+    width: calc(100% - 20px);
+  }
+
+  .specialty-feature-list {
+    grid-template-columns: 1fr;
+  }
+
+  .specialty-feature-list li:nth-child(odd) {
+    border-right: 0;
+  }
+
+  .specialty-feature-list li:nth-child(even) {
+    padding-left: 0;
+  }
+
+  .specialty-feature-list li {
+    min-height: 86px;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 14px;
+    padding-right: 0;
+  }
+
+  .specialty-closing-actions,
+  .specialty-closing-actions .button {
+    width: 100%;
+  }
+
+  .specialty-closing-actions .button {
+    justify-content: space-between;
+  }
+
   .service-grid {
     display: flex;
     width: calc(100% + 32px);

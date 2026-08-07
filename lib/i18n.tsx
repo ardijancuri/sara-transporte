@@ -9,6 +9,7 @@ import {
   type ReactNode,
 } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import { specialtyServiceTranslations } from "@/lib/specialty-service-translations";
 
 export type Locale = "de" | "en" | "fr";
 
@@ -62,6 +63,7 @@ export const localeNames: Record<Locale, string> = {
 };
 
 const translations: Record<string, Translation> = {
+  ...specialtyServiceTranslations,
   "Sprache wählen": {
     en: "Choose language",
     fr: "Choisir la langue",
