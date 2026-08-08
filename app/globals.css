@@ -1831,10 +1831,11 @@ h3 {
 .express-hotline a {
   margin-block: 18px 22px;
   color: var(--white);
-  font-size: clamp(2rem, 3.4vw, 3.55rem);
+  font-size: clamp(1.85rem, 2.75vw, 2.85rem);
   font-weight: 750;
   letter-spacing: -0.065em;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .specialty-features {
